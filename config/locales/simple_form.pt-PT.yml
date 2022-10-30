@@ -77,7 +77,7 @@ pt-PT:
       featured_tag:
         name: 'Eis algumas das etiquetas que utilizou recentemente:'
       filters:
-        action: Escolht qual a ação a executar quando uma publicação corresponde ao filtro
+        action: Escolhe qual a acção a executar quando uma publicação corresponde ao filtro
         actions:
           hide: Ocultar completamente o conteúdo filtrado, comportando-se como se não existisse
           warn: Ocultar o conteúdo filtrado por trás de um aviso mencionando o título do filtro
@@ -133,7 +133,7 @@ pt-PT:
         name: Só podes alterar a capitalização das letras para, por exemplo, torná-las mais legíveis
       user:
         chosen_languages: Quando seleccionado, só publicações nas línguas escolhidas vão ser mostradas nas cronologias públicas
-        role: A função controla que permissões o utilizador tem
+        role: O cargo controla as credenciais que o utilizador tem
       user_role:
         color: Cor a ser utilizada para este cargo em todo o interface de utilizador, como RGB no formato hexadecimal
         highlighted: Isto torna o cargo visível publicamente
@@ -321,7 +321,7 @@ pt-PT:
         time_zone: Fuso horário
       user_role:
         color: Cor do distintivo
-        highlighted: Mostrar o cargo como distintivo nos perfis de utilizador
+        highlighted: Mostrar o cargo em forma de crachá no perfil
         name: Nome
         permissions_as_keys: Permissões
         position: Prioridade
