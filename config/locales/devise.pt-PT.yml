@@ -12,7 +12,7 @@ pt-PT:
       last_attempt: Tem só mais uma tentativa antes da sua conta ser bloqueada.
       locked: A tua conta está bloqueada.
       not_found_in_database: "%{authentication_keys} ou palavra-passe inválida."
-      pending: A sua conta está ainda a aguardar revisão.
+      pending: A tua conta está ainda a aguardar revisão.
       timeout: A tua sessão expirou. Por favor, entra de novo para continuares.
       unauthenticated: Precisas de entrar na tua conta ou de te registares antes de continuar.
       unconfirmed: Tens de confirmar o teu endereço de e-mail antes de continuar.
@@ -20,9 +20,9 @@ pt-PT:
       confirmation_instructions:
         action: Verificar o endereço de e-mail
         action_with_app: Confirmar e regressar a %{app}
-        explanation: Criou uma conta em %{host} com este endereço de e-mail. Está a um clique de ativá-la. Se não foi você que fez este registo, por favor ignore esta mensagem.
-        explanation_when_pending: Candidatou-se com um convite para %{host} com este endereço de e-mail. Logo que confirme o seu endereço de e-mail, iremos rever a sua candidatura. Pode iniciar sessão para alterar os seus dados ou eliminar a sua conta, mas não poderá aceder à maioria das funções até que a sua conta seja aprovada. Se a sua inscrição for indeferida, os seus dados serão eliminados, pelo que não será necessária qualquer ação adicional da sua parte. Se não solicitou este convite, queira ignorar este e-mail.
-        extra_html: Por favor leia as <a href="%{terms_path}">regras da instância</a> e os <a href="%{policy_path}">nossos termos de serviço</a>.
+        explanation: Criaste uma conta em %{host} com este endereço de e-mail, e estás a um clique de a ativar. Se não foste tu que fizeste este registo, por favor ignora esta mensagem.
+        explanation_when_pending: Pediste um convite para %{host} com este endereço de e-mail. Logo que confirmes o teu endereço de e-mail, vamos rever a tua inscrição. Podes iniciar sessão para alterar os teus dados ou eliminar a tua conta, mas não vais poder aceder à maioria das funções até à tua conta ser aprovada. Se a tua inscrição não for aceite, os teus dados vão ser eliminados. Se não solicitaste este convite, por favor ignora este e-mail.
+        extra_html: Por favor lê <a href="%{terms_path}">as regras da instância</a> e os <a href="%{policy_path}">termos de serviço</a>.
         subject: 'Mastodon: Instruções de confirmação %{instance}'
         title: Verificar o endereço de e-mail
       email_changed:
@@ -87,8 +87,8 @@ pt-PT:
       updated: A tua palavra-passe foi alterada. Estás agora autenticado na tua conta.
       updated_not_active: A tua palavra-passe foi alterada.
     registrations:
-      destroyed: Adeus! A tua conta foi cancelada. Esperamos ver-te em breve.
-      signed_up: Seja bem-vindo! A sua conta foi correctamente registada.
+      destroyed: A tua conta foi cancelada. Adeus!
+      signed_up: Bem-vindo! A tua conta foi registada com sucesso.
       signed_up_but_inactive: A tua conta foi registada. No entanto ainda não está activa.
       signed_up_but_locked: A sua conta foi correctamente registada. Contudo, não pudemos iniciar sessão porque a sua conta está bloqueada.
       signed_up_but_pending: Foi enviada uma hiperligação de confirmação para o seu correio electrónico. Só depois de clicar na hiperligação avaliaremos a sua inscrição. Será notificado caso a sua conta seja aprovada.
@@ -100,9 +100,9 @@ pt-PT:
       signed_in: Sessão iniciada.
       signed_out: Sessão encerrada.
     unlocks:
-      send_instructions: Dentro de alguns momentos, irá receber um e-mail com instruções para desbloquear a sua conta. Consulte a sua pasta de lixo electrónico se não o encontrar.
-      send_paranoid_instructions: Se a sua conta existir, dentro de momentos irá receber um e-mail com instruções para a desbloquear. Consulte a sua pasta de lixo electrónico se não o encontrar.
-      unlocked: A sua conta foi correctamente desbloqueada. Queira iniciar uma nova sessão para continuar.
+      send_instructions: Vais receber um e-mail dentro de alguns minutos com instruções para desbloquear a tua conta.
+      send_paranoid_instructions: Se a tua conta existir, vais receber um e-mail dentro de alguns minutos com instruções a detalhar como a desbloquear.
+      unlocked: A tua conta foi desbloqueada. Inicia uma nova sessão para continuar.
   errors:
     messages:
       already_confirmed: já confirmado, por favor tente iniciar sessão

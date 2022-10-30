@@ -15,7 +15,7 @@ pt-PT:
               fragment_present: não pode conter um fragmento.
               invalid_uri: tem de ser um URI válido.
               relative_uri: tem de ser um URI absoluto.
-              secured_uri: tem de ser um URI HTTPS/SSL.
+              secured_uri: tem de ser um URI com HTTPS/SSL.
   doorkeeper:
     applications:
       buttons:
@@ -55,13 +55,13 @@ pt-PT:
         title: 'Aplicação: %{name}'
     authorizations:
       buttons:
-        authorize: Autorize
-        deny: Não autorize
+        authorize: Autorizar
+        deny: Não autorizar
       error:
         title: Ocorreu um erro
       new:
-        prompt_html: "%{client_name} pretende ter permissão para aceder à sua conta. É uma aplicação de terceiros. <strong>Se não confia nesta aplicação, então não deve autorizá-la.</strong>"
-        review_permissions: Rever permissões
+        prompt_html: "%{client_name} quer autorização para aceder à sua conta. É uma aplicação externa. <strong>Se não confias nesta aplicação, então não a deves autorizar.</strong>"
+        review_permissions: Rever autorizações
         title: Autorização é necessária
       show:
         title: Copiar o código desta autorização e colar na aplicação.
@@ -72,7 +72,7 @@ pt-PT:
         revoke: Tens a certeza?
       index:
         authorized_at: Autorizado em %{date}
-        description_html: Estas são aplicações que podem aceder à sua conta utilizando a API. Se encontrar aqui aplicativos que não reconhece, ou um aplicativo está com mau funcionamento, pode revogar o seu acesso.
+        description_html: Estas são aplicações que podem aceder à tua conta utilizando a API. Se vires aplicações que não reconheces, ou uma aplicação está com mau funcionamento, podes revogar o seu acesso.
         last_used_at: Última utilização em %{date}
         never_used: Nunca utilizado
         scopes: Permissões
@@ -81,13 +81,13 @@ pt-PT:
     errors:
       messages:
         access_denied: O proprietário do recurso ou servidor de autorização negou o pedido.
-        credential_flow_not_configured: As credenciais da palavra-passe do proprietário do recurso falhou devido a que Doorkeeper.configure.resource_owner_from_credentials não foram configuradas.
-        invalid_client: Autenticação do cliente falhou por causa de um cliente desconhecido, nenhum cliente de autenticação incluído ou método de autenticação não suportado.
+        credential_flow_not_configured: As credenciais da palavra-passe do proprietário do recurso falharam, dado que a propriedade Doorkeeper.configure.resource_owner_from_credentials não foi configurada.
+        invalid_client: A autenticação do cliente falhou por causa de um cliente desconhecido, não ter sido incluído um cliente de autenticação, ou o método de autenticação não é suportado.
         invalid_grant: A concessão de autorização fornecida é inválida, expirou, foi revogada, não corresponde à URI de redirecionamento usada no pedido de autorização ou foi emitida para outro cliente.
         invalid_redirect_uri: A URI de redirecionamento incluída não é válida.
         invalid_request:
-          missing_param: 'Parâmetro requerido em falta: %{value}.'
-          request_not_authorized: O pedido precisa ser autorizado. O parâmetro requerido para autorização da solicitação está ausente ou é inválido.
+          missing_param: 'Parâmetro necessário em falta: %{value}.'
+          request_not_authorized: O pedido precisa de ser autorizado. O parâmetro requerido para autorização da solicitação está ausente ou é inválido.
           unknown: A solicitação não possui um parâmetro requerido, inclui um valor de parâmetro não suportado ou tem outro tipo de formato incorreto.
         invalid_resource_owner: As credenciais do proprietário do recurso não são válidas ou o proprietário do recurso não pode ser encontrado
         invalid_scope: O âmbito solicitado é inválido, desconhecido ou tem um formato incorreto.
@@ -149,47 +149,47 @@ pt-PT:
     scopes:
       admin:read: ler todos os dados no servidor
       admin:read:accounts: ler informações sensíveis de todas as contas
-      admin:read:canonical_email_blocks: ler informações sensíveis de todos os bloqueios de endereços de e-mail canônicos
-      admin:read:domain_allows: ler informações sensíveis de todos os domínios permitios
+      admin:read:canonical_email_blocks: ler informações sensíveis de todos os bloqueios de endereços de e-mail canónicos
+      admin:read:domain_allows: ler informações sensíveis de todos os domínios permitidos
       admin:read:domain_blocks: ler informações sensíveis de todos os bloqueios de domínio
       admin:read:email_domain_blocks: ler informações sensíveis de todos os bloqueios de domínio de e-mail
       admin:read:ip_blocks: ler informações sensíveis de todos os bloqueios de IPs
-      admin:read:reports: ler informações sensíveis de todas as denúnicas e contas denunciadas
+      admin:read:reports: ler informações sensíveis de todas as denúncias e contas denunciadas
       admin:write: modificar todos os dados no servidor
-      admin:write:accounts: executar ações de moderação em contas
-      admin:write:canonical_email_blocks: executar ações de moderação no bloqueio de endereços de e-mail canônicos
-      admin:write:domain_allows: executar ações de moderação na permissão de domínios
-      admin:write:domain_blocks: executar ações de moderação no bloqueio de domínios
-      admin:write:email_domain_blocks: executar ações de moderação no bloqueio de domínios de e-mail
-      admin:write:ip_blocks: executar ações de moderação no bloqueio de IPs
-      admin:write:reports: executar ações de moderação em denúncias
-      crypto: usa encriptação ponta-a-ponta
-      follow: siga, bloqueie, desbloqueie, e deixa de seguir contas
-      push: receber as suas notificações push
-      read: tenha acesso aos dados da tua conta
+      admin:write:accounts: executar acções de moderação em contas
+      admin:write:canonical_email_blocks: executar acções de moderação no bloqueio de endereços de e-mail canónicos
+      admin:write:domain_allows: executar acções de moderação na permissão de domínios
+      admin:write:domain_blocks: executar acções de moderação no bloqueio de domínios
+      admin:write:email_domain_blocks: executar acções de moderação no bloqueio de domínios de e-mail
+      admin:write:ip_blocks: executar acções de moderação no bloqueio de IPs
+      admin:write:reports: executar acções de moderação em denúncias
+      crypto: usar encriptação ponta-a-ponta
+      follow: seguir, bloquear, desbloquear e deixar de seguir contas
+      push: receber as tuas notificações push
+      read: ter acesso aos dados da tua conta
       read:accounts: ver as informações da conta
-      read:blocks: ver os seus bloqueios
-      read:bookmarks: ver os seus favoritos
-      read:favourites: ver os seus favoritos
-      read:filters: ver os seus filtros
-      read:follows: ver quem você segue
-      read:lists: ver as suas listas
-      read:mutes: ver os utilizadores que silenciou
-      read:notifications: ver as suas notificações
-      read:reports: ver as suas denúncias
-      read:search: pesquisar em seu nome
+      read:blocks: ver os teus bloqueios
+      read:bookmarks: ver as tuas publicações guardadas
+      read:favourites: ver os teus favoritos
+      read:filters: ver os teus filtros
+      read:follows: ver quem segues
+      read:lists: ver as tuas listas
+      read:mutes: ver os utilizadores que silenciaste
+      read:notifications: ver as tuas notificações
+      read:reports: ver as tuas denúncias
+      read:search: pesquisar em teu nome
       read:statuses: ver todos os estados
-      write: publique por ti
+      write: publicar por ti
       write:accounts: modificar o seu perfil
       write:blocks: bloquear contas e domínios
-      write:bookmarks: estado dos favoritos
+      write:bookmarks: ver estado das publicações guardadas
       write:conversations: silenciar e eliminar conversas
       write:favourites: assinalar como favoritas
       write:filters: criar filtros
       write:follows: seguir pessoas
       write:lists: criar listas
-      write:media: carregar arquivos de media
+      write:media: carregar ficheiros de media
       write:mutes: silenciar pessoas e conversas
-      write:notifications: limpar as suas notificações
+      write:notifications: limpar as tuas notificações
       write:reports: denunciar outras pessoas
-      write:statuses: publicar estado
+      write:statuses: publicar estados
