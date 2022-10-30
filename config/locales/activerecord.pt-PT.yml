@@ -6,8 +6,8 @@ pt-PT:
         expires_at: Prazo
         options: Escolhas
       user:
-        agreement: Acordo de serviço
-        email: Endereço de correio electrónico
+        agreement: Termos de serviço
+        email: Endereço de e-mail
         locale: Região
         password: Palavra-passe
       user/account:
@@ -43,13 +43,13 @@ pt-PT:
               blocked: usa um fornecedor de e-mail que não é permitido
               unreachable: não parece existir
             role_id:
-              elevated: não pode ser maior que o da sua função atual
+              elevated: não pode ser maior que o da tua função actual
         user_role:
           attributes:
             permissions_as_keys:
               dangerous: incluir permissões que não são seguras para a função base
-              elevated: não pode incluir permissões que a sua função atual não possui
-              own_role: não pode ser alterado com a sua função atual
+              elevated: não pode incluir permissões que a tua função actual não possui
+              own_role: não pode ser alterado com a tua função actual
             position:
-              elevated: não pode ser maior que o da sua função atual
-              own_role: não pode ser alterado com a sua função atual
+              elevated: não pode ser maior que o da tua função actual
+              own_role: não pode ser alterado com a tua função actual
