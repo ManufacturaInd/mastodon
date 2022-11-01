@@ -995,25 +995,25 @@ pt-PT:
   admin_mailer:
     new_appeal:
       actions:
-        delete_statuses: para eliminar as suas publicações
-        disable: para congelar a sua conta
-        mark_statuses_as_sensitive: para marcar as suas publicações como problemáticas
-        none: uma advertência
-        sensitive: para marcar a sua conta como problemática
-        silence: para limitar a sua conta
-        suspend: para suspender a sua conta
-      body: "%{target} está a recorrer de uma decisão de moderação de %{action_taken_by} a %{date}, que consistiu em %{type}. Escreveu:"
-      next_steps: Pode aprovar o recurso para reverter a decisão de moderação, ou ignorá-lo.
+        delete_statuses: para apagar as tuas publicações
+        disable: para congelar a tua conta
+        mark_statuses_as_sensitive: marcar as tuas publicações como sensíveis
+        none: um aviso
+        sensitive: marcação da tua conta como sensível
+        silence: limitação da tua conta
+        suspend: suspensão da tua conta
+      body: "%{target} está a recorrer de uma decisão de moderação de %{action_taken_by} em %{date}, que consistiu em %{type}. Escreveu:"
+      next_steps: Podes aprovar o recurso para reverter a decisão de moderação, ou então ignorá-lo.
       subject: "%{username} está a recorrer da decisão de moderação em %{instance}"
     new_pending_account:
-      body: Abaixo, estão os pormenores da nova conta. Pode aprovar ou rejeitar esta inscrição.
-      subject: Nova conta para revisão em %{instance} (%{username})
+      body: Abaixo estão os detalhes da nova conta. Podes aprovar ou rejeitar esta inscrição.
+      subject: Nova conta para aprovação em %{instance} (%{username})
     new_report:
       body: "%{reporter} denunciou %{target}"
       body_remote: Alguém de %{domain} denunciou %{target}
       subject: Nova denúncia para %{instance} (#%{id})
     new_trends:
-      body: 'Os seguintes itens precisam ser revistos antes de poderem ser exibidos publicamente:'
+      body: 'Estes pontos precisam de ser revistos antes de poderem ser mostrados publicamente:'
       new_trending_links:
         title: Ligações em alta
       new_trending_statuses:
@@ -1025,14 +1025,14 @@ pt-PT:
       subject: Novas tendências para revisão em %{instance}
   aliases:
     add_new: Criar pseudónimo
-    created_msg: Criou com sucesso um novo pseudónimo. Pode agora iniciar a migração da conta antiga.
-    deleted_msg: O pseudónimo foi correctamente eliminado. Não será mais possível migrar a partir dessa conta.
-    empty: Não tem pseudónimos.
-    hint_html: Se quiser mudar de outra conta para esta, pode criar aqui um pseudónimo, que é necessário antes de poder prosseguir com a migração de seguidores da conta antiga para esta. Esta ação por si só é <strong>inofensiva e reversível</strong>. <strong>A migração da conta é iniciada a partir da conta antiga</strong>.
-    remove: Desvincular pseudónimo
+    created_msg: Criaste um novo pseudónimo. Podes agora iniciar a migração da conta antiga.
+    deleted_msg: O pseudónimo foi apagado. Migrar dessa conta para esta não vai mais ser possível.
+    empty: Não tens pseudónimos.
+    hint_html: Se quiseres mudar de outra conta para esta, podes criar aqui um pseudónimo. Este passo é necessário antes de poderes prosseguir com a migração de seguidores da conta antiga para esta. Esta ação por si só é <strong>inofensiva e reversível</strong>. <strong>A migração da conta é iniciada a partir da conta antiga</strong>.
+    remove: Apagar pseudónimo
   appearance:
-    advanced_web_interface: Interface web avançada
-    advanced_web_interface_hint: 'Se quiser utilizar toda a largura do seu ecrã, a interface web avançada permite-lhe configurar várias colunas diferentes para ver tanta informação ao mesmo tempo quanto quiser: Página inicial, notificações, cronologia federada, qualquer número de listas e etiquetas.'
+    advanced_web_interface: Interface web avançado
+    advanced_web_interface_hint: 'Se quiseres usar toda a largura do ecrã, o interface web avançada tem várias colunas diferentes para ter acesso simultâneo a vários tipos de informação: página inicial, notificações, timeline local ou federada, qualquer número de listas e hashtags.'
     animations_and_accessibility: Animações e acessibilidade
     confirmation_dialogs: Caixas de confirmação
     discovery: Descobrir
@@ -1040,8 +1040,8 @@ pt-PT:
       body: O Mastodon é traduzido por voluntários.
       guide_link: https://pt.crowdin.com/project/mastodon/
       guide_link_text: Todos podem contribuir.
-    sensitive_content: Conteúdo problemático
-    toot_layout: Disposição da publicação
+    sensitive_content: Conteúdo sensível
+    toot_layout: Disposição das publicações
   application_mailer:
     notification_preferences: Alterar preferências de e-mail
     salutation: "%{name},"
@@ -1050,35 +1050,35 @@ pt-PT:
     view_profile: Ver perfil
     view_status: Ver publicação
   applications:
-    created: Aplicação correctamente criada
-    destroyed: Aplicação correctamente eliminada
+    created: Aplicação criada
+    destroyed: Aplicação eliminada
     logout: Sair
-    regenerate_token: Regenerar token de acesso
-    token_regenerated: Token de acesso regenerado com sucesso
-    warning: Cuidado com estes dados. Não partilhar com ninguém!
+    regenerate_token: Gerar outro token de acesso
+    token_regenerated: Token de acesso gerado novamente
+    warning: Estes dados são sensíveis, não os partilhes!
     your_token: O teu token de acesso
   auth:
-    apply_for_account: Solicitar uma conta
+    apply_for_account: Seguir para a lista de espera
     change_password: Palavra-passe
     confirmations:
-      wrong_email_hint: Se esse endereço de e-mail não estiver correto, você pode alterá-lo nas configurações da conta.
-    delete_account: Eliminar conta
-    delete_account_html: Se deseja eliminar a sua conta, pode <a href="%{path}">continuar aqui</a>. Uma confirmação será solicitada.
+      wrong_email_hint: Se esse endereço de e-mail não estiver correcto, poderás alterá-lo nas configurações da conta.
+    delete_account: Apagar conta
+    delete_account_html: Se desejas eliminar a tua conta, podes <a href="%{path}">continuar aqui</a> para confirmar.
     description:
-      prefix_invited_by_user: "@%{name} convidou-o a juntar-se a esta instância do Mastodon!"
-      prefix_sign_up: Inscreva-se hoje no Mastodon!
-      suffix: Com uma conta, poderá seguir pessoas, publicar atualizações e trocar mensagens com utilizadores de qualquer instância Mastodon e muito mais!
-    didnt_get_confirmation: Não recebeu o e-mail de confirmação?
-    dont_have_your_security_key: Não tem a sua chave de segurança?
-    forgot_password: Esqueceu-se da palavra-passe?
-    invalid_reset_password_token: Token de modificação da palavra-passe é inválido ou expirou. Por favor, solicita um novo.
-    link_to_otp: Insira um código de autenticação em duas etapas do seu telemóvel, ou um código de recuperação
+      prefix_invited_by_user: "@%{name} mandou-te um convite para te juntares à Ciberlândia!"
+      prefix_sign_up: Inscreve-te já hoje!
+      suffix: Com uma conta, podes seguir pessoas, fazer publicações, trocar mensagens com utilizadores de qualquer instância Mastodon e muito mais!
+    didnt_get_confirmation: Não recebeste o e-mail de confirmação?
+    dont_have_your_security_key: Não tens a tua chave de segurança?
+    forgot_password: Esqueceste-te da palavra-passe?
+    invalid_reset_password_token: Este token de modificação da palavra-passe é inválido ou expirou. Por favor solicita um novo.
+    link_to_otp: Introduz um código de autenticação 2FA do teu telemóvel ou um código de recuperação
     link_to_webauth: Usa o teu dispositivo de chave de segurança
     log_in_with: Iniciar sessão com
     login: Entrar
     logout: Sair
-    migrate_account: Mudar para uma conta diferente
-    migrate_account_html: Se deseja redirecionar esta conta para uma outra pode <a href="%{path}">configurar isso aqui</a>.
+    migrate_account: Migrar para outra conta
+    migrate_account_html: Se quiseres redireccionar esta conta para uma outra, podes <a href="%{path}">configurar isso aqui</a>.
     or_log_in_with: Ou iniciar sessão com
     privacy_policy_agreement_html: Eu li e concordo com a <a href="%{privacy_policy_path}" target="_blank">política de privacidade</a>
     providers:
@@ -1091,20 +1091,20 @@ pt-PT:
     rules:
       accept: Aceitar
       back: Retroceder
-      preamble: Estas são definidas e aplicadas pelos moderadores de %{domain}.
-      title: Algumas regras básicas.
-    security: Alterar palavra-passe
+      preamble: São definidas e aplicadas pelos moderadores da Ciberlândia.
+      title: Algumas regras base.
+    security: Mudar palavra-passe
     set_new_password: Editar palavra-passe
     setup:
       email_below_hint_html: Se o endereço de e-mail abaixo não estiver correcto, podes alterá-lo aqui e receber um novo e-mail de confirmação.
-      email_settings_hint_html: O e-mail de confirmação foi enviado para %{email}. Se esse endereço de e-mail não estiver correto, podes alterá-lo nas definições da tua conta.
+      email_settings_hint_html: O e-mail de confirmação foi enviado para %{email}. Se esse endereço de e-mail não estiver correcto, podes alterá-lo nas definições da tua conta.
       title: Configuração
     sign_in:
       preamble_html: Iniciar sessão com as suas credenciais de <strong>%{domain}</strong>. Se a sua conta estiver hospedada noutro servidor, não poderá iniciar sessão aqui.
       title: Iniciar sessão em %{domain}
     sign_up:
-      preamble: Com uma conta neste servidor Mastodon, poderá seguir qualquer outra pessoa na rede, independentemente do servidor onde a conta esteja hospedada.
-      title: Vamos lá inscrevê-lo em %{domain}.
+      preamble: Com uma conta na Ciberlândia, podes seguir qualquer outra pessoa no fediverso Mastodon, independentemente do servidor onde a conta esteja alojada.
+      title: Vamos lá inscrever-te na Ciberlândia.
     status:
       account_status: Estado da conta
       confirming: A aguardar que concluas a confirmação do e-mail.
@@ -1121,7 +1121,7 @@ pt-PT:
     error: Houve um erro ao ir buscar a conta remota
     follow: Seguir
     follow_request: 'Enviaste um pedido para seguir:'
-    following: 'Sucesso! Agora estás a seguir:'
+    following: 'Feito! Agora estás a seguir:'
     post_follow:
       close: Ou podes simplesmente fechar esta janela.
       return: Mostrar perfil do utilizador
@@ -1155,47 +1155,47 @@ pt-PT:
       x_months: "%{count} meses"
       x_seconds: "%{count} segundos"
   deletes:
-    challenge_not_passed: A informação que inseriu não estava correcta
-    confirm_password: Insira sua palavra-passe atual para verificar a sua identidade
-    confirm_username: Insira seu nome de utilizador para confirmar o procedimento
-    proceed: Eliminar conta
-    success_msg: A sua conta foi correctamente eliminada
+    challenge_not_passed: A informação que introduziste não estava correcta
+    confirm_password: Introduz a tua palavra-passe actual para verificar a tua identidade
+    confirm_username: Introduz o teu nome de utilizador para confirmar esta acção
+    proceed: Apagar conta
+    success_msg: A tua conta foi apagada do nosso servidor
     warning:
-      before: 'Antes de continuar, por favor leia cuidadosamente estas notas:'
-      caches: O conteúdo que foi armazenado em cache por outras instâncias pode perdurar
-      data_removal: As suas publicações e outros dados serão eliminados permanentemente
-      email_change_html: Pode <a href="%{path}">alterar o seu endereço de e-mail</a> sem eliminar a sua conta
-      email_contact_html: Se ainda não chegou, pode enviar um e-mail a <a href="mailto:%{email}">%{email}</a> para obter ajuda
-      email_reconfirmation_html: Se não recebeu o e-mail de confirmação, pode <a href="%{path}">pedi-lo novamente</a>
-      irreversible: Não será possível restaurar ou reativar sua conta
-      more_details_html: Para mais pormenores, leia a <a href="%{terms_path}">política de privacidade</a>.
-      username_available: O seu nome de utilizador ficará novamente disponível
-      username_unavailable: O seu nome de utilizador permanecerá indisponível
+      before: 'Antes de continuar, por favor lê cuidadosamente estas notas:'
+      caches: O conteúdo que foi armazenado em cache por outras instâncias pode persistir
+      data_removal: As tuas publicações e outros dados vão ser permanentemente apagados
+      email_change_html: Podes <a href="%{path}">mudar o teu endereço de e-mail</a> sem apagar a tua conta
+      email_contact_html: Se ainda não chegou, podes enviar um e-mail para <a href="mailto:%{email}">%{email}</a> para obter ajuda
+      email_reconfirmation_html: Se não recebeste o e-mail de confirmação, podes <a href="%{path}">pedi-lo novamente</a>
+      irreversible: Não vai ser possível recuperar ou reactivar sua conta
+      more_details_html: Para mais pormenores, lê a nossa <a href="%{terms_path}">política de privacidade</a>.
+      username_available: O teu nome de utilizador vai ficar novamente disponível
+      username_unavailable: O teu nome de utilizador vai permanecer indisponível
   disputes:
     strikes:
-      action_taken: Ação tomada
+      action_taken: Acção tomada
       appeal: Recorrer
       appeal_approved: Esta advertência foi alvo de um recurso que foi aceite, pelo que já não é válida
       appeal_rejected: O recurso foi rejeitado
       appeal_submitted_at: Recurso enviado
-      appealed_msg: O seu recurso foi enviado. Se for aprovado, enviamos uma notificação.
+      appealed_msg: O teu recurso foi enviado. Se for aprovado, enviamos-te uma notificação.
       appeals:
         submit: Enviar recurso
       approve_appeal: Aprovar recurso
       associated_report: Denúncia associada
       created_at: Data
-      description_html: Estas são ações tomadas contra a tua conta e advertências que te foram enviados pela equipa de %{instance}.
+      description_html: Estas são acções tomadas contra a tua conta e advertências que te foram enviadas pela equipa da Ciberlândia.
       recipient: Endereçado a
       reject_appeal: Indeferir recurso
       status: 'Publicação #%{id}'
-      status_removed: Publicação já eliminada do sistema
+      status_removed: Publicação já apagada do sistema
       title: "%{action} de %{date}"
       title_actions:
         delete_statuses: Remoção de publicação
         disable: Congelamento da conta
-        mark_statuses_as_sensitive: Marcação das publicações como problemáticas
-        none: Advertência
-        sensitive: Marcação da conta como problemática
+        mark_statuses_as_sensitive: Marcação das publicações como sensíveis
+        none: Aviso
+        sensitive: Marcação da conta como sensível
         silence: Limitação da conta
         suspend: Suspensão da conta
       your_appeal_approved: O teu recurso foi aprovado
@@ -1216,21 +1216,21 @@ pt-PT:
     '500':
       content: Houve um erro interno do servidor.
       title: Esta página não está bem
-    '503': A página não pôde ser apresentada devido a uma falha temporária do servidor.
+    '503': A página não pôde ser carregada devido a uma falha temporária do servidor.
     noscript_html: Para usar a aplicação web do Mastodon, vais ter de ativar o JavaScript. Em alternativa, experimenta uma das <a href="%{apps_path}">apps nativas</a> do Mastodon na tua plataforma.
   existing_username_validator:
-    not_found: não foi encontrado nenhum utilizador local com esse nome
+    not_found: não foi encontrada nenhuma conta local com esse nome
     not_found_multiple: não foi possível encontrar %{usernames}
   exports:
     archive_takeout:
       date: Data
       download: Descarregar o teu arquivo
       hint_html: Podes pedir um arquivo das tuas <strong>publicações e ficheiros de media carregados</strong>. Os dados no ficheiro exportado vão no formato ActivityPub, que pode ser lido com qualquer software compatível. Podes pedir um arquivo uma vez por cada 7 dias.
-      in_progress: A compilar o teu arquivo...
+      in_progress: A preparar o teu arquivo...
       request: Pede o teu arquivo
       size: Tamanho
-    blocks: Bloqueaste
-    bookmarks: Postas Guardadas
+    blocks: Bloqueios
+    bookmarks: Publicações Guardadas
     csv: CSV
     domain_blocks: Bloqueios de domínio
     lists: Listas
@@ -1244,9 +1244,9 @@ pt-PT:
   filters:
     contexts:
       account: Perfis
-      home: Cronologia inicial
+      home: Timeline inicial
       notifications: Notificações
-      public: Cronologias públicas
+      public: Timelines públicas
       thread: Conversações
     edit:
       add_keyword: Adicionar palavra-chave
@@ -1259,7 +1259,7 @@ pt-PT:
       invalid_context: Inválido ou nenhum contexto fornecido
     index:
       contexts: Filtros em %{contexts}
-      delete: Eliminar
+      delete: Apagar
       empty: Não há filtros.
       expires_in: Expira em %{distance}
       expires_on: Expira em %{date}
