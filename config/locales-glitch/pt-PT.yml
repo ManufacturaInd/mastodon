@@ -4,6 +4,26 @@ pt-PT:
     custom_emojis:
       batch_copy_error: 'Houve um erro ao copiar alguns dos emoji selecionados: %{message}'
       batch_error: 'Houve um erro: %{message}'
+    domain_allows:
+      export: Exportar
+      import: Importar
+    domain_blocks:
+      export: Exportar
+      import: Importar
+    export_domain_allows:
+      new:
+        title: Importar domínios permitidos
+      no_file: Nenhum ficheiro seleccionado
+    export_domain_blocks:
+      import:
+        description_html: Estás prestes a importar uma lista de bloqueios de domínios. Revê essa lista com cuidado, especialmente se não foste tu a criá-la.
+        existing_relationships_warning: Relações de seguidores existentes
+        private_comment_description_html: 'Para te ajudar a seguir de onde vêm os bloqueios importados, cada bloqueio importado vai ser criado com um comentário privado: <q>%{comment}</q>'
+        private_comment_template: Importado de %{source} em %{date}
+        title: Import domain blocks
+      new:
+        title: Import domain blocks
+      no_file: No file selected
     settings:
       captcha_enabled:
         desc_html: Isto depende de scripts externos da hCaptcha, o que pode ser uma preocupação de segurança e privacidade. Além disso, <strong>isto pode tornar o processo de registo menos acessível para algumas pessoas (especialmente as com limitações físicas)</strong>. Por isto, considera medidas alternativas tais como registo mediante aprovação ou sob convite.<br>Pessoas que se registam com um convite não precisam de resolver um CAPTCHA
@@ -39,4 +59,4 @@ pt-PT:
   generic:
     use_this: Usar isto
   settings:
-    flavours: Sabores
+    flavours: Temas
