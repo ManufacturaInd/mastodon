@@ -205,7 +205,7 @@ pt-PT:
         otp_attempt: Código de autenticação em duas etapas
         password: Palavra-passe
         phrase: Palavra ou expressão-chave
-        setting_advanced_layout: Ativar interface web avançado
+        setting_advanced_layout: Ativar interface multi-colunas
         setting_aggregate_reblogs: Agrupar partilhas em cronologias
         setting_always_send_emails: Enviar notificações de email sempre
         setting_auto_play_gif: Reproduzir GIFs automaticamente

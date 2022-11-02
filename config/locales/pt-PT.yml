@@ -1058,8 +1058,8 @@ pt-PT:
     hint_html: Se quiseres mudar de outra conta para esta, podes criar aqui um pseudónimo. Este passo é necessário antes de poderes prosseguir com a migração de seguidores da conta antiga para esta. Esta ação por si só é <strong>inofensiva e reversível</strong>. <strong>A migração da conta é iniciada a partir da conta antiga</strong>.
     remove: Apagar pseudónimo
   appearance:
-    advanced_web_interface: Interface web avançado
-    advanced_web_interface_hint: 'Se quiseres usar toda a largura do ecrã, o interface web avançada tem várias colunas diferentes para ter acesso simultâneo a vários tipos de informação: página inicial, notificações, timeline local ou federada, qualquer número de listas e hashtags.'
+    advanced_web_interface: Interface multi-colunas
+    advanced_web_interface_hint: 'Se quiseres usar toda a largura do ecrã, o interface multi-colunas dá-te várias colunas diferentes para ter acesso simultâneo a vários tipos de informação: página inicial, notificações, timeline local ou federada, qualquer número de listas e hashtags.'
     animations_and_accessibility: Animações e acessibilidade
     confirmation_dialogs: Caixas de confirmação
     discovery: Descobrir
@@ -1631,6 +1631,8 @@ pt-PT:
     over_daily_limit: Excedeste o limite de %{limit} publicações agendadas para esse dia
     over_total_limit: Tu excedeste o limite de %{limit} publicações agendadas
     too_soon: A data de agendamento tem de ser futura
+  search:
+    search_or_paste: "Pesquisar..."
   sessions:
     activity: Última atividade
     browser: Navegador
