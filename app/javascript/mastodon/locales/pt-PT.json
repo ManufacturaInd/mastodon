@@ -295,7 +295,7 @@
   "getting_started.documentation": "Documentação",
   "getting_started.heading": "Primeiros passos",
   "getting_started.invite": "Convidar pessoas",
-  "getting_started.open_source_notice": "A Ciberlândia é uma instância do <a href="https://github.com/glitch-soc/mastodon" target="_blank">Mastodon</a>, um software livre. É mantida e sustentada pela <a href="https://direitosdigitais.pt" target="_blank">D3</a>, a associação de defesa dos direitos digitais em Portugal.',
+  "getting_started.open_source_notice": "A Ciberlândia é uma instância do <a href=\"https://github.com/glitch-soc/mastodon\" target=\"_blank\">Mastodon</a>, um software livre. É mantida e sustentada pela <a href=\"https://direitosdigitais.pt\" target=\"_blank\">D3</a>, a associação de defesa dos direitos digitais em Portugal.",
   "getting_started.privacy_policy": "Termos & Política de Privacidade",
   "getting_started.security": "Segurança",
   "getting_started.what_is_mastodon": "Acerca do Mastodon",
