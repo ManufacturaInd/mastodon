@@ -6,11 +6,11 @@ pt-PT:
     about_this: Sobre esta instância
     active_count_after: activo
     active_footnote: Utilizadores activos mensais (UAM)
-    administered_by: 'Administrado por:'
+    administered_by: 'Administrado por'
     api: API
-    apps: Aplicações móveis
+    apps: Apps móveis
     apps_platforms: Usar o Mastodon a partir do iOS, Android e outras plataformas
-    browse_directory: Navegar pelo directório de perfis e filtrar por interesses
+    browse_directory: Navegar pelo directório de contas e filtrar por interesses
     browse_local_posts: Visualizar as publicações desta instância em tempo real
     browse_public_posts: Visualizar as publicações do fediverso em tempo real
     contact: Contacto
@@ -28,7 +28,7 @@ pt-PT:
     learn_more: Saber mais
     logged_in_as_html: Acabas de te ligar como %{username}.
     logout_before_registering: Já tens sessão iniciada.
-    privacy_policy: Política de Privacidade
+    privacy_policy: Termos & Política de Privacidade
     rules: Regras da instância
     rules_html: 'Abaixo está um resumo das regras a seguir se pretendes ter uma conta nesta instância:'
     see_whats_happening: O que está a acontecer
@@ -98,10 +98,10 @@ pt-PT:
         submit: Alterar e-mail
         title: Alterar e-mail para %{username}
       change_role:
-        changed_msg: Função alterada com sucesso!
-        label: Alterar função
-        no_role: Nenhuma função
-        title: Alterar a função de %{username}
+        changed_msg: Cargo alterado!
+        label: Alterar cargo
+        no_role: Nenhum cargo
+        title: Alterar o cargo de %{username}
       confirm: Confirmar
       confirmed: Confirmado
       confirming: A confirmar
@@ -154,7 +154,7 @@ pt-PT:
       most_recent_ip: IP mais recente
       no_account_selected: Nenhuma conta selecionada, por isso nada foi alterado
       no_limits_imposed: Sem limites impostos
-      no_role_assigned: Nenhuma função atribuída
+      no_role_assigned: Nenhum cargo atribuído
       not_subscribed: Não inscrito
       pending: Pendente de revisão
       perform_full_suspension: Suspender totalmente
@@ -183,7 +183,7 @@ pt-PT:
       reset: Fazer reset
       reset_password: Fazer reset à  palavra-passe
       resubscribe: Reinscrever
-      role: Função
+      role: Cargo
       search: Pesquisar
       search_same_email_domain: Outros utilizadores com o mesmo domínio de correio electrónico
       search_same_ip: Outros utilizadores com o mesmo IP
@@ -226,8 +226,8 @@ pt-PT:
         approve_appeal: Aprovar recurso
         approve_user: Aprovar utilizador
         assigned_to_self_report: Atribuir Denúncia
-        change_email_user: Alterar correio electrónico do utilizador
-        change_role_user: Alterar Função do Utilizador
+        change_email_user: Alterar E-mail do Utilizador
+        change_role_user: Alterar Cargo do Utilizador
         confirm_user: Confirmar Utilizador
         create_account_warning: Criar Aviso
         create_announcement: Criar comunicado
@@ -238,7 +238,7 @@ pt-PT:
         create_email_domain_block: Criar Bloqueio de Domínio de E-mail
         create_ip_block: Criar regra de IP
         create_unavailable_domain: Criar Domínio Indisponível
-        create_user_role: Criar Função
+        create_user_role: Criar Cargo
         demote_user: Despromover Utilizador
         destroy_announcement: Apagar comunicado
         destroy_canonical_email_block: Eliminar Bloqueio de E-mail
@@ -250,7 +250,7 @@ pt-PT:
         destroy_ip_block: Eliminar regra de IP
         destroy_status: Eliminar Publicação
         destroy_unavailable_domain: Eliminar Domínio Indisponível
-        destroy_user_role: Eliminar Função
+        destroy_user_role: Eliminar Cargo
         disable_2fa_user: Desativar 2FA
         disable_custom_emoji: Desativar Emoji Personalizado
         disable_sign_in_token_auth_user: Desativar token de autenticação por e-mail para Utilizador
@@ -265,28 +265,28 @@ pt-PT:
         remove_avatar_user: Remover Imagem de Perfil
         reopen_report: Reabrir Denúncia
         resend_user: Reenviar E-mail de Confirmação
-        reset_password_user: Repor Password
+        reset_password_user: Repor Palavra-Passe
         resolve_report: Resolver Denúncia
-        sensitive_account: Marcar a media na sua conta como problemática
-        silence_account: Limitar conta
-        suspend_account: Suspender conta
+        sensitive_account: Marcar a media na tua conta como sensível
+        silence_account: Silenciar Conta
+        suspend_account: Suspender Conta
         unassigned_report: Desatribuir Denúncia
         unblock_email_account: Desbloquear endereço de e-mail
-        unsensitive_account: Desmarcar a conta como problemática
+        unsensitive_account: Desmarcar a media na tua conta como sensível
         unsilence_account: Deixar de Silenciar Conta
         unsuspend_account: Retirar Suspensão à Conta
-        update_announcement: Atualizar comunicado
-        update_custom_emoji: Atualizar Emoji Personalizado
-        update_domain_block: Atualizar Bloqueio de Domínio
-        update_ip_block: Atualizar regra de IP
-        update_status: Atualizar Estado
-        update_user_role: Atualizar Função
+        update_announcement: Actualizar Anúncio
+        update_custom_emoji: Actualizar Emoji Personalizado
+        update_domain_block: Actualizar Bloqueio de Domínio
+        update_ip_block: Actualizar regra de IP
+        update_status: Actualizar Estado
+        update_user_role: Actualizar Cargo
       actions:
         approve_appeal_html: "%{name} aprovou o recurso da decisão de moderação de %{target}"
         approve_user_html: "%{name} aprovou a inscrição de %{target}"
         assigned_to_self_report_html: "%{name} atribuiu a denúncia %{target} a si próprio"
         change_email_user_html: "%{name} alterou o endereço de e-mail de %{target}"
-        change_role_user_html: "%{name} alterou a função de %{target}"
+        change_role_user_html: "%{name} alterou o cargo de %{target}"
         confirm_user_html: "%{name} confirmou o endereço de e-mail de %{target}"
         create_account_warning_html: "%{name} enviou um aviso para %{target}"
         create_announcement_html: "%{name} criou o novo anúncio %{target}"
@@ -297,7 +297,7 @@ pt-PT:
         create_email_domain_block_html: "%{name} bloqueou o domínio de e-mail %{target}"
         create_ip_block_html: "%{name} criou regra para o IP %{target}"
         create_unavailable_domain_html: "%{name} parou a entrega ao domínio %{target}"
-        create_user_role_html: "%{name} criou a função %{target}"
+        create_user_role_html: "%{name} criou o cargo %{target}"
         demote_user_html: "%{name} despromoveu o utilizador %{target}"
         destroy_announcement_html: "%{name} eliminou o anúncio %{target}"
         destroy_canonical_email_block_html: "%{name} desbloqueou o e-mail com a hash %{target}"
@@ -309,7 +309,7 @@ pt-PT:
         destroy_ip_block_html: "%{name} eliminou regra para o IP %{target}"
         destroy_status_html: "%{name} removeu a publicação de %{target}"
         destroy_unavailable_domain_html: "%{name} retomou a entrega ao domínio %{target}"
-        destroy_user_role_html: "%{name} eliminou a função %{target}"
+        destroy_user_role_html: "%{name} eliminou o cargo %{target}"
         disable_2fa_user_html: "%{name} desativou a 2FA para %{target}"
         disable_custom_emoji_html: "%{name} desabilitou o emoji %{target}"
         disable_sign_in_token_auth_user_html: "%{name} desativou token de autenticação por e-mail para %{target}"
@@ -339,7 +339,7 @@ pt-PT:
         update_domain_block_html: "%{name} atualizou o bloqueio de domínio para %{target}"
         update_ip_block_html: "%{name} alterou regra para IP %{target}"
         update_status_html: "%{name} atualizou o estado de %{target}"
-        update_user_role_html: "%{name} alterou a função %{target}"
+        update_user_role_html: "%{name} alterou o cargo %{target}"
       deleted_account: conta apagada
       empty: Não foram encontrados registos.
       filter_by_action: Filtrar por ação
@@ -703,7 +703,7 @@ pt-PT:
       updated_at: Atualizado
       view_profile: Ver perfil
     roles:
-      add_new: Adicionar função
+      add_new: Adicionar um cargo
       assigned_users:
         one: "%{count} utilizador"
         other: "%{count} utilizadores"
@@ -714,10 +714,10 @@ pt-PT:
         moderation: Moderação
         special: Especiais
       delete: Eliminar
-      description_html: Com as <strong>funções de utilizador</strong>, pode personalizar quais as funções e áreas do Mastodon a que os seus utilizadores podem aceder.
-      edit: Editar função '%{name}'
-      everyone: Permissões padrão
-      everyone_full_description_html: Esta é a <strong>função base</strong> que afeta <strong>todos os utilizadores</strong>, mesmo aqueles sem uma função atribuída. Todas as outras funções herdam as permissões desta.
+      description_html: Com os <strong>cargos de utilizador</strong>, podes personalizar que funcionalidades e áreas do Mastodon os teus utilizadores podem aceder.
+      edit: Editar o cargo '%{name}'
+      everyone: Autorizações por omissão
+      everyone_full_description_html: Este é o <strong>cargo base</strong> que afecta <strong>todos os utilizadores</strong>, mesmo aqueles sem um cargo atribuído. Todos os outros cargos herdam as autorizações deste.
       permissions_count:
         one: "%{count} permissão"
         other: "%{count} permissões"
@@ -742,8 +742,8 @@ pt-PT:
         manage_invites_description: Permite aos utilizadores pesquisarem e desativarem ligações de convite
         manage_reports: Gerir Relatórios
         manage_reports_description: Permite aos utilizadores rever relatórios e executar ações de moderação contra eles
-        manage_roles: Gerir Funções
-        manage_roles_description: Permite aos utilizadores a gestão e atribuição de funções abaixo dos seus
+        manage_roles: Gerir Cargos
+        manage_roles_description: Permite aos utilizadores gerir e atribuir cargos abaixo dos deles
         manage_rules: Gerir Regras
         manage_rules_description: Permite aos utilizadores alterar as regras do servidor
         manage_settings: Gerir Configurações
@@ -762,7 +762,7 @@ pt-PT:
         view_dashboard_description: Permite aos utilizadores acederem ao painel de controlo e a várias estatísticas
         view_devops: DevOps
         view_devops_description: Permite aos utilizadores aceder aos painéis de controlo do Sidekiq e pgHero
-      title: Funções
+      title: Cargos
     rules:
       add_new: Adicionar regra
       delete: Eliminar
@@ -791,16 +791,16 @@ pt-PT:
       discovery:
         follow_recommendations: Recomendações para seguir
         preamble: Revelar conteúdos interessantes é fundamental para a entrada de novos utilizadores que podem não conhecer ninguém no Mastodon. Controle como os vários recursos de descoberta funcionam no seu servidor.
-        profile_directory: Diretório de perfis
+        profile_directory: Quem por cá anda
         public_timelines: Cronologias públicas
         publish_discovered_servers: Publicar servidores descobertos
         publish_statistics: Publicar estatísticas
         title: Descobrir
         trends: Em alta
       domain_blocks:
-        all: Para toda a gente
-        disabled: Para ninguém
-        users: Para utilizadores locais que se encontrem autenticados
+        all: A toda a gente
+        disabled: A ninguém
+        users: A contas locais que estejam logadas
       registrations:
         preamble: Controle quem pode criar uma conta no seu servidor.
         title: Inscrições
@@ -1084,7 +1084,7 @@ pt-PT:
     providers:
       cas: CAS
       saml: SAML
-    register: Registar
+    register: Criar uma conta
     registration_closed: "%{instance} não está a aceitar novos membros"
     resend_confirmation: Reenviar instruções de confirmação
     reset_password: Criar nova palavra-passe
@@ -1274,8 +1274,8 @@ pt-PT:
         other: "%{count} publicações individuais ocultadas"
       title: Filtros
     new:
-      save: Gravar novo filtro
-      title: Adicionar novo filtro
+      save: Gravar um novo filtro
+      title: Adicionar um novo filtro
     statuses:
       back_to_filter: Voltar ao filtro
       batch:
@@ -1302,7 +1302,7 @@ pt-PT:
     deselect: Desmarcar todos
     none: Nenhum
     order_by: Ordenar por
-    save_changes: Gravar alterações
+    save_changes: Gravar as alterações
     select_all_matching_items:
       one: Selecciona %{count} item que corresponde à tua pesquisa.
       other: Selecciona todos os %{count} itens que correspondem à tua pesquisa.
@@ -1388,7 +1388,7 @@ pt-PT:
     incoming_migrations_html: Para migrar de outra conta para esta, primeiro você precisa <a href="%{path}">criar um pseudónimo</a>.
     moved_msg: A sua conta está agora a ser redireccionada para %{acct} e os seus seguidores estão a ser transferidos.
     not_redirecting: A sua conta não está atualmente a ser redirecionada para nenhuma outra conta.
-    on_cooldown: Migrou recentemente a sua conta. Esta função ficará disponível novamente em %{count} dias.
+    on_cooldown: Migraste a tua conta há pouco tempo. Esta função vai ficar novamente acessível em %{count} dias.
     past_migrations: Migrações anteriores
     proceed_with_move: Migrar seguidores
     redirected_msg: A sua conta está agora a ser redireccionada para %{acct}.
@@ -1489,7 +1489,7 @@ pt-PT:
     posting_defaults: Padrões de publicação
     public_timelines: Cronologias públicas
   privacy_policy:
-    title: Política de Privacidade
+    title: Termos de Serviço e Política de Privacidade
   reactions:
     errors:
       limit_reached: Alcançado limite de reações diferentes
