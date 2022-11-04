@@ -45,7 +45,7 @@ pt-PT:
         current_password: Por motivos de segurança, introduz a palavra-passe da conta actual
         current_username: Para confirmar, introduz o nome de utilizador da conta actual
         digest: Enviado após um longo período de inatividade e apenas se foste mencionado na tua ausência
-        discoverable: Permitir que a tua conta seja descoberta por outros através de recomendações, destaques e outras funções
+        discoverable: Permitir que a tua conta seja descoberta por outros através de recomendações, destaques e outras formas
         email: Vai ser enviado um e-mail de confirmação
         fields: Pode ter até 4 itens expostos, em forma de tabela, no seu perfil
         header: PNG, GIF or JPG. Ficheiros até %{size}. Vão ser reduzidos para %{dimensions}px
@@ -88,12 +88,12 @@ pt-PT:
         closed_registrations_message: Apresentado quando as inscrições estiverem encerradas
         content_cache_retention_period: Publicações de outros servidores serão apagadas decorrido o número de dias especificado, se estiver definido um valor positivo. Isso pode ser irreversível.
         custom_css: Pode aplicar estilos personalizados na versão web do Mastodon.
-        mascot: Sobrepõe-se à ilustração na interface web avançada.
-        media_cache_retention_period: Os ficheiros de media descarregados serão apagados decorrido o número de dias especificado, quando definido com um valor positivo, e descarregados novamente quando solicitados.
-        peers_api_enabled: Uma lista de nomes de domínio que este servidor encontrou no fediverso. Nenhum dado é incluído aqui sobre se você federa com um determinado servidor, apenas que o seu servidor o conhece. Este serviço é utilizado por serviços que recolhem estatísticas na federação, em termos gerais.
-        profile_directory: O diretório de perfis lista todos os utilizadores que optaram por ter a sua conta a ser sugerida a outros.
-        require_invite_text: Quando as incrições exigirem aprovação manual, faça o texto "Por que se quer juntar a nós?" da solicitação de convite ser obrigatório, em vez de opcional
-        site_contact_email: Como as pessoas podem entrar em contacto consigo para obter informações legais ou de apoio técnico.
+        mascot: Sobrepõe-se à ilustração no interface web multi-colunas.
+        media_cache_retention_period: Os ficheiros de media descarregados serão excluídos após o número de dias especificado, quando definido com um valor positivo, e descarregados novamente quando solicitados.
+        peers_api_enabled: Uma lista de nomes de domínio que este servidor encontrou no fediverso. Nenhum dado é incluído aqui sobre se a tua conta federa com um determinado servidor, apenas que o teu servidor o conhece. Este serviço é utilizado por serviços que recolhem estatísticas na federação, em termos gerais.
+        profile_directory: O 'Quem por cá anda' mostra todas as contas da Ciberlândia que permitem ser sugeridas a outros.
+        require_invite_text: Quando as incrições exigirem aprovação manual, faça o texto "Porque se quer juntar a nós?" da solicitação de convite, obrigatório ao invés de opcional
+        site_contact_email: Como as pessoas podem entrar em contacto consigo para obter informações legais ou de suporte.
         site_contact_username: Como as pessoas conseguem chegar até si no Mastodon.
         site_extended_description: Qualquer informação adicional que possa ser útil para os visitantes e os seus utilizadores. Pode ser estruturada com a sintaxe Markdown.
         site_short_description: Uma breve descrição para ajudar a identificar de forma única o seu servidor. Quem o está a gerir, e a quem se destina?
@@ -255,8 +255,8 @@ pt-PT:
         mascot: Mascote personalizada (legado)
         media_cache_retention_period: Período de retenção de ficheiros de media em cache
         peers_api_enabled: Publicar lista de servidores descobertos na API
-        profile_directory: Habilitar diretório de perfis
-        registrations_mode: Quem se pode inscrever
+        profile_directory: Habilitar 'Quem por cá anda'
+        registrations_mode: Quem pode inscrever-se
         require_invite_text: Requerer uma razão para entrar
         show_domain_blocks: Mostrar domínios bloqueados
         show_domain_blocks_rationale: Mostrar porque os domínios foram bloqueados
@@ -312,7 +312,7 @@ pt-PT:
         indexable: Incluir página de perfil nos motores de busca
         show_application: Mostrar de que aplicação criou uma publicação
       tag:
-        listable: Permitir que esta hashtag apareça em pesquisas e no diretório de perfis
+        listable: Permitir que esta hashtag apareça em pesquisas e no 'Quem por cá anda'
         name: Hashtag
         trendable: Permitir que esta hashtag apareça em destaque
         usable: Permitir que as publicações utilizem esta hashtag

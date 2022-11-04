@@ -20,10 +20,10 @@ pt-PT:
         existing_relationships_warning: Relações de seguidores existentes
         private_comment_description_html: 'Para te ajudar a seguir de onde vêm os bloqueios importados, cada bloqueio importado vai ser criado com um comentário privado: <q>%{comment}</q>'
         private_comment_template: Importado de %{source} em %{date}
-        title: Import domain blocks
+        title: Importar bloqueios de domínio
       new:
-        title: Import domain blocks
-      no_file: No file selected
+        title: Importar bloqueios de domínio
+      no_file: Nenhum ficheiro seleccionado
     settings:
       captcha_enabled:
         desc_html: Isto depende de scripts externos da hCaptcha, o que pode ser uma preocupação de segurança e privacidade. Além disso, <strong>isto pode tornar o processo de registo menos acessível para algumas pessoas (especialmente as com limitações físicas)</strong>. Por isto, considera medidas alternativas tais como registo mediante aprovação ou sob convite.<br>Pessoas que se registam com um convite não precisam de resolver um CAPTCHA
@@ -60,3 +60,6 @@ pt-PT:
     use_this: Usar isto
   settings:
     flavours: Temas
+  compose_form:
+    spoiler: Esconder o texto por trás de um aviso de conteúdo
+
