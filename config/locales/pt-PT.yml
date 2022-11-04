@@ -6,7 +6,7 @@ pt-PT:
     about_this: Sobre esta instância
     active_count_after: activo
     active_footnote: Utilizadores activos mensais (UAM)
-    administered_by: 'Administrado por'
+    administered_by: 'Administração'
     api: API
     apps: Apps móveis
     apps_platforms: Usar o Mastodon a partir do iOS, Android e outras plataformas
@@ -29,10 +29,10 @@ pt-PT:
     logged_in_as_html: Acabas de te ligar como %{username}.
     logout_before_registering: Já tens sessão iniciada.
     privacy_policy: Termos & Política de Privacidade
-    rules: Regras da instância
-    rules_html: 'Abaixo está um resumo das regras a seguir se pretendes ter uma conta nesta instância:'
+    rules: Regras da Ciberlândia
+    rules_html: 'Este é um resumo das regras a seguir se pretendes ter uma conta nesta instância.'
     see_whats_happening: O que está a acontecer
-    server_stats: 'Estatísticas da instância:'
+    server_stats: 'População'
     source_code: Código fonte
     status_count_after:
       one: publicação
@@ -54,7 +54,7 @@ pt-PT:
     user_count_after:
       one: utilizador
       other: utilizadores
-    user_count_before: Casa para
+    user_count_before: Por cá andam
     what_is_mastodon: O que é o Mastodon?
   accounts:
     choices_html: 'escolhas de %{name}:'
@@ -1129,9 +1129,9 @@ pt-PT:
       accept: Aceitar
       back: Retroceder
       invited_by: 'Pode inscrever-se em %{domain} graças ao convite que recebeu de:'
-      preamble: São definidas e aplicadas pelos moderadores da Ciberlândia.
+      preamble: Caso queiras ter uma conta neste servidor, estas são as regras da casa. Vê também a página <a href="/about">Acerca da Ciberlândia</a> para mais pormenores e motivações por trás destes princípios.
       preamble_invited: Antes de prosseguir, por favor, considere as regras base definidas pelos moderadores de %{domain}.
-      title: Algumas regras base.
+      title: Só uma coisinha...
       title_invited: Foi convidado.
     security: Mudar palavra-passe
     set_new_password: Editar palavra-passe

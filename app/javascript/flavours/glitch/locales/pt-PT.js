@@ -6,7 +6,7 @@ const messages = {
   'layout.current_is': 'O teu layout actual é:',
   'layout.desktop': 'Desktop',
   'layout.mobile': 'Mobile',
-  'navigation_bar.app_settings': 'Configurações',
+  'navigation_bar.app_settings': 'Mais ajustes',
   'getting_started.onboarding': 'Mostra-me o que há por aqui',
   'onboarding.page_one.federation': 'A Ciberlândia é uma \'instância\' do Mastodon. O Mastodon é uma rede de servidores autónomos que se juntam para formar uma grande rede social. A esses servidores chamamos instâncias.',
   'onboarding.page_one.welcome': 'Damos-te as boas vindas à Ciberlândia!',
