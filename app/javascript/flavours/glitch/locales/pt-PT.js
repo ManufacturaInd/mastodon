@@ -6,11 +6,27 @@ const messages = {
   'layout.current_is': 'O teu layout actual é:',
   'layout.desktop': 'Desktop',
   'layout.mobile': 'Mobile',
-  'navigation_bar.app_settings': 'Mais ajustes',
+  'navigation_bar.app_settings': 'Configurações',
+  'navigation_bar.featured_users': 'Contas em destaque',
+  'navigation_bar.info': 'Acerca da Ciberlândia',
   'getting_started.onboarding': 'Mostra-me o que há por aqui',
   'onboarding.page_one.federation': 'A Ciberlândia é uma \'instância\' do Mastodon. O Mastodon é uma rede de servidores autónomos que se juntam para formar uma grande rede social. A esses servidores chamamos instâncias.',
   'onboarding.page_one.welcome': 'Damos-te as boas vindas à Ciberlândia!',
+  'onboarding.page_one.handle': 'Estás em {domain}, por isso o endereço completo da tua conta é {handle}',
+  'onboarding.page_two.compose': 'Escreve os teus toots na primeira coluna. Podes anexar imagens, definir a visibilidade do toot e adicionar avisos de conteúdo com os ícones abaixo da caixa de composição.',
+  'onboarding.page_three.search': 'Usa a barra de pesquisa para encontrar pessoas e explorar hashtags, como por exemplo {illustration} ou {introductions}. Para procurar uma conta que não está nesta instância, usa o seu endereço completo.',
+  'onboarding.page_three.profile': 'Podes colocar um novo avatar, bio e nome para tornar o teu perfil mais teu. Na página de edição vais encontrar outras opções para ficar tudo ainda mais bonitinho.',
+  'onboarding.page_four.home': 'A timeline inicial mostra as publicações das contas que segues.',
+  'onboarding.page_four.notifications': 'A coluna das notificações mostra quando alguém interage contigo.',
+  'onboarding.page_five.public_timelines': 'A timeline local mostra os toots públicos de todas as contas na Ciberlândia. A timeline federada mostra os toots públicos de todas as contas seguidas por cada pessoa na Ciberlândia. Estas são as timelines públicas, uma boa forma de descobrir pessoas novas.',
+  'onboarding.page_six.admin': 'A administração da Ciberlândia pode ser contactada pela conta {admin}.',
+  'onboarding.page_six.read_guidelines': 'Não te esqueças de ler as {guidelines}!',
+  'onboarding.page_six.guidelines': 'regras da casa',
+  'onboarding.page_six.almost_done': 'Está quase...',
   'onboarding.page_six.github': 'A Ciberlândia baseia-se no Glitchsoc. O Glitchsoc é uma fork amigável do {Mastodon}, e é compatível com qualquer aplicação ou instância Mastodon. O Glitchsoc é totalmente livre e open source. Podes apontar bugs, sugerir funcionalidades ou contribuir para o código em {github}.',
+  'onboarding.page_six.apps_available': 'Existem {apps} disponíveis para iOS, Android e outras plataformas.',
+  'onboarding.page_six.various_app': 'várias apps móveis',
+  'onboarding.page_six.appetoot': 'Desejamos-te uma boa estadia neste cantinho do ciberespaço!',
   'settings.auto_collapse': 'Colapsar automaticamente',
   'settings.auto_collapse_all': 'Tudo',
   'settings.auto_collapse_lengthy': 'Publicações compridas',
@@ -40,6 +56,8 @@ const messages = {
   'favourite_modal.combo': 'Podes carregar em {combo} para saltar este passo da próxima',
 
   'home.column_settings.show_direct': 'Mostrar mensagens',
+  'home.column_settings.advanced': 'Pesquisa avançada',
+  'home.column_settings.filter_regex': 'Filtrar com expressões regulares',
 
   'notification.markForDeletion': 'Marcar para apagar',
   'notifications.clear': 'Limpar todas as notificações',
@@ -62,6 +80,8 @@ const messages = {
   'advanced_options.threaded_mode.short': 'Modo de fazer fios (threads)',
   'advanced_options.threaded_mode.long': 'Abre automaticamente uma resposta depois de postar',
   'advanced_options.threaded_mode.tooltip': 'Modo de fazer fios activado',
+
+  'account.add_account_note': 'Acrescentar uma nota a @{name}',
 };
 
 export default Object.assign({}, inherited, messages);
