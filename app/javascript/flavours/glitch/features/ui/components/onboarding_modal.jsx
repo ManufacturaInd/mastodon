@@ -47,7 +47,7 @@ const PageTwo = ({ intl, myAccount }) => (
         <DrawerAccount account={myAccount} />
         <ComposeForm
           privacy='public'
-          text='Awoo! #introductions'
+          text='Olá Ciberlândia! Onde é a festa?'
           spoilerText=''
           suggestions={[]}
         />

@@ -253,12 +253,12 @@ pt-PT:
         destroy_user_role: Eliminar Cargo
         disable_2fa_user: Desativar 2FA
         disable_custom_emoji: Desativar Emoji Personalizado
-        disable_sign_in_token_auth_user: Desativar token de autenticação por e-mail para Utilizador
-        disable_user: Desativar Utilizador
-        enable_custom_emoji: Ativar Emoji Personalizado
-        enable_sign_in_token_auth_user: Ativar token de autenticação por e-mail para Utilizador
-        enable_user: Ativar Utilizador
-        memorialize_account: Tornar conta num memorial
+        disable_sign_in_token_auth_user: Desactivar token de autenticação por e-mail para Utilizador
+        disable_user: Desactivar Utilizador
+        enable_custom_emoji: Activar Emoji Personalizado
+        enable_sign_in_token_auth_user: Activar token de autenticação por e-mail para Utilizador
+        enable_user: Activar Utilizador
+        memorialize_account: Memorizar Conta
         promote_user: Promover Utilizador
         reject_appeal: Rejeitar Recurso
         reject_user: Rejeitar Utilizador
@@ -341,8 +341,8 @@ pt-PT:
         update_status_html: "%{name} atualizou o estado de %{target}"
         update_user_role_html: "%{name} alterou o cargo %{target}"
       deleted_account: conta apagada
-      empty: Não foram encontrados registos.
-      filter_by_action: Filtrar por ação
+      empty: Não foram encontrados logs.
+      filter_by_action: Filtrar por acção
       filter_by_user: Filtrar por utilizador
       title: Registo de auditoria
     announcements:
@@ -1024,7 +1024,7 @@ pt-PT:
         title: Etiquetas em alta
       subject: Novas tendências para revisão em %{instance}
   aliases:
-    add_new: Criar pseudónimo
+    add_new: Criar um pseudónimo
     created_msg: Criaste um novo pseudónimo. Podes agora iniciar a migração da conta antiga.
     deleted_msg: O pseudónimo foi apagado. Migrar dessa conta para esta não vai mais ser possível.
     empty: Não tens pseudónimos.
@@ -1063,7 +1063,7 @@ pt-PT:
     confirmations:
       wrong_email_hint: Se esse endereço de e-mail não estiver correcto, poderás alterá-lo nas configurações da conta.
     delete_account: Apagar conta
-    delete_account_html: Se desejas eliminar a tua conta, podes <a href="%{path}">continuar aqui</a> para confirmar.
+    delete_account_html: Se quiseres eliminar a tua conta, podes <a href="%{path}">continuar aqui</a> para confirmar.
     description:
       prefix_invited_by_user: "@%{name} mandou-te um convite para te juntares à Ciberlândia!"
       prefix_sign_up: Inscreve-te já hoje!
@@ -1774,7 +1774,7 @@ pt-PT:
       edit_profile_step: Pode personalizar o seu perfil carregando uma imagem de perfil, alterando o nome a exibir, entre outras opções. Pode optar por rever os novos seguidores antes de estes o poderem seguir.
       explanation: Aqui estão algumas dicas para começar
       final_action: Começar a publicar
-      final_step: 'Comece a publicar! Mesmo sem seguidores, as suas mensagens públicas podem ser vistas por outros, como por exemplo na cronologia local e em etiquetas. Pense em apresentar-se usando a etiqueta #apresentações.'
+      final_step: 'Publica já algo! Mesmo sem seguidores, as tuas mensagens públicas podem ser vistas por outros na timeline local e em hashtags. Podes apresentar-te com a hashtag #introductions.'
       full_handle: O seu nome completo
       full_handle_hint: Isto é o que tem de facultar aos seus amigos para que eles lhe possam enviar mensagens ou segui-lo a partir de outra instância.
       subject: Bem-vindo ao Mastodon
@@ -1787,7 +1787,7 @@ pt-PT:
     seamless_external_login: Tu estás ligado via um serviço externo. Por isso, as configurações da palavra-passe e do e-mail não estão disponíveis.
     signed_in_as: 'Registado como:'
   verification:
-    explanation_html: 'Pode <strong>comprovar que é o dono das hiperligações nos metadados do seu perfil</strong>. Para isso, a página para a qual a hiperligação aponta tem de conter uma outra para o seu perfil do Mastodon. Após adicionar a hiperligação, poderá ter de voltar aqui e voltar a guardar o seu perfil para que a verificação produza efeito. Essa hiperligação <strong>tem</strong> de ter um atributo <code>rel="me"</code>. O conteúdo do texto não é importante. Eis um exemplo:'
+    explanation_html: 'Podes <strong>comprovar que os links são teus nos metadados do teu perfil</strong>. Para isso, o website para onde o link aponta tem de ter um link para o teu perfil na Ciberlândia. Esse link <strong>tem</strong> de ter um atributo <code>rel="me"</code>. O conteúdo do texto não é relevante. Um exemplo:'
     verification: Verificação
   webauthn_credentials:
     add: Adicionar nova chave de segurança

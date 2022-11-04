@@ -31,7 +31,7 @@ pt-PT:
         text: Só podes recorrer de uma advertência uma vez
       defaults:
         autofollow: As pessoas que aderem através do convite seguir-te-ão automaticamente
-        avatar: PNG, GIF or JPG. Ficheiros até %{size}. Vão ser reduzidos para %{dimensions}px
+        avatar: PNG, GIF ou JPG. Ficheiros até %{size}. Vão ser reduzidos para %{dimensions}px
         bot: Esta conta executa ações automatizadas e pode não ser monitorizada
         context: Um ou múltiplos contextos nos quais o filtro deve ser aplicado
         current_password: Por motivos de segurança, introduz a palavra-passe da conta actual
@@ -39,7 +39,7 @@ pt-PT:
         digest: Enviado após um longo período de inatividade e apenas se foste mencionado na tua ausência
         discoverable: Permitir que a tua conta seja descoberta por outros através de recomendações, destaques e outras formas
         email: Vai ser enviado um e-mail de confirmação
-        fields: Pode ter até 4 itens expostos, em forma de tabela, no seu perfil
+        fields: Podes ter no máximo 4 caixas no teu perfil
         header: PNG, GIF or JPG. Ficheiros até %{size}. Vão ser reduzidos para %{dimensions}px
         inbox_url: Copia o URL da página inicial do repetidor que queres usar
         irreversible: Publicações filtradas vão ser definitivamente apagadas, mesmo que o filtro seja removido posteriormente
@@ -48,12 +48,12 @@ pt-PT:
         password: Usa pelo menos 8 caracteres
         phrase: Será correspondido independentemente da capitalização ou do aviso de conteúdo duma publicação
         scopes: APIs a que deve ser concedido acesso. Se escolheres uma abrangência de nível superior, não é preciso seleccioná-las individualmente.
-        setting_aggregate_reblogs: Não mostrar novas partilhas que foram partilhadas recentemente (só afecta as novas partilhas)
+        setting_aggregate_reblogs: Não mostrar novas re-publicações que foram partilhadas recentemente (só afecta as novas partilhas)
         setting_always_send_emails: Normalmente as notificações por e-mail não são enviadas quando estiveres a utilizar ativamente o Mastodon
-        setting_default_sensitive: Media sensíveis são ocultos por omissão e podem ser revelados com um clique
-        setting_display_media_default: Esconder ficheiros media marcados como sensíveis
-        setting_display_media_hide_all: Esconder sempre todos os ficheiros media
-        setting_display_media_show_all: Mostrar sempre os ficheiros media marcados como sensível
+        setting_default_sensitive: Media sensíveis aparecem ocultos e podem ser revelados com um clique
+        setting_display_media_default: Esconder media sensíveis
+        setting_display_media_hide_all: Esconder todos os media
+        setting_display_media_show_all: Mostrar sempre media sensíveis
         setting_hide_network: Quem tu segues e quem te segue não vai ser mostrado no teu perfil
         setting_noindex: Afecta o teu perfil público e as páginas das tuas publicações
         setting_show_application: A aplicação que usas para publicar vai ser mostrada na vista detalhada das tuas publicações
@@ -197,6 +197,10 @@ pt-PT:
         setting_auto_play_gif: Reproduzir GIFs automaticamente
         setting_boost_modal: Pedir confirmação antes de re-publicar
         setting_crop_images: Cortar imagens em publicações não expandidas para o formato 16x9
+        setting_default_content_type: Formato preferido para os teus toots
+        setting_default_content_type_html: HTML
+        setting_default_content_type_markdown: Markdown
+        setting_default_content_type_plain: Texto simples
         setting_default_language: Língua da publicação
         setting_default_privacy: Privacidade da publicação
         setting_default_sensitive: Sempre marcar media como sensível
@@ -207,11 +211,14 @@ pt-PT:
         setting_display_media_hide_all: Esconder todos
         setting_display_media_show_all: Mostrar todos
         setting_expand_spoilers: Expandir sempre as publicações marcadas com avisos de conteúdo
+        setting_favourite_modal: Pedir confirmação antes de favoritar
+        setting_hide_followers_count: Esconder o teu número de seguidores
         setting_hide_network: Esconder a tua rede
         setting_noindex: Não quero ser indexado por motores de pesquisa
         setting_reduce_motion: Reduz movimento em animações
         setting_show_application: Mostrar sempre a aplicação usada para enviar as publicações
-        setting_system_font_ui: Usar a fonte padrão do teu sistema
+        setting_system_emoji_font: Usar o tipo de letra do teu sistema para emoji
+        setting_system_font_ui: Usar o tipo de letra do teu sistema
         setting_theme: Tema do site
         setting_trends: Mostrar as tendências de hoje
         setting_unfollow_modal: Pedir confirmação antes de deixar de seguir alguém
