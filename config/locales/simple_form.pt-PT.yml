@@ -71,7 +71,7 @@ pt-PT:
         setting_noindex: Afecta o teu perfil público e as páginas das tuas publicações
         setting_show_application: A aplicação que usas para publicar vai ser mostrada na vista detalhada das tuas publicações
         setting_use_blurhash: Os gradientes são baseados nas cores das imagens escondidas, mas ofuscam os detalhes
-        setting_use_pending_items: Ocultar atualizações da cronologia atrás de um clique em vez de rolar automaticamente o feed
+        setting_use_pending_items: Ocultar actualizações da timeline atrás de um clique em vez de rolar automaticamente a lista
         username: O teu nome de utilizador será único em %{domain}
         whole_word: Quando a palavra-chave ou expressão-chave é apenas alfanumérica, ela só vai ser aplicada se corresponder à palavra completa
       domain_allow:
@@ -137,7 +137,7 @@ pt-PT:
       tag:
         name: Só podes alterar a capitalização das letras para, por exemplo, torná-las mais legíveis
       user:
-        chosen_languages: Quando seleccionado, só publicações nas línguas escolhidas vão ser mostradas nas cronologias públicas
+        chosen_languages: Quando seleccionado, só publicações nas línguas escolhidas vão ser mostradas nas timelines públicas
         role: O cargo controla as credenciais que o utilizador tem
       user_role:
         color: Cor a ser utilizada para este cargo em todo o interface de utilizador, como RGB no formato hexadecimal
@@ -211,7 +211,7 @@ pt-PT:
         password: Palavra-passe
         phrase: Palavra ou expressão-chave
         setting_advanced_layout: Ativar interface multi-colunas
-        setting_aggregate_reblogs: Agrupar partilhas em cronologias
+        setting_aggregate_reblogs: Agrupar partilhas em timelines
         setting_always_send_emails: Enviar notificações de email sempre
         setting_auto_play_gif: Reproduzir GIFs automaticamente
         setting_boost_modal: Pedir confirmação antes de re-publicar
@@ -281,9 +281,9 @@ pt-PT:
         status_page_url: URL da página de estado
         theme: Tema predefinido
         thumbnail: Miniatura do servidor
-        timeline_preview: Permitir acesso não autenticado às cronologias públicas
-        trendable_by_default: Permitir publicações em alta sem revisão prévia
-        trends: Activar publicações em alta
+        timeline_preview: Permitir acesso não autenticado às timelines públicas
+        trendable_by_default: Permitir tendências sem revisão prévia
+        trends: Habilitar tendências
         trends_as_landing_page: Usar tendências como página inicial
       interactions:
         must_be_follower: Bloquear notificações de não-seguidores

@@ -152,7 +152,7 @@ pt-PT:
       moderation_notes: Notas de moderação
       most_recent_activity: Actividade mais recente
       most_recent_ip: IP mais recente
-      no_account_selected: Nenhuma conta selecionada, por isso nada foi alterado
+      no_account_selected: Nenhuma conta seleccionada, por isso nada foi alterado
       no_limits_imposed: Sem limites impostos
       no_role_assigned: Nenhum cargo atribuído
       not_subscribed: Não inscrito
@@ -310,13 +310,13 @@ pt-PT:
         destroy_status_html: "%{name} removeu a publicação de %{target}"
         destroy_unavailable_domain_html: "%{name} retomou a entrega ao domínio %{target}"
         destroy_user_role_html: "%{name} eliminou o cargo %{target}"
-        disable_2fa_user_html: "%{name} desativou a 2FA para %{target}"
+        disable_2fa_user_html: "%{name} desactivou a 2FA para %{target}"
         disable_custom_emoji_html: "%{name} desabilitou o emoji %{target}"
-        disable_sign_in_token_auth_user_html: "%{name} desativou token de autenticação por e-mail para %{target}"
-        disable_user_html: "%{name} desativou o acesso para o utilizador %{target}"
+        disable_sign_in_token_auth_user_html: "%{name} desactivou token de autenticação por e-mail para %{target}"
+        disable_user_html: "%{name} desactivou o acesso para o utilizador %{target}"
         enable_custom_emoji_html: "%{name} habilitou o emoji %{target}"
-        enable_sign_in_token_auth_user_html: "%{name} ativou o token de autenticação por e-mail para %{target}"
-        enable_user_html: "%{name} ativou o acesso para o utilizador %{target}"
+        enable_sign_in_token_auth_user_html: "%{name} activou o token de autenticação por e-mail para %{target}"
+        enable_user_html: "%{name} activou o acesso para o utilizador %{target}"
         memorialize_account_html: "%{name} transformou a conta de %{target} em memorial"
         promote_user_html: "%{name} promoveu o utilizador %{target}"
         reject_appeal_html: "%{name} rejeitou o recurso da decisão de moderação de %{target}"
@@ -332,8 +332,8 @@ pt-PT:
         unassigned_report_html: "%{name} desatribuiu a denúncia %{target}"
         unblock_email_account_html: "%{name} desbloqueou o endereço de e-mail de %{target}"
         unsensitive_account_html: "%{name} desmarcou a media de %{target} como sensível"
-        unsilence_account_html: "%{name} desativou o silêncio de %{target}"
-        unsuspend_account_html: "%{name} desativou a suspensão de %{target}"
+        unsilence_account_html: "%{name} desactivou o silêncio de %{target}"
+        unsuspend_account_html: "%{name} desactivou a suspensão de %{target}"
         update_announcement_html: "%{name} atualizou o anúncio %{target}"
         update_custom_emoji_html: "%{name} atualizou o emoji %{target}"
         update_domain_block_html: "%{name} atualizou o bloqueio de domínio para %{target}"
@@ -489,7 +489,7 @@ pt-PT:
         create: Adicionar domínio
         resolve: Domínio de resolução
         title: Novo bloqueio de domínio de e-mail
-      no_email_domain_block_selected: Nenhum bloqueio de domínio de e-mail foi alterado pois nenhum foi selecionado
+      no_email_domain_block_selected: Nenhum bloqueio de domínio de e-mail foi alterado pois nenhum foi seleccionado
       not_permitted: Não permitido
       resolved_dns_records_hint_html: O nome de domínio resolve para os seguintes domínios MX, que são, em última análise, responsáveis por aceitar o e-mail. Bloquear um domínio MX irá bloquear as inscrições de qualquer endereço de e-mail que use o mesmo domínio MX, mesmo quando o nome de domínio visível é diferente. <strong>Cuidado para não bloquear os principais provedores de e-mail.</strong>
       resolved_through_html: Resolvido através de %{domain}
@@ -510,7 +510,7 @@ pt-PT:
         title: Importar bloqueios de domínio
       no_file: Nenhum ficheiro selecionado
     follow_recommendations:
-      description_html: "<strong>Recomendações de quem seguir ajudam novos utilizadores a encontrar conteúdo interessante rapidamente.</strong>. Quando um utilizador não interage com outros o suficiente para formar recomendações personalizadas, estas contas são recomendadas. Elas são recalculadas diariamente a partir de uma mistura de contas com mais atividade recente e maior número de seguidores locais para um determinado idioma."
+      description_html: "<strong>Recomendações de quem seguir ajudam novos utilizadores a encontrar conteúdo interessante rapidamente.</strong>. Quando um utilizador não interage com outros o suficiente para formar recomendações personalizadas, estas contas são recomendadas. Elas são recalculadas diariamente a partir de uma mistura de contas com mais actividade recente e maior número de seguidores locais para um determinado idioma."
       language: Para o idioma
       status: Estado
       suppress: Suprimir recomendação de contas a seguir
@@ -606,7 +606,7 @@ pt-PT:
         '94670856': 3 anos
       new:
         title: Criar nova regra de IP
-      no_ip_block_selected: Nenhuma regra de IP foi alterada pois nenhuma foi selecionada
+      no_ip_block_selected: Nenhuma regra de IP foi alterada pois nenhuma foi seleccionada
       title: Regras de IP
     relationships:
       title: Relações de %{acct}
@@ -643,7 +643,7 @@ pt-PT:
         resolve_description_html: Nenhuma ação vai ser tomada contra a conta denunciada, nenhuma advertência será registada, e a denuncia será fechada.
         silence_description_html: O perfil será visível apenas para aqueles que já o seguem ou o procurem manualmente, limitando severamente o seu alcance. Pode sempre ser revertido.
         suspend_description_html: O perfil e todo o seu conteúdo tornar-se-ão inacessíveis até serem eventualmente apagados. A interacção com a conta será impossível. Reversível no prazo de 30 dias.
-      actions_description_html: Decide a acção a tomar para resolver esta denúncia. Se decidires por uma ação punitiva contra a conta denunciada, vai ser enviado um e-mail de notificação, exceto quando selecionada a categoria <strong>Spam</strong>.
+      actions_description_html: Decide a acção a tomar para resolver esta denúncia. Se decidires por uma ação punitiva contra a conta denunciada, vai ser enviado um e-mail de notificação, exceto quando seleccionada a categoria <strong>Spam</strong>.
       actions_description_remote_html: Decide a acção a tomar para resolver esta denúncia. Isso apenas afetará como <strong>o teu</strong> servidor comunica com esta conta remota e gere o seu conteúdo.
       add_to_report: Juntar à denúncia
       are_you_sure: Tem a certeza?
@@ -783,14 +783,14 @@ pt-PT:
     settings:
       about:
         manage_rules: Gerir regras do servidor
-        preamble: Forneça informações aprofundadas sobre como o servidor é operado, moderado, financiado.
-        rules_hint: Existe uma área dedicada às regras a que os seus utilizadores devem aderir.
-        title: Acerca de
+        preamble: Dá informações em pormenor sobre como o servidor é operado, moderado e financiado.
+        rules_hint: Existe uma área dedicada às regras a que os teus utilizadores devem aderir.
+        title: Sobre
       appearance:
-        preamble: Personalize a interface web do Mastodon.
+        preamble: Personaliza o interface web do Mastodon.
         title: Aspeto
       branding:
-        preamble: A marca do seu servidor diferencia-a doutros servidores na rede. Essa informação pode ser exibida em vários contexos, como a interface na teia do Mastodon, aplicações nativas, visualizações de hiperligações noutros sites, em aplicações de mensagens, etc. Por esta razão, é melhor manter esta informação clara, curta e concisa.
+        preamble: A marca do teu servidor diferencia-o de outros servidores na rede. Essa informação pode ser mostrada em vários contextos, como o interface web do Mastodon, aplicações nativas, visualizações de links noutros sites e dentro de aplicações de mensagens, etc. Por isso, é melhor manter esta informação clara, curta e concisa.
         title: Marca
       captcha_enabled:
         desc_html: Isto depende de scripts externos da hCaptcha, o que pode ser uma preocupação de segurança e privacidade. Além disso, <strong>isto pode tornar o processo de registo menos acessível para algumas pessoas (especialmente as com limitações físicas)</strong>. Por isso, considere medidas alternativas tais como registo mediante aprovação ou sob convite.
@@ -882,23 +882,23 @@ pt-PT:
       appeal_rejected: Recurso rejeitado
     system_checks:
       database_schema_check:
-        message_html: Há migrações de base de dados pendentes. Queira executá-las, para garantir que a aplicação se comporta como o esperado
+        message_html: Existem migrações de base de dados pendentes. Executa-as para garantir que a aplicação se comporta como deve ser
       elasticsearch_health_red:
         message_html: O cluster elasticsearch não está de boa saúde (estado vermelho), as funcionalidades de pesquisa não estão disponíveis
       elasticsearch_health_yellow:
         message_html: O cluster elasticsearch não está de boa saúde (estado amarelo), pode querer investigar o motivo
       elasticsearch_index_mismatch:
-        message_html: Os mapeamentos elasticsearch estão desatualizados. Por favor, execute <code>tootctl search deploy --only=%{value}</code>
+        message_html: Os mapeamentos elasticsearch estão desatualizados. Por favor, executa <code>tootctl search deploy --only=%{value}</code>
       elasticsearch_preset:
         action: Ver a documentação
-        message_html: O seu cluster elasticsearch tem mais de um nó, mas o Mastodon não está configurado para os usar.
+        message_html: O teu cluster elasticsearch tem mais de um nó, mas o Mastodon não está configurado para os usar.
       elasticsearch_preset_single_node:
         action: Ver documentação
-        message_html: O seu cluster elasticsearch tem apenas um nó, <code>ES_PRESET</code> deve ser configurado para <code>single_node_cluster</code>.
+        message_html: O teu cluster elasticsearch tem apenas um nó, <code>ES_PRESET</code> deve ser configurado para <code>single_node_cluster</code>.
       elasticsearch_reset_chewy:
-        message_html: O seu índice de sistema elasticsearch está desatualizado devido a uma mudança de configuração. Por favor, execute <code>tootctl search deploy --reset-chewy</code> para o atualizar.
+        message_html: O índice de sistema elasticsearch está desatualizado devido a uma mudança de configuração. Por favor, executa <code>tootctl search deploy --reset-chewy</code> para o atualizar.
       elasticsearch_running_check:
-        message_html: Não foi possível conectar ao Elasticsearch. Por favor, verifique se está em execução, ou desabilite a pesquisa de texto completo
+        message_html: Não foi possível conectar ao Elasticsearch. Verifica se está a correr, ou desactiva a pesquisa de texto completo
       elasticsearch_version_check:
         message_html: 'Versão de Elasticsearch incompatível: %{value}'
         version_comparison: A versão de Elasticsearch %{running_version} está em execução. No entanto, é obrigatória a versão %{required_version}
@@ -933,9 +933,9 @@ pt-PT:
         description_html: Estas são as ligações que presentemente estão a ser muito partilhadas por contas visíveis pelo seu servidor. Estas podem ajudar os seus utilizador a descobrir o que está a acontecer no mundo. Nenhuma ligação é exibida publicamente até que o editor a aprove. Também pode permitir ou rejeitar ligações em avulso.
         disallow: Não permitir ligação
         disallow_provider: Não permitir editor
-        no_link_selected: Nenhuma ligação foi alterada, pois nenhuma foi selecionada
+        no_link_selected: Nenhum link foi alterado, pois nenhum foi seleccionado
         publishers:
-          no_publisher_selected: Nenhum editor foi alterado, pois nenhum foi selecionado
+          no_publisher_selected: Nenhum editor foi alterado, pois nenhum foi seleccionado
         shared_by_over_week:
           one: Partilhado por uma pessoa na última semana
           other: Partilhado por %{count} pessoas na última semana
@@ -956,7 +956,7 @@ pt-PT:
         description_html: Estas são publicações que o seu servidor conhece e que atualmente estão a ser frequentemente partilhadas e adicionadas aos favoritos. Isto pode ajudar os seus utilizadores, novos e retornados, a encontrar mais pessoas para seguir. Nenhuma publicação será exibida publicamente até que aprove o autor, e o autor permita que a sua conta seja sugerida a outros. Você também pode permitir ou rejeitar publicações individualmente.
         disallow: Não permitir publicação
         disallow_account: Não permitir autor
-        no_status_selected: Nenhuma publicação em alta foi alterada, pois nenhuma foi selecionada
+        no_status_selected: Nenhuma publicação em tendência foi alterada, pois nenhuma foi seleccionada
         not_discoverable: O autor optou por não permitir que a sua conta seja sugerida a outros
         shared_by:
           one: Partilhado ou adicionado aos marcadores uma vez
@@ -972,7 +972,7 @@ pt-PT:
           tag_uses_measure: utilizações totais
         description_html: 'Estas são as #etiquetas que aparecem atualmente com frequência em publicações visíveis pelo seu servidor. Isto pode ajudar os seus utilizadores a descobrir o que está ser mais falado no momento. Nenhuma #etiqueta será exibida publicamente até que a aprove.'
         listable: Pode ser sugerida
-        no_tag_selected: Nenhuma etiqueta foi alterada, pois nenhuma foi selecionada
+        no_tag_selected: Nenhuma etiqueta foi alterada, pois nenhuma foi seleccionada
         not_listable: Não será sugerida
         not_trendable: Não aparecerá nas tendências
         not_usable: Não pode ser utilizada
@@ -1129,7 +1129,7 @@ pt-PT:
       accept: Aceitar
       back: Retroceder
       invited_by: 'Pode inscrever-se em %{domain} graças ao convite que recebeu de:'
-      preamble: Caso queiras ter uma conta neste servidor, estas são as regras da casa. Vê também a página <a href="/about">Acerca da Ciberlândia</a> para mais pormenores e motivações por trás destes princípios.
+      preamble: "Caso queiras ter uma conta neste servidor, estas são as regras da casa. Vê também a página <a href=\"/about\">Acerca da Ciberlândia</a> para mais pormenores e motivações por trás destes princípios."
       preamble_invited: Antes de prosseguir, por favor, considere as regras base definidas pelos moderadores de %{domain}.
       title: Só uma coisinha...
       title_invited: Foi convidado.
@@ -1287,7 +1287,7 @@ pt-PT:
       add_keyword: Adicionar palavra-chave
       keywords: Palavras-chave
       statuses: Publicações individuais
-      statuses_hint_html: Este filtro aplica-se a publicações individuais selecionadas, independentemente de estas corresponderem às palavras-chave abaixo. <a href="%{path}">Revê ou retira publicações do filtro</a>.
+      statuses_hint_html: Este filtro aplica-se a publicações individuais seleccionadas, independentemente de estas corresponderem às palavras-chave abaixo. <a href="%{path}">Revê ou retira publicações do filtro</a>.
       title: Editar filtros
     errors:
       deprecated_api_multiple_keywords: Estes parâmetros não podem ser alterados a partir desta aplicação porque se aplicam a mais de um filtro de palavra-chave. Usa uma aplicação mais recente ou a interface web.
@@ -1316,7 +1316,7 @@ pt-PT:
       batch:
         remove: Retirar do filtro
       index:
-        hint: Este filtro aplica-se a publicações individuais selecionadas independentemente de outros critérios. Podes juntar mais publicações a este filtro através do interface web.
+        hint: Este filtro aplica-se a publicações individuais seleccionadas independentemente de outros critérios. Podes juntar mais publicações a este filtro através do interface web.
         title: Publicações filtradas
   footer:
     developers: Responsáveis pelo desenvolvimento
@@ -1329,7 +1329,7 @@ pt-PT:
       one: "<strong>%{count}</strong> item seleccionado nesta página."
       other: Todos os <strong>%{count}</strong> itens nesta página estão seleccionados.
     all_matching_items_selected_html:
-      one: "<strong>%{count}</strong> item que corresponde à tua pesquisa selecionado."
+      one: "<strong>%{count}</strong> item que corresponde à tua pesquisa seleccionado."
       other: Todos os <strong>%{count}</strong> itens que correspondem à tua pesquisa estão seleccionados.
     cancel: Cancelar
     changes_saved_msg: Alterações gravadas!
@@ -1539,7 +1539,7 @@ pt-PT:
   notifications:
     administration_emails: Notificções administrativas por e-mail
     email_events: Eventos para notificações por e-mail
-    email_events_hint: 'Selecione os casos para os quais deseja receber notificações:'
+    email_events_hint: 'Selecciona os eventos para os quais queres receber notificações:'
     other_settings: Outras opções de notificações
   number:
     human:
@@ -1601,24 +1601,24 @@ pt-PT:
     confirm_follow_selected_followers: De certeza que queres seguir os seguidores seleccionados?
     confirm_remove_selected_followers: De certeza que queres seguir os seguidores seleccionados?
     confirm_remove_selected_follows: De certeza que queres remover os seguidores seleccionados?
-    dormant: Inativo
+    dormant: Inactivo
     follow_failure: Não foi possível seguir algumas das contas selecionadas.
-    follow_selected_followers: Seguir seguidores selecionados
+    follow_selected_followers: Seguir seguidores seleccionados
     followers: Seguidores
     following: A seguir
     invited: Convidado
-    last_active: Última atividade
+    last_active: Última actividade
     most_recent: Mais recente
     moved: Mudou-se
-    mutual: Mútuo
+    mutual: Recíproco
     primary: Primário
     relationship: Relação
-    remove_selected_domains: Remover todos os seguidores dos domínios selecionados
-    remove_selected_followers: Remover seguidores selecionados
-    remove_selected_follows: Deixar de seguir os utilizadores selecionados
+    remove_selected_domains: Remover todos os seguidores dos domínios seleccionados
+    remove_selected_followers: Remover seguidores seleccionados
+    remove_selected_follows: Deixar de seguir os utilizadores seleccionados
     status: Estado da conta
   remote_follow:
-    missing_resource: Não foi possível achar o URL de redireccionamento para a tua conta
+    missing_resource: Não foi possível encontrar a URL de redireccionamento para a tua conta
   reports:
     errors:
       invalid_rules: não faz referência a regras válidas
@@ -1629,12 +1629,12 @@ pt-PT:
       tag: 'Publicações públicas marcadas com #%{hashtag}'
   scheduled_statuses:
     over_daily_limit: Excedeste o limite de %{limit} publicações agendadas para esse dia
-    over_total_limit: Tu excedeste o limite de %{limit} publicações agendadas
+    over_total_limit: Excedeste o limite total de %{limit} publicações agendadas
     too_soon: A data de agendamento tem de ser futura
   search:
     search_or_paste: "Pesquisar..."
   sessions:
-    activity: Última atividade
+    activity: Última actividade
     browser: Navegador
     browsers:
       alipay: Alipay
@@ -1677,7 +1677,7 @@ pt-PT:
     revoke: Revogar
     revoke_success: Sessão correctamente revogada
     title: Sessões
-    view_authentication_history: Ver histórico de autenticação da sua conta
+    view_authentication_history: Ver o historial de autenticação da tua conta
   settings:
     account: Conta
     account_settings: Definições da conta
@@ -1686,7 +1686,7 @@ pt-PT:
     authorized_apps: Aplicações autorizadas
     back: Voltar ao Mastodon
     delete: Eliminação da conta
-    development: Desenvolvimento
+    development: API
     edit_profile: Editar perfil
     export: Exportar dados
     featured_tags: Etiquetas destacadas
@@ -1721,14 +1721,14 @@ pt-PT:
       other: 'continha as hashtags proibidas: %{tags}'
     edited_at_html: Editado em %{date}
     errors:
-      in_reply_not_found: A publicação a que está a tentar responder parece não existir.
-    open_in_web: Abrir na Teia
-    over_character_limit: limite de caracter excedeu %{max}
+      in_reply_not_found: A publicação a que estás a tentar responder parece não existir.
+    open_in_web: Abrir no browser
+    over_character_limit: limite de caracteres excedeu %{max}
     pin_errors:
       direct: Publicações visíveis apenas para utilizadores mencionados não podem ser afixadas
       limit: Já afixaste a quantidade máxima de publicações
-      ownership: Não podem ser afixadas publicações doutras pessoas
-      reblog: Não pode afixar um reforço
+      ownership: Posts de outras pessoas não podem ser afixados
+      reblog: Não podes afixar uma re-publicação
     poll:
       total_people:
         one: "%{count} pessoa"
@@ -1748,19 +1748,19 @@ pt-PT:
       private_long: Mostrar só aos seguidores
       public: Público
       public_long: Todos podem ver
-      unlisted: Não inventariado
-      unlisted_long: Todos podem ver, mas não será inventariado nas cronologias públicas
+      unlisted: Público, mas não mostrar nas timelines públicas
+      unlisted_long: Todos podem ver, mas não vai ser postado nas timelines públicas
   statuses_cleanup:
     enabled: Apagar publicações antigas automaticamente
-    enabled_hint: Apaga automaticamente as suas publicações assim que atingirem um certo limite de tempo, a não ser que correspondam a uma das seguintes excepções
-    exceptions: Exceções
-    explanation: Como apagar publicações é uma operação custosa, isto é feito lentamente ao longo do tempo, quando o servidor não está ocupado. Por esta razão, as suas publicações podem ser apagadas um pouco depois de atingirem o limite de idade definido.
-    ignore_favs: Ignorar marcadores
-    ignore_reblogs: Ignorar reforços
-    interaction_exceptions: Exceções baseadas em interações
+    enabled_hint: Apaga automaticamente as tuas publicações assim que atingirem um limite de idade específico, a não ser que correspondam a uma das excepções abaixo
+    exceptions: Excepções
+    explanation: Como excluir publicações é uma operação demorada, fazemo-lo lentamente ao longo do tempo, quando o servidor não está ocupado de outra forma. Por esta razão, as suas publicações podem ser apagadas um pouco depois de atingirem o limite de idade.
+    ignore_favs: Ignorar favoritos
+    ignore_reblogs: Ignorar partilhas
+    interaction_exceptions: Excepções baseadas em interações
     interaction_exceptions_explanation: Note que não há garantia de que as publicações sejam excluídas se ficarem abaixo do limite de favoritos ou partilhas após as ter verificado uma vez.
-    keep_direct: Manter mensagens diretas
-    keep_direct_hint: Não apaga nenhuma das suas mensagens diretas
+    keep_direct: Manter mensagens
+    keep_direct_hint: Não apaga nenhuma das suas mensagens
     keep_media: Manter publicações com anexos de multimédia
     keep_media_hint: Não apaga nenhuma das suas publicações com multimédia anexada
     keep_pinned: Manter publicações afixadas
