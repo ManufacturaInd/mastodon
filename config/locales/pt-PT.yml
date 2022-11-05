@@ -111,8 +111,8 @@ pt-PT:
       demote: Despromoveu
       destroyed_msg: Os dados de %{username} estão agora em fila de espera para serem apagados
       disable: Congelar
-      disable_sign_in_token_auth: Desativar token de autenticação por e-mail
-      disable_two_factor_authentication: Desactivar autenticação por dois factores (2FA)
+      disable_sign_in_token_auth: Desactivar token de autenticação por e-mail
+      disable_two_factor_authentication: Desactivar 2FA
       disabled: Congelada
       display_name: Nome a mostrar
       domain: Domínio
@@ -120,9 +120,9 @@ pt-PT:
       email: Correio electrónico
       email_status: Estado do e-mail
       enable: Descongelar
-      enable_sign_in_token_auth: Ativar token de autenticação por e-mail
-      enabled: Ativado
-      enabled_msg: Descongelou a conta %{username}
+      enable_sign_in_token_auth: Activar token de autenticação por e-mail
+      enabled: Activado
+      enabled_msg: Descongelou com sucesso a conta %{username}
       followers: Seguidores
       follows: A seguir
       header: Cabeçalho
@@ -251,8 +251,8 @@ pt-PT:
         destroy_status: Eliminar Publicação
         destroy_unavailable_domain: Eliminar Domínio Indisponível
         destroy_user_role: Eliminar Cargo
-        disable_2fa_user: Desativar 2FA
-        disable_custom_emoji: Desativar Emoji Personalizado
+        disable_2fa_user: Desactivar 2FA
+        disable_custom_emoji: Desactivar Emoji Personalizado
         disable_sign_in_token_auth_user: Desactivar token de autenticação por e-mail para Utilizador
         disable_user: Desactivar Utilizador
         enable_custom_emoji: Activar Emoji Personalizado
@@ -372,13 +372,13 @@ pt-PT:
       created_msg: Emoji criado!
       delete: Eliminar
       destroyed_msg: Emoji destruído!
-      disable: Desativar
-      disabled: Desativado
-      disabled_msg: Emoji desativado
+      disable: Desactivar
+      disabled: Desactivado
+      disabled_msg: Emoji desactivado
       emoji: Emoji
-      enable: Ativar
-      enabled: Ativado
-      enabled_msg: Emoji ativado
+      enable: Activar
+      enabled: Activado
+      enabled_msg: Emoji activado
       image_hint: PNG ou GIF até %{size}
       list: Lista
       listed: Inventariado
@@ -443,7 +443,7 @@ pt-PT:
       existing_domain_block_html: Já colocaste limites mais restritivos a %{name}, primeiro é preciso <a href="%{unblock_url}">desbloqueá-lo</a>.
       new:
         create: Criar bloqueio
-        hint: O bloqueio de dominio não impede a criação de entradas na base de dados, mas vai retroativamente e automaticamente aplicar métodos de moderação específica nessas contas.
+        hint: O bloqueio de dominio não impede a criação de entradas na base de dados, mas vai retroactivamente e automaticamente aplicar métodos de moderação específica nessas contas.
         severity:
           desc_html: "<strong>Silenciar</strong> vai fazer com que as publicações dessa conta sejam invisíveis para quem não a segue. <strong>Suspender</strong> vai eliminar todo o conteúdo guardado dessa conta, media e informações de perfil. Usa <strong>Nenhum</strong> se apenas desejares rejeitar ficheiros de media."
           noop: Nenhum
@@ -457,7 +457,7 @@ pt-PT:
       private_comment: Comentário privado
       private_comment_hint: Comentário sobre essa limitação de domínio para uso interno pelos moderadores.
       public_comment: Comentário público
-      public_comment_hint: Comentário sobre essa limitação de domínio para o público geral, se ativada a divulgação da lista de limitações de domínio.
+      public_comment_hint: Comentário sobre essa limitação de domínio para o público geral, se activada a divulgação da lista de limitações de domínio.
       reject_media: Rejeitar ficheiros de media
       reject_media_hint: Remove ficheiros de media armazenados localmente e não aceita descarregar novos ficheiros no futuro. Irrelevante para suspensões
       reject_reports: Rejeitar denúncia
@@ -576,7 +576,7 @@ pt-PT:
       total_storage: Anexos de media
       totals_time_period_hint_html: Os totais exibidos abaixo incluem dados referentes ao tempo total.
     invites:
-      deactivate_all: Desativar todos
+      deactivate_all: Desactivar todos
       filter:
         all: Todos
         available: Disponíveis
@@ -604,16 +604,16 @@ pt-PT:
       add_new: Adicionar novo repetidor
       delete: Eliminar
       description_html: Um <strong>repetidor de federação</strong> é um servidor intermediário que troca grandes volumes de publicações públicas entre instâncias que o subscrevem e publicam. <strong>Ele pode ajudar pequenas e medias instâncias a descobrir conteúdo do fediverso</strong> que, de outro modo, exigiria que os utilizadores locais seguissem manualmente outras pessoas em instâncias remotas.
-      disable: Desativar
+      disable: Desactivar
       disabled: Desactivado
       enable: Activar
-      enable_hint: Uma vez ativado, a tua instância irá assinar todas as publicações deste repetidor e irá começar a enviar as suas publicações públicas para lá.
-      enabled: Ativado
+      enable_hint: Uma vez activado, a tua instância irá subscrever a todas as publicações deste repetidor e irá começar a enviar as suas publicações públicas para ele.
+      enabled: Activado
       inbox_url: URL do repetidor
       pending: À espera da aprovação do repetidor
-      save_and_enable: Guardar e ativar
+      save_and_enable: Guardar e activar
       setup: Configurar uma ligação ao repetidor
-      signatures_not_enabled: Os repetidores não funcionarão correctamente enquanto o modo seguro ou o modo de lista branca estiverem activados
+      signatures_not_enabled: Relays não funcionarão corretamente enquanto o modo seguro ou o modo lista branca estiverem activados
       status: Estado
       title: Retransmissores
     report_notes:
@@ -628,7 +628,7 @@ pt-PT:
       action_taken_by: Ação tomada por
       actions:
         delete_description_html: As publicações denunciadas vão ser eliminadas e uma advertência vai ser registada para ajudar a escalar acções em futuras infracções.
-        mark_as_sensitive_description_html: Os media nas publicações denunciadas vão ser marcados como sensíveis e uma advertência será registada para ajudar a escalar ações em futuras infracções.
+        mark_as_sensitive_description_html: Os media nas publicações denunciadas vão ser marcados como sensíveis e uma advertência será registada para ajudar a escalar acções em futuras infracções.
         other_description_html: Ver mais opções para controlar o comportamento da conta e personalizar a comunicação para a conta denunciada.
         resolve_description_html: Nenhuma ação vai ser tomada contra a conta denunciada, nenhuma advertência será registada, e a denuncia será fechada.
         silence_description_html: O perfil será visível apenas para aqueles que já o seguem ou o procurem manualmente, limitando severamente o seu alcance. Pode sempre ser revertido.
@@ -661,7 +661,7 @@ pt-PT:
         create_and_resolve: Resolver com nota
         create_and_unresolve: Reabrir com nota
         delete: Eliminar
-        placeholder: Descreve as ações que foram tomadas ou quaisquer outras atualizações relacionadas...
+        placeholder: Descreve as acções que foram tomadas ou quaisquer outras atualizações relacionadas...
         title: Notas
       notes_description_html: Visualiza e deixa anotações para outros moderadores e para ti no futuro
       processed_msg: 'Relatório #%{id} processado com sucesso'
@@ -672,8 +672,8 @@ pt-PT:
       reported_account: Conta denunciada
       reported_by: Denunciado por
       resolved: Resolvido
-      resolved_msg: Denúncia correctamente resolvida!
-      skip_to_actions: Passar para as ações
+      resolved_msg: Denúncia resolvida com sucesso!
+      skip_to_actions: Passar para as acções
       status: Estado
       statuses: Conteúdo denunciado
       statuses_description_html: O conteúdo ofensivo será citado na comunicação com a conta denunciada
@@ -739,9 +739,9 @@ pt-PT:
         manage_federation: Gerir Federação
         manage_federation_description: Permite aos utilizadores bloquear ou permitir federação com outros domínios e controlar a entregabilidade
         manage_invites: Gerir Convites
-        manage_invites_description: Permite aos utilizadores pesquisarem e desativarem ligações de convite
+        manage_invites_description: Permite aos utilizadores pesquisar e desactivar links de convite
         manage_reports: Gerir Relatórios
-        manage_reports_description: Permite aos utilizadores rever relatórios e executar ações de moderação contra eles
+        manage_reports_description: Permite aos utilizadores rever relatórios e executar acções de moderação contra eles
         manage_roles: Gerir Cargos
         manage_roles_description: Permite aos utilizadores gerir e atribuir cargos abaixo dos deles
         manage_rules: Gerir Regras
@@ -751,13 +751,13 @@ pt-PT:
         manage_taxonomies: Gerir Taxonomias
         manage_taxonomies_description: 'Permite aos utilizadores avaliar o conteúdo em alta e atualizar as configurações de #etiquetas'
         manage_user_access: Gerir Acesso de Utilizador
-        manage_user_access_description: Permite aos utilizadores desativar a autenticação em duas etapas de outros utilizadores, alterar o seu endereço de e-mail e redefinir a sua palavra-passe
+        manage_user_access_description: Permite aos utilizadores desactivar a autenticação em duas etapas de outros utilizadores, alterar o seu endereço de e-mail e redefinir a sua palavra-passe
         manage_users: Gerir Utilizadores
-        manage_users_description: Permite aos utilizadores ver os detalhes de outros utilizadores e executar ações de moderação contra eles
+        manage_users_description: Permite aos utilizadores ver os detalhes de outros utilizadores e executar acções de moderação contra eles
         manage_webhooks: Gerir Webhooks
         manage_webhooks_description: Permite aos utilizadores configurar webhooks para eventos administrativos
         view_audit_log: Ver Registo de Auditoria
-        view_audit_log_description: Permite aos utilizadores ver um histórico de ações administrativas no servidor
+        view_audit_log_description: Permite aos utilizadores ver um histórico de acções administrativas no servidor
         view_dashboard: Ver Painel de Controlo
         view_dashboard_description: Permite aos utilizadores acederem ao painel de controlo e a várias estatísticas
         view_devops: DevOps
@@ -792,7 +792,7 @@ pt-PT:
         follow_recommendations: Recomendações para seguir
         preamble: Revelar conteúdos interessantes é fundamental para a entrada de novos utilizadores que podem não conhecer ninguém no Mastodon. Controle como os vários recursos de descoberta funcionam no seu servidor.
         profile_directory: Quem por cá anda
-        public_timelines: Cronologias públicas
+        public_timelines: Timelines públicas
         publish_discovered_servers: Publicar servidores descobertos
         publish_statistics: Publicar estatísticas
         title: Descobrir
@@ -811,8 +811,8 @@ pt-PT:
           open: Qualquer pessoa se pode registar
         title: Modo de registo
       show_known_fediverse_at_about_page:
-        desc_html: Quando ativado, mostra-se a previsualização de publicações de todo o fediverso conhecido. Desativado, só se mostra publicações locais.
-        title: Mostrar o fediverso conhecido na previsualização da cronologia
+        desc_html: Quando activado, mostra-se a previsualização de publicações de todo o fediverso conhecido. Desactivado, só se mostram publicações locais.
+        title: Mostrar o fediverso conhecido na previsualização da timeline
       site_description:
         desc_html: Mostrar como parágrafo na página inicial e usado como etiqueta "meta". Podes usar HTML, em particular <code>&lt;a&gt;</code> e <code>&lt;em&gt;</code>.
         title: Descrição do site
@@ -975,16 +975,16 @@ pt-PT:
     webhooks:
       add_new: Adicionar endpoint
       delete: Eliminar
-      description_html: Um <strong>webhook</strong> possibilita que o Mastodon envie <strong>notificações em tempo real</strong> de eventos seleccionados, para uma aplicação sua, de modo que esta possa <strong>espoletar ações automaticamente</strong>.
-      disable: Desativar
-      disabled: Desativado
+      description_html: Um <strong>webhook</strong> possibilita que o Mastodon envie <strong>notificações em tempo real</strong> de eventos seleccionados para uma aplicação tua, para que esta possa <strong>executar acções automaticamente</strong>.
+      disable: Desactivar
+      disabled: Desactivado
       edit: Editar endpoint
-      empty: Não tem ainda qualquer endpoint de webhook configurado.
-      enable: Ativar
+      empty: Não tens ainda nenhum endpoint de webhook configurado.
+      enable: Activar
       enabled: Activo
       enabled_events:
-        one: 1 evento ativado
-        other: "%{count} eventos ativados"
+        one: 1 evento activado
+        other: "%{count} eventos activados"
       events: Eventos
       new: Novo webhook
       rotate_secret: Alternar segredo
@@ -1110,7 +1110,7 @@ pt-PT:
       confirming: A aguardar que concluas a confirmação do e-mail.
       functional: A tua conta está totalmente operacional.
       pending: A tua inscrição está à espera de revisão pela nossa equipa, o que pode demorar algum tempo. Vais receber um e-mail se a tua conta for aprovada.
-      redirecting_to: A tua conta está inativa porque está atualmente a ser redirecionada para %{acct}.
+      redirecting_to: A tua conta está inactiva porque está atualmente a ser redireccionada para %{acct}.
       view_strikes: Vê as advertências contra a tua conta
     too_fast: Formulário enviado demasiado rapidamente, tenta outra vez.
     trouble_logging_in: Problemas a iniciar sessão?
@@ -1217,7 +1217,7 @@ pt-PT:
       content: Houve um erro interno do servidor.
       title: Esta página não está bem
     '503': A página não pôde ser carregada devido a uma falha temporária do servidor.
-    noscript_html: Para usar a aplicação web do Mastodon, vais ter de ativar o JavaScript. Em alternativa, experimenta uma das <a href="%{apps_path}">apps nativas</a> do Mastodon na tua plataforma.
+    noscript_html: Para usar a aplicação web do Mastodon, vais ter de activar o JavaScript. Em alternativa, experimenta uma das <a href="%{apps_path}">apps nativas</a> do Mastodon na tua plataforma.
   existing_username_validator:
     not_found: não foi encontrada nenhuma conta local com esse nome
     not_found_multiple: não foi possível encontrar %{usernames}
@@ -1332,7 +1332,7 @@ pt-PT:
     upload: Enviar
   in_memoriam_html: Em memória.
   invites:
-    delete: Desativar
+    delete: Desactivar
     expired: Expirados
     expires_in:
       '1800': 30 minutos
@@ -1362,7 +1362,7 @@ pt-PT:
       password: palavra-passe
       sign_in_token: código de segurança por correio electrónico
       webauthn: chaves de segurança
-    description_html: Se vês atividade que não reconheces, considera mudar a tua palavra-passe e ativar a autenticação em duas etapas.
+    description_html: Se vês actividade que não reconheces, considera mudar a tua palavra-passe e activar a autenticação em duas etapas.
     empty: Sem historial de autenticação disponível
     failed_sign_in_html: Tentativa falhada de iniciar sessão com %{method} de %{ip} (%{browser})
     successful_sign_in_html: Sessão iniciada sessão com sucesso com %{method} de %{ip} (%{browser})
@@ -1373,27 +1373,27 @@ pt-PT:
       not_ready: Não é possível anexar ficheiros que não acabaram de ser processados. Tenta mais daqui a pouco!
       too_many: Não é possível anexar mais de 4 arquivos
   migrations:
-    acct: Mudou-se para
-    cancel: Cancelar redirecionamento
-    cancel_explanation: Cancelar o redirecionamento irá reativar a sua conta atual, mas não trará de volta os seguidores que foram migrados para essa conta.
-    cancelled_msg: Cancelou correctamente o redireccionamento.
+    acct: username@domain da nova conta
+    cancel: Cancelar redireccionamento
+    cancel_explanation: Cancelar o redireccionamento vai reactivar a tua conta atual, mas não vai trazer de volta os seguidores que foram migrados para essa conta.
+    cancelled_msg: Cancelou com sucesso o redireccionamento.
     errors:
-      already_moved: é a mesma conta para a qual já migrou
-      missing_also_known_as: não é um pseudónimo dessa conta
+      already_moved: é a mesma conta para a qual já migraste
+      missing_also_known_as: não está a referenciar esta conta
       move_to_self: não pode ser conta atual
-      not_found: não foi encontrado
-      on_cooldown: Você está no período de espera
+      not_found: não pode ser encontrado
+      on_cooldown: Estás no período de espera
     followers_count: Seguidores no momento da migração
     incoming_migrations: A migrar de uma conta diferente
-    incoming_migrations_html: Para migrar de outra conta para esta, primeiro você precisa <a href="%{path}">criar um pseudónimo</a>.
-    moved_msg: A sua conta está agora a ser redireccionada para %{acct} e os seus seguidores estão a ser transferidos.
-    not_redirecting: A sua conta não está atualmente a ser redirecionada para nenhuma outra conta.
+    incoming_migrations_html: Para migrar de outra conta para esta, primeiro precisas de <a href="%{path}">criar um pseudónimo</a>.
+    moved_msg: A tua conta está agora a ser redireccionada para %{acct} e os teus seguidores estão a ser transferidos.
+    not_redirecting: A tua conta não está a ser redireccionada para nenhuma outra conta.
     on_cooldown: Migraste a tua conta há pouco tempo. Esta função vai ficar novamente acessível em %{count} dias.
     past_migrations: Migrações anteriores
     proceed_with_move: Migrar seguidores
     redirected_msg: A sua conta está agora a ser redireccionada para %{acct}.
     redirecting_to: A sua conta está a ser redireccionada para %{acct}.
-    set_redirect: Definir redirecionamento
+    set_redirect: Definir redireccionamento
     warning:
       backreference_required: A nova conta deve primeiro ser configurada para que esta seja referenciada
       before: 'Antes de continuar, leia cuidadosamente estas notas:'
@@ -1402,7 +1402,7 @@ pt-PT:
       followers: Esta ação irá migrar todos os seguidores da conta atual para a nova conta
       only_redirect_html: Em alternativa, pode <a href="%{path}">apenas colocar um redireccionamento no seu perfil</a>.
       other_data: Nenhum outro dado será migrado automaticamente
-      redirect: O perfil da sua conta atual será atualizado com um aviso de redirecionamento e será excluído das pesquisas
+      redirect: O perfil da sua conta atual será atualizado com um aviso de redireccionamento e será excluído das pesquisas
   moderation:
     title: Moderação
   move_handler:
@@ -1461,12 +1461,12 @@ pt-PT:
           trillion: T
   otp_authentication:
     code_hint: Introduz o código gerado pela tua aplicação de autenticação para confirmar
-    description_html: Se ativar a <strong>autenticação em duas etapas</strong>, para entrar na sua conta terá de ter consigo o seu telefone, que vai gerar os tokens necessários à validação do seu acesso.
-    enable: Ativar
-    instructions_html: "<strong>Digitalize este código QR no Google Authenticator ou numa aplicação TOTP semelhante a partir do seu telemóvel</strong>. A partir desse momento, essa aplicação irá gerar tokens que terá que inserir para aceder à sua conta."
-    manual_instructions: 'Se não conseguir digitalizar o código QR e precisar de o inserir manualmente, eis o código por extenso:'
+    description_html: Se activares a <strong>autenticação em duas etapas</strong>, vais ter de ter o teu telemóvel contigo para entrar na tua conta, que vai gerar os tokens necessários à validação do teu acesso.
+    enable: Activar
+    instructions_html: "<strong>Digitaliza este código QR numa aplicação TOTP no teu telemóvel</strong>. De agora em diante, essa aplicação vai gerar tokens que deves introduzir para poderes aceder à sua conta."
+    manual_instructions: 'Se não consegues digitalizar o código QR e precisas de o introduzir manualmente, aqui está o código em texto:'
     setup: Configurar
-    wrong_code: O código introduzido é inválido! A hora do servidor e a hora do dispositivo estão corretos?
+    wrong_code: O código introduzido é inválido! A hora do servidor e a hora do dispositivo estão correctos?
   pagination:
     newer: Mais nova
     next: Seguinte
@@ -1487,7 +1487,7 @@ pt-PT:
   preferences:
     other: Outro
     posting_defaults: Padrões de publicação
-    public_timelines: Cronologias públicas
+    public_timelines: Timelines públicas
   privacy_policy:
     title: Termos de Serviço e Política de Privacidade
   reactions:
@@ -1495,10 +1495,10 @@ pt-PT:
       limit_reached: Alcançado limite de reações diferentes
       unrecognized_emoji: não é um emoji reconhecido
   relationships:
-    activity: Atividade da conta
-    confirm_follow_selected_followers: Tem a certeza que deseja seguir os seguidores selecionados?
-    confirm_remove_selected_followers: Tem a certeza que deseja seguir os seguidores selecionados?
-    confirm_remove_selected_follows: Tem certeza que deseja remover os seguidores selecionados?
+    activity: Actividade da conta
+    confirm_follow_selected_followers: De certeza que queres seguir os seguidores seleccionados?
+    confirm_remove_selected_followers: De certeza que queres seguir os seguidores seleccionados?
+    confirm_remove_selected_follows: De certeza que queres remover os seguidores seleccionados?
     dormant: Inativo
     follow_failure: Não foi possível seguir algumas das contas selecionadas.
     follow_selected_followers: Seguir seguidores selecionados
@@ -1516,7 +1516,7 @@ pt-PT:
     remove_selected_follows: Deixar de seguir os utilizadores selecionados
     status: Estado da conta
   remote_follow:
-    missing_resource: Não foi possível encontrar o URL de redireccionamento para a sua conta
+    missing_resource: Não foi possível achar o URL de redireccionamento para a tua conta
   reports:
     errors:
       invalid_rules: não faz referência a regras válidas
@@ -1704,11 +1704,11 @@ pt-PT:
       time: "%H:%M"
   two_factor_authentication:
     add: Adicionar
-    disable: Desactivar autenticação por dois factores (2FA)
-    disabled_success: Autenticação em duas etapas correctamente desactivada
+    disable: Desactivar
+    disabled_success: Autenticação em duas etapas desactivada com sucesso
     edit: Editar
-    enabled: A autenticação em duas etapas está ativada
-    enabled_success: Autenticação em duas etapas correctamente activada
+    enabled: A autenticação em duas etapas está activada
+    enabled_success: Autenticação em duas etapas activada com sucesso
     generate_recovery_codes: Gerar códigos para recuperar conta
     lost_recovery_codes: Os códigos de recuperação permitem que recupere o acesso à sua conta caso perca o seu telemóvel. Se perder os códigos de recuperação, pode criar uns novos aqui. Os seus códigos antigos serão revogados.
     methods: Métodos de autenticação em duas etapas
@@ -1792,17 +1792,17 @@ pt-PT:
   webauthn_credentials:
     add: Adicionar nova chave de segurança
     create:
-      error: Ocorreu um problema ao adicionar sua chave de segurança. Tente novamente.
-      success: A sua chave de segurança foi correctamente adicionada.
+      error: Houve um problema ao adicionar a tua chave de segurança. Tenta outra vez.
+      success: A tua chave de segurança foi adicionada.
     delete: Eliminar
-    delete_confirmation: Tem a certeza de que pretende eliminar esta chave de segurança?
-    description_html: Se activar a <strong>autenticação com chave de segurança</strong>, vai passar a precisar de usar uma das suas chaves de segurança para aceder à sua conta.
+    delete_confirmation: Queres mesmo eliminar esta chave de segurança?
+    description_html: Se activares a <strong>autenticação com chave de segurança</strong>, vai ser preciso usar uma das tuas chaves de segurança para poderes aceder à tua conta.
     destroy:
-      error: Ocorreu um problema ao remover a sua chave de segurança. Tente novamente.
-      success: A sua chave de segurança foi correctamente eliminada.
+      error: Houve um problema a apagar a tua chave. Tenta outra vez.
+      success: A tua chave de segurança foi eliminada.
     invalid_credential: Chave de segurança inválida
     nickname_hint: Introduz a alcunha da tua nova chave de segurança
-    not_enabled: Ainda não ativaste o WebAuthn
+    not_enabled: Ainda não activaste o WebAuthn
     not_supported: Este navegador não suporta chaves de segurança
-    otp_required: Para usar chaves de segurança, ativa primeiro a 2FA.
+    otp_required: Para usar chaves de segurança, activa primeiro a 2FA.
     registered_on: Registado em %{date}
