@@ -288,7 +288,7 @@ class ComposerOptions extends ImmutablePureComponent {
           <TextIconButton
             active={spoiler}
             ariaControls='glitch.composer.spoiler.input'
-            label='CW'
+            label='AC'
             onClick={onToggleSpoiler}
             title={formatMessage(messages.spoiler)}
           />
