@@ -46,9 +46,9 @@ pt-PT:
       reason: Motivo
       rejecting_media: 'Arquivos de media destas instâncias não vão ser processados ou armazenados, e nenhuma miniatura será mostrada, o que requer que o utilizador clique e abra o ficheiro original manualmente:'
       rejecting_media_title: Media filtrada
-      silenced: 'Publicações destas instâncias vão ser ocultas em linhas do tempo e conversas públicas, e nenhuma notificação vai ser gerada a partir das interações dos seus utilizadores, a menos que você os esteja a seguir:'
+      silenced: 'Publicações destas instâncias vão ser ocultas em linhas do tempo e conversas públicas, e nenhuma notificação vai ser gerada a partir das interacções dos seus utilizadores, a menos que você os esteja a seguir:'
       silenced_title: Servidores silenciados
-      suspended: 'Nenhum dado dessas instâncias vai ser processado, armazenado ou trocado, tornando qualquer interação ou comunicação com os utilizadores dessas instâncias impossível:'
+      suspended: 'Nenhum dado dessas instâncias vai ser processado, armazenado ou trocado, tornando qualquer interacção ou comunicação com os utilizadores dessas instâncias impossível:'
       suspended_title: Servidores suspensos
     unavailable_content_html: O Mastodon geralmente permite ver o conteúdo e interagir com utilizadores de qualquer outra instância no fediverso. Estas são as excepções desta instância em específico.
     user_count_after:
@@ -157,8 +157,8 @@ pt-PT:
       no_role_assigned: Nenhum cargo atribuído
       not_subscribed: Não inscrito
       pending: Pendente de revisão
-      perform_full_suspension: Suspender totalmente
-      previous_strikes: Punições anteriores
+      perform_full_suspension: Suspender completamente
+      previous_strikes: Advertências anteriores
       previous_strikes_description_html:
         one: Esta conta tem <strong>1</strong> advertência.
         other: Esta conta tem <strong>%{count}</strong> advertências.
@@ -197,10 +197,10 @@ pt-PT:
       show:
         created_reports: Denúncias realizadas
         targeted_reports: Denunciada por outros
-      silence: Limitar
-      silenced: Limitado
-      statuses: Publicações
-      strikes: Reprimendas anteriores
+      silence: Silêncio
+      silenced: Silenciada
+      statuses: Status
+      strikes: Advertências anteriores
       subscribe: Inscrever-se
       suspend: Suspender
       suspended: Suspensa
@@ -334,11 +334,11 @@ pt-PT:
         unsensitive_account_html: "%{name} desmarcou a media de %{target} como sensível"
         unsilence_account_html: "%{name} desactivou o silêncio de %{target}"
         unsuspend_account_html: "%{name} desactivou a suspensão de %{target}"
-        update_announcement_html: "%{name} atualizou o anúncio %{target}"
-        update_custom_emoji_html: "%{name} atualizou o emoji %{target}"
-        update_domain_block_html: "%{name} atualizou o bloqueio de domínio para %{target}"
+        update_announcement_html: "%{name} actualizou o anúncio %{target}"
+        update_custom_emoji_html: "%{name} actualizou o emoji %{target}"
+        update_domain_block_html: "%{name} actualizou o bloqueio de domínio para %{target}"
         update_ip_block_html: "%{name} alterou regra para IP %{target}"
-        update_status_html: "%{name} atualizou o estado de %{target}"
+        update_status_html: "%{name} actualizou o estado de %{target}"
         update_user_role_html: "%{name} alterou o cargo %{target}"
       deleted_account: conta apagada
       empty: Não foram encontrados logs.
@@ -361,7 +361,7 @@ pt-PT:
       title: Anúncios
       unpublish: Despublicar
       unpublished_msg: Anúncio despublicado!
-      updated_msg: Anúncio atualizado!
+      updated_msg: Anúncio actualizado!
     custom_emojis:
       assign_category: Atribuir categoria
       by_domain: Domínio
@@ -384,8 +384,8 @@ pt-PT:
       listed: Inventariado
       new:
         title: Adicionar novo emoji local
-      no_emoji_selected: Nenhum emoji foi alterado porque nenhum foi seleccionado
-      not_permitted: Não estás autorizado a executar esta ação
+      not_permitted: Não estás autorizado a executar esta acção 
+      no_emoji_selected: Nenhum emoji foi seleccionado, por isso não há nada para fazer
       overwrite: Gravar por cima
       shortcode: Código de atalho
       shortcode_hint: Pelo menos 2 caracteres, apenas caracteres alfanuméricos e underscores
@@ -393,12 +393,12 @@ pt-PT:
       uncategorized: Sem categoria
       unlist: Tirar da lista
       unlisted: Não listado
-      update_failed_msg: Não foi possível atualizar este emoji
-      updated_msg: Emoji atualizado!
+      update_failed_msg: Não foi possível actualizar este emoji
+      updated_msg: Emoji actualizado!
       upload: Enviar
     dashboard:
       active_users: utilizadores activos
-      interactions: interações
+      interactions: interacções
       media_storage: Armazenamento de media
       new_users: novos utilizadores
       opened_reports: denúncias abertas
@@ -630,10 +630,10 @@ pt-PT:
         delete_description_html: As publicações denunciadas vão ser eliminadas e uma advertência vai ser registada para ajudar a escalar acções em futuras infracções.
         mark_as_sensitive_description_html: Os media nas publicações denunciadas vão ser marcados como sensíveis e uma advertência será registada para ajudar a escalar acções em futuras infracções.
         other_description_html: Ver mais opções para controlar o comportamento da conta e personalizar a comunicação para a conta denunciada.
-        resolve_description_html: Nenhuma ação vai ser tomada contra a conta denunciada, nenhuma advertência será registada, e a denuncia será fechada.
+        resolve_description_html: Nenhuma acção vai ser tomada contra a conta denunciada, nenhuma advertência será registada, e a denuncia será fechada.
         silence_description_html: O perfil será visível apenas para aqueles que já o seguem ou o procurem manualmente, limitando severamente o seu alcance. Pode sempre ser revertido.
         suspend_description_html: O perfil e todo o seu conteúdo tornar-se-ão inacessíveis até serem eventualmente apagados. A interacção com a conta será impossível. Reversível no prazo de 30 dias.
-      actions_description_html: Decide a acção a tomar para resolver esta denúncia. Se decidires por uma ação punitiva contra a conta denunciada, vai ser enviado um e-mail de notificação, exceto quando seleccionada a categoria <strong>Spam</strong>.
+      actions_description_html: Decide a acção a tomar para resolver esta denúncia. Se decidires por uma acção punitiva contra a conta denunciada, vai ser enviado um e-mail de notificação, exceto quando seleccionada a categoria <strong>Spam</strong>.
       actions_description_remote_html: Decide a acção a tomar para resolver esta denúncia. Isso apenas afetará como <strong>o teu</strong> servidor comunica com esta conta remota e gere o seu conteúdo.
       add_to_report: Juntar à denúncia
       are_you_sure: Tem a certeza?
@@ -661,11 +661,11 @@ pt-PT:
         create_and_resolve: Resolver com nota
         create_and_unresolve: Reabrir com nota
         delete: Eliminar
-        placeholder: Descreve as acções que foram tomadas ou quaisquer outras atualizações relacionadas...
+        placeholder: Descreve as acções que foram tomadas ou quaisquer outras actualizações relacionadas...
         title: Notas
       notes_description_html: Visualiza e deixa anotações para outros moderadores e para ti no futuro
       processed_msg: 'Relatório #%{id} processado com sucesso'
-      quick_actions_description_html: 'Tome uma ação rápida ou role para baixo para ver o conteúdo denunciado:'
+      quick_actions_description_html: 'Tome uma acção rápida ou role para baixo para ver o conteúdo denunciado:'
       remote_user_placeholder: o utilizador remoto de %{instance}
       reopen: Reabrir denúncia
       report: 'Denúncia #%{id}'
@@ -749,7 +749,7 @@ pt-PT:
         manage_settings: Gerir Configurações
         manage_settings_description: Permite aos utilizadores alterar as configurações do sítio na teia
         manage_taxonomies: Gerir Taxonomias
-        manage_taxonomies_description: 'Permite aos utilizadores avaliar o conteúdo em alta e atualizar as configurações de #etiquetas'
+        manage_taxonomies_description: Permite aos utilizadores rever o conteúdo em tendência e actualizar as configurações de hashtag
         manage_user_access: Gerir Acesso de Utilizador
         manage_user_access_description: Permite aos utilizadores desactivar a autenticação em duas etapas de outros utilizadores, alterar o seu endereço de e-mail e redefinir a sua palavra-passe
         manage_users: Gerir Utilizadores
@@ -837,7 +837,7 @@ pt-PT:
         desc_html: Conteúdo específico em tendência pode mesmo assim ser explicitamente rejeitado
         title: Permitir tendências sem revisão prévia
       trends:
-        desc_html: Exibir publicamente hashtags atualmente em destaque que já tenham sido revistas anteriormente
+        desc_html: Exibir publicamente hashtags actualmente em destaque que já tenham sido revistas anteriormente
         title: Hashtags em destaque
     site_uploads:
       delete: Eliminar arquivo carregado
@@ -909,8 +909,8 @@ pt-PT:
       links:
         allow: Permitir ligação
         allow_provider: Permitir editor
-        description_html: Estas são as ligações que presentemente estão a ser muito partilhadas por contas visíveis pelo seu servidor. Estas podem ajudar os seus utilizador a descobrir o que está a acontecer no mundo. Nenhuma ligação é exibida publicamente até que o editor a aprove. Também pode permitir ou rejeitar ligações em avulso.
-        disallow: Não permitir ligação
+        description_html: Estes são links que actualmente estão a ser frequentemente partilhados por contas visiveis pelo seu servidor. Eles podem ajudar os seus utilizador a descobrir o que está a acontecer no mundo. Nenhum link é exibido publicamente até que aprove o editor. Também pode permitir ou rejeitar links individualmente.
+        disallow: Não permitir link
         disallow_provider: Não permitir editor
         no_link_selected: Nenhum link foi alterado, pois nenhum foi seleccionado
         publishers:
@@ -932,7 +932,7 @@ pt-PT:
       statuses:
         allow: Permitir publicação
         allow_account: Permitir autor
-        description_html: Estas são publicações que o seu servidor conhece e que atualmente estão a ser frequentemente partilhadas e adicionadas aos favoritos. Isto pode ajudar os seus utilizadores, novos e retornados, a encontrar mais pessoas para seguir. Nenhuma publicação será exibida publicamente até que aprove o autor, e o autor permita que a sua conta seja sugerida a outros. Você também pode permitir ou rejeitar publicações individualmente.
+        description_html: Estas são publicações que o seu servidor conhece e que actualmente estão a ser frequentemente partilhadas e adicionadas aos favoritos. Isto pode ajudar os seus utilizadores, novos e retornados, a encontrar mais pessoas para seguir. Nenhuma publicação será exibida publicamente até que aprove o autor, e o autor permita que a sua conta seja sugerida a outros. Você também pode permitir ou rejeitar publicações individualmente.
         disallow: Não permitir publicação
         disallow_account: Não permitir autor
         no_status_selected: Nenhuma publicação em tendência foi alterada, pois nenhuma foi seleccionada
@@ -942,14 +942,14 @@ pt-PT:
           other: Partilhado e adicionado aos marcadores %{friendly_count} vezes
         title: Publicações em alta
       tags:
-        current_score: Pontuação atual %{score}
+        current_score: Pontuação actual %{score}
         dashboard:
           tag_accounts_measure: utilizadores únicos
           tag_languages_dimension: Liderança de línguas
           tag_servers_dimension: Topo de servidores
           tag_servers_measure: servidores diferentes
           tag_uses_measure: utilizações totais
-        description_html: 'Estas são as #etiquetas que aparecem atualmente com frequência em publicações visíveis pelo seu servidor. Isto pode ajudar os seus utilizadores a descobrir o que está ser mais falado no momento. Nenhuma #etiqueta será exibida publicamente até que a aprove.'
+        description_html: Estas são hashtags que aparecem actualmente com frequência em publicações visíveis pelo seu servidor. Isto pode ajudar os seus utilizadores a descobrir o que está ser mais falado no momento. Nenhuma hashtag é exibida publicamente até que a aprove.
         listable: Pode ser sugerida
         no_tag_selected: Nenhuma etiqueta foi alterada, pois nenhuma foi seleccionada
         not_listable: Não será sugerida
@@ -1019,16 +1019,16 @@ pt-PT:
       new_trending_statuses:
         title: Publicações em alta
       new_trending_tags:
-        no_approved_tags: 'Neste momento, não existem #etiquetas aprovadas para destaque.'
-        requirements: 'Qualquer um destes candidatos pode ultrapassar a #%{rank} etiqueta aprovada em destaque, que é atualmente #%{lowest_tag_name} com uma pontuação de %{lowest_tag_score}.'
-        title: Etiquetas em alta
+        no_approved_tags: Não existem, actualmente, hashtags aprovadas em destaque.
+        requirements: 'Qualquer um destes candidatos pode ultrapassar a #%{rank} hashtag aprovada em destaque, que é actualmente #%{lowest_tag_name} com uma pontuação de %{lowest_tag_score}.'
+        title: Hashtags em destaque
       subject: Novas tendências para revisão em %{instance}
   aliases:
     add_new: Criar um pseudónimo
     created_msg: Criaste um novo pseudónimo. Podes agora iniciar a migração da conta antiga.
     deleted_msg: O pseudónimo foi apagado. Migrar dessa conta para esta não vai mais ser possível.
     empty: Não tens pseudónimos.
-    hint_html: Se quiseres mudar de outra conta para esta, podes criar aqui um pseudónimo. Este passo é necessário antes de poderes prosseguir com a migração de seguidores da conta antiga para esta. Esta ação por si só é <strong>inofensiva e reversível</strong>. <strong>A migração da conta é iniciada a partir da conta antiga</strong>.
+    hint_html: Se quiseres mudar de outra conta para esta, podes criar aqui um pseudónimo. Este passo é necessário antes de poderes prosseguir com a migração de seguidores da conta antiga para esta. Esta acção por si só é <strong>inofensiva e reversível</strong>. <strong>A migração da conta é iniciada a partir da conta antiga</strong>.
     remove: Apagar pseudónimo
   appearance:
     advanced_web_interface: Interface multi-colunas
@@ -1110,7 +1110,7 @@ pt-PT:
       confirming: A aguardar que concluas a confirmação do e-mail.
       functional: A tua conta está totalmente operacional.
       pending: A tua inscrição está à espera de revisão pela nossa equipa, o que pode demorar algum tempo. Vais receber um e-mail se a tua conta for aprovada.
-      redirecting_to: A tua conta está inactiva porque está atualmente a ser redireccionada para %{acct}.
+      redirecting_to: A tua conta está inactiva porque está actualmente a ser redireccionada para %{acct}.
       view_strikes: Vê as advertências contra a tua conta
     too_fast: Formulário enviado demasiado rapidamente, tenta outra vez.
     trouble_logging_in: Problemas a iniciar sessão?
@@ -1191,7 +1191,7 @@ pt-PT:
       status_removed: Publicação já apagada do sistema
       title: "%{action} de %{date}"
       title_actions:
-        delete_statuses: Remoção de publicação
+        delete_statuses: Apagar publicação
         disable: Congelamento da conta
         mark_statuses_as_sensitive: Marcação das publicações como sensíveis
         none: Aviso
@@ -1375,12 +1375,12 @@ pt-PT:
   migrations:
     acct: username@domain da nova conta
     cancel: Cancelar redireccionamento
-    cancel_explanation: Cancelar o redireccionamento vai reactivar a tua conta atual, mas não vai trazer de volta os seguidores que foram migrados para essa conta.
+    cancel_explanation: Cancelar o redireccionamento vai reactivar a tua conta actual, mas não vai trazer de volta os seguidores que foram migrados para essa conta.
     cancelled_msg: Cancelou com sucesso o redireccionamento.
     errors:
       already_moved: é a mesma conta para a qual já migraste
       missing_also_known_as: não está a referenciar esta conta
-      move_to_self: não pode ser conta atual
+      move_to_self: não pode ser conta actual
       not_found: não pode ser encontrado
       on_cooldown: Estás no período de espera
     followers_count: Seguidores no momento da migração
@@ -1398,11 +1398,11 @@ pt-PT:
       backreference_required: A nova conta deve primeiro ser configurada para que esta seja referenciada
       before: 'Antes de continuar, leia cuidadosamente estas notas:'
       cooldown: Após a migração, há um período de tempo de espera durante o qual não poderá voltar a migrar
-      disabled_account: Posteriormente, a sua conta atual não será totalmente utilizável. No entanto, continuará a ter acesso à exportação de dados, bem como à reativação.
-      followers: Esta ação irá migrar todos os seguidores da conta atual para a nova conta
+      disabled_account: Posteriormente, a sua conta actual não será totalmente utilizável. No entanto, continuará a ter acesso à exportação de dados, bem como à reativação.
+      followers: Esta acção irá migrar todos os seguidores da conta actual para a nova conta
       only_redirect_html: Em alternativa, pode <a href="%{path}">apenas colocar um redireccionamento no seu perfil</a>.
       other_data: Nenhum outro dado será migrado automaticamente
-      redirect: O perfil da sua conta atual será atualizado com um aviso de redireccionamento e será excluído das pesquisas
+      redirect: O perfil da sua conta actual será actualizado com um aviso de redireccionamento e será excluído das pesquisas
   moderation:
     title: Moderação
   move_handler:
@@ -1554,7 +1554,7 @@ pt-PT:
       uc_browser: Navegador UC
       unknown_browser: Navegador Desconhecido
       weibo: Weibo
-    current_session: Sessão atual
+    current_session: Sessão actual
     description: "%{browser} em %{platform}"
     explanation: Estes são os navegadores que estão conectados com a tua conta do Mastodon.
     ip: IP
@@ -1595,8 +1595,8 @@ pt-PT:
     preferences: Preferências
     profile: Perfil
     relationships: Seguindo e seguidores
-    statuses_cleanup: Remoção automática da publicação
-    strikes: Punições de moderação
+    statuses_cleanup: Auto-apagar toots
+    strikes: Advertências de moderação
     two_factor_authentication: Autenticação em duas etapas
     webauthn_authentication: Chaves de segurança
   statuses:
@@ -1653,23 +1653,23 @@ pt-PT:
     enabled: Apagar publicações antigas automaticamente
     enabled_hint: Apaga automaticamente as tuas publicações assim que atingirem um limite de idade específico, a não ser que correspondam a uma das excepções abaixo
     exceptions: Excepções
-    explanation: Como excluir publicações é uma operação demorada, fazemo-lo lentamente ao longo do tempo, quando o servidor não está ocupado de outra forma. Por esta razão, as suas publicações podem ser apagadas um pouco depois de atingirem o limite de idade.
+    explanation: Como excluir publicações é uma operação demorada, fazemo-lo lentamente ao longo do tempo, quando o servidor não está ocupado de outra forma. Por esta razão, as tuas publicações podem ser apagadas um pouco depois de atingirem o limite de idade.
     ignore_favs: Ignorar favoritos
     ignore_reblogs: Ignorar partilhas
-    interaction_exceptions: Excepções baseadas em interações
-    interaction_exceptions_explanation: Note que não há garantia de que as publicações sejam excluídas se ficarem abaixo do limite de favoritos ou partilhas após as ter verificado uma vez.
+    interaction_exceptions: Excepções baseadas em interacções
+    interaction_exceptions_explanation: Nota que não há garantia de que as publicações sejam excluídas se ficarem abaixo do limite de favoritos ou partilhas depois de fazermos a verificação.
     keep_direct: Manter mensagens
-    keep_direct_hint: Não apaga nenhuma das suas mensagens
-    keep_media: Manter publicações com anexos de multimédia
-    keep_media_hint: Não apaga nenhuma das suas publicações com multimédia anexada
+    keep_direct_hint: Não apaga nenhuma das tuas mensagens
+    keep_media: Manter publicações com anexos de media
+    keep_media_hint: Não exclui nenhuma das suas publicações com media anexados
     keep_pinned: Manter publicações afixadas
-    keep_pinned_hint: Não apagar nenhuma das suas publicações afixadas
+    keep_pinned_hint: Não apaga nenhuma das tuas publicações afixadas
     keep_polls: Manter sondagens
-    keep_polls_hint: Não apaga nenhuma das suas sondagens
+    keep_polls_hint: Não apaga nenhuma das tuas sondagens
     keep_self_bookmark: Manter as publicações que guardou
-    keep_self_bookmark_hint: Não apaga as suas próprias publicações se as tiver guardado
-    keep_self_fav: Manter as publicações que marcou
-    keep_self_fav_hint: Não apaga as suas próprias publicações se as tiver marcado
+    keep_self_bookmark_hint: Não apaga as tuas próprias publicações se as tiveres guardado
+    keep_self_fav: Manter as publicações que gostou
+    keep_self_fav_hint: Não apaga as tuas próprias publicações se as tiveres favoritado
     min_age:
       '1209600': 2 semanas
       '15778476': 6 meses
@@ -1680,10 +1680,10 @@ pt-PT:
       '63113904': 2 anos
       '7889238': 3 meses
     min_age_label: Limite de idade
-    min_favs: Manter pelo menos as publicações dos marcadores
-    min_favs_hint: Não elimina nenhuma das suas publicações que tenha recebido pelo menos este número de favoritos. Deixe em branco para eliminar publicações, independentemente do seu número de favoritos
-    min_reblogs: Manter as publicações reforçadas mais de
-    min_reblogs_hint: Não apaga nenhuma das suas publicações que tenha sido partilhada mais do que este número de vezes. Deixe em branco para apagar as publicações, independentemente do número de partilhas
+    min_favs: Manter os toots com número de favoritos maior que
+    min_favs_hint: Não apaga nenhuma das tuas publicações que tenham recebido mais do que esta quantidade de favoritos. Deixa em branco para apagar as publicações, independentemente do número de favoritos
+    min_reblogs: Manter os toots com número de re-publicações maior que
+    min_reblogs_hint: Não apaga nenhuma das tuas publicações que tenha sido partilhada mais do que este número de vezes. Deixa em branco para apagar as publicações, independentemente do número de partilhas
   stream_entries:
     pinned: Publicação afixada
     reblogged: reforçada
