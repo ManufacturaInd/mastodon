@@ -188,8 +188,8 @@ pt-PT:
         honeypot: "%{label} (não preencher)"
         inbox_url: URL da caixa de entrada do repetidor
         irreversible: Expandir em vez de esconder
-        locale: Língua da interface
-        locked: Exigir pedidos de seguimento
+        locale: Idioma
+        locked: Proteger a tua conta
         max_uses: Número máximo de utilizações
         new_password: Nova palavra-passe
         note: Biografia
