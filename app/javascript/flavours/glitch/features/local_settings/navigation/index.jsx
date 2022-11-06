@@ -54,7 +54,7 @@ class LocalSettingsNavigation extends PureComponent {
           active={index === 2}
           index={2}
           onNavigate={onNavigate}
-          textIcon='CW'
+          textIcon='AC'
           title={intl.formatMessage(messages.content_warnings)}
         />
         <LocalSettingsNavigationItem
