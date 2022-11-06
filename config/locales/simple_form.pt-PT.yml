@@ -97,16 +97,16 @@ pt-PT:
         media_cache_retention_period: Os ficheiros de media descarregados serão excluídos após o número de dias especificado, quando definido com um valor positivo, e descarregados novamente quando solicitados.
         peers_api_enabled: Uma lista de nomes de domínio que este servidor encontrou no fediverso. Nenhum dado é incluído aqui sobre se a tua conta federa com um determinado servidor, apenas que o teu servidor o conhece. Este serviço é utilizado por serviços que recolhem estatísticas na federação, em termos gerais.
         profile_directory: O 'Quem por cá anda' mostra todas as contas da Ciberlândia que permitem ser sugeridas a outros.
-        require_invite_text: Quando as incrições exigirem aprovação manual, faça o texto "Porque se quer juntar a nós?" da solicitação de convite, obrigatório ao invés de opcional
-        site_contact_email: Como as pessoas podem entrar em contacto consigo para obter informações legais ou de suporte.
-        site_contact_username: Como as pessoas conseguem chegar até si no Mastodon.
-        site_extended_description: Qualquer informação adicional que possa ser útil para os visitantes e os seus utilizadores. Pode ser estruturada com a sintaxe Markdown.
-        site_short_description: Uma breve descrição para ajudar a identificar de forma única o seu servidor. Quem o está a gerir, e a quem se destina?
-        site_terms: Use a sua própria política de privacidade ou deixe em branco para usar a política padrão. Pode ser estruturada com a sintaxe Markdown.
+        require_invite_text: Quando as inscrições exigirem aprovação manual, a questão "Porque te queres juntar a nós?" passa a ser de resposta obrigatória
+        site_contact_email: Como as pessoas podem entrar em contacto contigo para obter informações legais ou de suporte.
+        site_contact_username: Como as pessoas conseguem chegar até ti no Mastodon.
+        site_extended_description: Qualquer informação adicional que possa ser útil para os visitantes e os teus utilizadores. Aceita Markdown.
+        site_short_description: Uma breve descrição para ajudar a identificar de forma única o seu servidor. Quem o está a gerir, para quem é?
+        site_terms: Usa a tua própria política de privacidade ou deixa em branco para usar a política por omissão. Aceita Markdown.
         site_title: Como as pessoas podem referir-se ao seu servidor para além do seu nome de domínio.
         status_page_url: URL de uma página onde as pessoas podem ver o estado deste servidor durante uma interrupção
-        theme: Tema que os visitantes e os novos utilizadores veem.
-        thumbnail: Uma imagem de cerca de 2:1, apresentada ao lado da informação do seu servidor.
+        theme: Tema de interface aplicado às novas contas.
+        thumbnail: Uma imagem de aproximadamente 2:1, mostrada ao lado da informação deste servidor.
         timeline_preview: Os visitantes sem sessão iniciada poderão consultar as publicações públicas mais recentes disponíveis no servidor.
         trendable_by_default: Ignorar a revisão manual do conteúdo em alta. Elementos em avulso poderão ainda assim ser retirados das tendências mesmo após a sua apresentação.
         trends: As publicações em alta mostram quais as publicações, etiquetas e notícias que estão a ganhar destaque no seu servidor.
@@ -259,22 +259,22 @@ pt-PT:
           warn: Ocultar com um aviso
       form_admin_settings:
         activity_api_enabled: Publicar estatísticas agregadas sobre a atividade dos utilizadores na API
-        backups_retention_period: Período de retenção de arquivos de utilizador
-        bootstrap_timeline_accounts: Recomendar sempre estas contas para novos utilizadores
-        closed_registrations_message: Mensagem personalizada quando as inscrições não estiverem disponíveis
+        backups_retention_period: Período de retenção de backups
+        bootstrap_timeline_accounts: Recomendar sempre estas contas aos novos utilizadores
+        closed_registrations_message: Mensagem personalizada quando as inscrições não estão disponíveis
         content_cache_retention_period: Período de retenção de conteúdo em cache
         custom_css: CSS personalizado
         mascot: Mascote personalizada (legado)
         media_cache_retention_period: Período de retenção de ficheiros de media em cache
         peers_api_enabled: Publicar lista de servidores descobertos na API
         profile_directory: Habilitar 'Quem por cá anda'
-        registrations_mode: Quem pode inscrever-se
-        require_invite_text: Requerer uma razão para entrar
+        registrations_mode: Quem se pode inscrever
+        require_invite_text: Exigir um motivo para entrar
         show_domain_blocks: Mostrar domínios bloqueados
         show_domain_blocks_rationale: Mostrar porque os domínios foram bloqueados
         site_contact_email: E-mail de contacto
         site_contact_username: Nome de utilizador do contacto
-        site_extended_description: Descrição estendida
+        site_extended_description: Descrição alargada
         site_short_description: Descrição do servidor
         site_terms: Política de privacidade
         site_title: Nome do servidor
@@ -283,7 +283,7 @@ pt-PT:
         thumbnail: Miniatura do servidor
         timeline_preview: Permitir acesso não autenticado às timelines públicas
         trendable_by_default: Permitir tendências sem revisão prévia
-        trends: Habilitar tendências
+        trends: Activar tendências
         trends_as_landing_page: Usar tendências como página inicial
       interactions:
         must_be_follower: Bloquear notificações de não-seguidores
