@@ -123,8 +123,16 @@ const messages = {
   'settings.media.pop_in_position.left': 'Esquerda',
   'settings.media.pop_in_position.right': 'Direita',
   'settings.navbar_under': 'Navegação em baixo (apenas em mobile)',
+
   'status.collapse': 'Colapsar',
   'status.uncollapse': 'Expandir',
+  'status.in_reply_to': 'Este toot é uma resposta',
+  'status.has_preview_card': 'Tem um cartão de previsualização',
+  'status.has_pictures': 'Tem imagens anexadas',
+  'status.is_poll': 'Este toot é uma sondagem',
+  'status.has_video': 'Tem vídeos anexados',
+  'status.has_audio': 'Tem áudios anexados',
+  'status.local_only': 'Apenas visível na Ciberlândia',
 
   'media_gallery.sensitive': 'Sensível',
 
