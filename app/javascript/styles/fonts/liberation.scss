@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Liberation Sans';
+  src:
+    local('Liberation Sans Italic'),
+    url('~fonts/liberation/LiberationSans-Italic-webfont.woff') format('woff'),
+  font-weight: normal;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Liberation Sans';
+  src:
+    local('Liberation Sans Bold'),
+    url('~fonts/liberation/LiberationSans-Bold-webfont.woff') format('woff'),
+  font-weight: bold;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Liberation Sans';
+  src:
+    local('Liberation Sans Bold Italic'),
+    url('~fonts/liberation/LiberationSans-BoldItalic-webfont.woff') format('woff'),
+  font-weight: bold;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Liberation Sans';
+  src:
+    local('Liberation Sans Regular'),
+    url('~fonts/liberation/LiberationSans-Regular-webfont.woff') format('woff'),
+  font-weight: normal;
+  font-display: swap;
+  font-style: normal;
+}
