@@ -1732,10 +1732,10 @@ pt-PT:
       subject: O seu arquivo está pronto para descarregar
       title: Arquivo de ficheiros
     suspicious_sign_in:
-      change_password: alterar a sua palavra-passe
-      details: 'Aqui estão os detalhes do inicio de sessão:'
+      change_password: mudes a tua palavra-passe
+      details: 'Aqui estão os pormenores:'
       explanation: Detectámos um inicio de sessão na tua conta a partir de um novo endereço IP.
-      further_actions_html: Se não foste tu, recomendamos que %{action} imediatamente e ative a autenticação de dois fatores para manter a sua conta segura.
+      further_actions_html: Se não foste tu, recomendamos que %{action} imediatamente e actives a autenticação de dois factores (2FA) para manter a tua conta segura.
       subject: A tua conta foi acedida a partir de um novo endereço IP
       title: Novo inicio de sessão
     warning:
