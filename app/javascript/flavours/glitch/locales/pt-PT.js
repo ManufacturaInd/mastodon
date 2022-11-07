@@ -157,6 +157,7 @@ const messages = {
   'advanced_options.threaded_mode.tooltip': 'Modo de fazer fios activado',
 
   'account.add_account_note': 'Acrescentar uma nota a @{name}',
+  'compose_form.spoiler': 'Usar um aviso de conteúdo para ocultar esta publicação',
 };
 
 export default Object.assign({}, inherited, messages);
