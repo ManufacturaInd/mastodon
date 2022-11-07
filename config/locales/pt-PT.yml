@@ -1527,7 +1527,7 @@ pt-PT:
       subject: "%{name} mencionou-te"
       title: Nova menção
     poll:
-      subject: A sondagem de %{name} encerrou
+      subject: Uma sondagem realizada por %{name} terminou
     reblog:
       body: 'A sua publicação foi reforçada por %{name}:'
       subject: "%{name} reforçou a sua publicação"
