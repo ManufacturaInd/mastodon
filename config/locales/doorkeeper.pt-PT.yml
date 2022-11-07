@@ -38,7 +38,7 @@ pt-PT:
         application: Aplicações
         callback_url: URL de retorno
         delete: Eliminar
-        empty: Não tem aplicações.
+        empty: Não tens aplicações configuradas.
         name: Nome
         new: Nova aplicação
         scopes: Âmbitos
