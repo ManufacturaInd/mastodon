@@ -778,7 +778,7 @@ pt-PT:
         title: Sobre
       appearance:
         preamble: Personaliza o interface web do Mastodon.
-        title: Aspeto
+        title: Aspecto
       branding:
         preamble: A marca do teu servidor diferencia-o de outros servidores na rede. Essa informação pode ser mostrada em vários contextos, como o interface web do Mastodon, aplicações nativas, visualizações de links noutros sites e dentro de aplicações de mensagens, etc. Por isso, é melhor manter esta informação clara, curta e concisa.
         title: Marca
@@ -1582,7 +1582,7 @@ pt-PT:
     aliases: Pseudónimos da conta
     appearance: Aspecto
     authorized_apps: Aplicações autorizadas
-    back: Voltar ao Mastodon
+    back: Voltar à Ciberlândia
     delete: Eliminação da conta
     development: API
     edit_profile: Editar perfil
