@@ -172,7 +172,7 @@ pt-PT:
       defaults:
         autofollow: Convidar para seguir a tua conta
         avatar: Imagem de Perfil
-        bot: Esta é uma conta bot
+        bot: Esta conta é um bot
         chosen_languages: Filtrar línguas
         confirm_new_password: Confirmar nova palavra-passe
         confirm_password: Confirmar palavra-passe
