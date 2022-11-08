@@ -1129,7 +1129,7 @@ pt-PT:
       accept: Aceitar
       back: Retroceder
       invited_by: 'Pode inscrever-se em %{domain} graças ao convite que recebeu de:'
-      preamble: "Caso queiras ter uma conta neste servidor, estas são as regras da casa. Vê também a página <a href=\"/about\">Acerca da Ciberlândia</a> para mais pormenores e motivações por trás destes princípios."
+      preamble: "Caso queiras ter uma conta neste servidor, estas são as regras da casa."
       preamble_invited: Antes de prosseguir, por favor, considere as regras base definidas pelos moderadores de %{domain}.
       title: Só uma coisinha...
       title_invited: Foi convidado.
