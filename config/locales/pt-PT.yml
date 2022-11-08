@@ -1091,7 +1091,7 @@ pt-PT:
     rules:
       accept: Aceitar
       back: Retroceder
-      preamble: "Caso queiras ter uma conta neste servidor, estas são as regras da casa. Vê também a página <a href=\"/about\">Acerca da Ciberlândia</a> para mais pormenores e motivações por trás destes princípios."
+      preamble: "Caso queiras ter uma conta neste servidor, estas são as regras da casa."
       title: Só uma coisinha...
     security: Mudar palavra-passe
     set_new_password: Editar palavra-passe
