@@ -1556,7 +1556,7 @@ pt-PT:
       weibo: Weibo
     current_session: Sessão actual
     description: "%{browser} em %{platform}"
-    explanation: Estes são os navegadores que estão conectados com a tua conta do Mastodon.
+    explanation: Estes são os navegadores que estão com sessão iniciada na tua conta do Mastodon.
     ip: IP
     platforms:
       adobe_air: Adobe Air
@@ -1583,17 +1583,17 @@ pt-PT:
     appearance: Aspecto
     authorized_apps: Aplicações autorizadas
     back: Voltar à Ciberlândia
-    delete: Eliminação da conta
+    delete: Apagar a tua conta
     development: API
     edit_profile: Editar perfil
     export: Exportar dados
     featured_tags: Etiquetas destacadas
     import: Importar
     import_and_export: Importar e exportar
-    migrate: Migração de conta
+    migrate: Migrar a tua conta
     notifications: Notificações
     preferences: Preferências
-    profile: Perfil
+    profile: O teu perfil
     relationships: Seguindo e seguidores
     statuses_cleanup: Auto-apagar toots
     strikes: Advertências de moderação
@@ -1639,7 +1639,7 @@ pt-PT:
     show_newer: Mostrar mais recentes
     show_older: Mostrar mais antigos
     show_thread: Mostrar conversa
-    sign_in_to_participate: Inicie a sessão para participar na conversa
+    sign_in_to_participate: Inicia sessão para poderes participar na conversa
     title: '%{name}: "%{quote}"'
     visibilities:
       direct: Direto
