@@ -166,6 +166,8 @@ const messages = {
 
   'account.add_account_note': 'Acrescentar uma nota a @{name}',
   'compose_form.spoiler': 'Usar um aviso de conteúdo para ocultar esta publicação',
+
+  'community.column_settings.allow_local_only': 'Mostrar toots locais',
 };
 
 export default Object.assign({}, inherited, messages);
