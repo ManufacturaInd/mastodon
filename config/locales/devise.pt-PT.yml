@@ -47,16 +47,16 @@ pt-PT:
         subject: 'Ciberlândia: Instruções para alterar a palavra-passe'
         title: Solicitar nova palavra-passe
       two_factor_disabled:
-        explanation: A autenticação em duas etapas para a sua conta foi desativada. É agora possível aceder apenas com o seu endereço de e-mail e palavra-passe.
+        explanation: A autenticação de dois factores para a sua conta foi desativada. É agora possível aceder apenas com o seu endereço de e-mail e palavra-passe.
         subject: 'Ciberlândia: Autenticação de duas etapas desactivada'
         title: 2FA desativado
       two_factor_enabled:
-        explanation: A autenticação em duas etapas foi ativada para a sua conta. Um token, gerado pela aplicação TOTP emparelhada, será necessário para aceder.
-        subject: 'Ciberlândia: Autenticação em duas etapas activada'
+        explanation: A autenticação de dois factores foi ativada para a sua conta. Um token, gerado pela aplicação TOTP emparelhada, será necessário para aceder.
+        subject: 'Ciberlândia: Autenticação de dois factores activada'
         title: 2FA ativado
       two_factor_recovery_codes_changed:
         explanation: Os códigos de recuperação anteriores foram invalidados e novos foram gerados.
-        subject: 'Ciberlândia: Gerados novos códigos de recuperação em duas etapas'
+        subject: 'Ciberlândia: Gerados novos códigos de recuperação de dois factores'
         title: Códigos de recuperação 2FA alterados
       unlock_instructions:
         subject: 'Ciberlândia: Instruções para desbloquear a tua conta'

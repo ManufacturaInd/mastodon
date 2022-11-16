@@ -208,7 +208,7 @@ pt-PT:
         max_uses: Número máximo de utilizações
         new_password: Nova palavra-passe
         note: Biografia
-        otp_attempt: Código de autenticação em duas etapas
+        otp_attempt: Código de autenticação de dois factores
         password: Palavra-passe
         phrase: Palavra ou expressão-chave
         setting_advanced_layout: Ativar interface multi-colunas
