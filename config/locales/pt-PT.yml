@@ -751,7 +751,7 @@ pt-PT:
         manage_taxonomies: Gerir Taxonomias
         manage_taxonomies_description: Permite aos utilizadores rever o conteúdo em tendência e actualizar as configurações de hashtag
         manage_user_access: Gerir Acesso de Utilizador
-        manage_user_access_description: Permite aos utilizadores desactivar a autenticação em duas etapas de outros utilizadores, alterar o seu endereço de e-mail e redefinir a sua palavra-passe
+        manage_user_access_description: Permite aos utilizadores desactivar a autenticação de dois factores de outros utilizadores, alterar o seu endereço de e-mail e redefinir a sua palavra-passe
         manage_users: Gerir Utilizadores
         manage_users_description: Permite aos utilizadores ver os detalhes de outros utilizadores e executar acções de moderação contra eles
         manage_webhooks: Gerir Webhooks
@@ -1358,11 +1358,11 @@ pt-PT:
       limit: Atingiu o número máximo de listas permitido
   login_activities:
     authentication_methods:
-      otp: aplicação de autenticação em duas etapas
+      otp: aplicação de autenticação de dois factores
       password: palavra-passe
       sign_in_token: código de segurança por correio electrónico
       webauthn: chaves de segurança
-    description_html: Se vês actividade que não reconheces, considera mudar a tua palavra-passe e activar a autenticação em duas etapas.
+    description_html: Se vês actividade que não reconheces, considera mudar a tua palavra-passe e activar a autenticação de dois factores.
     empty: Sem historial de autenticação disponível
     failed_sign_in_html: Tentativa falhada de iniciar sessão com %{method} de %{ip} (%{browser})
     successful_sign_in_html: Sessão iniciada sessão com sucesso com %{method} de %{ip} (%{browser})
@@ -1461,7 +1461,7 @@ pt-PT:
           trillion: T
   otp_authentication:
     code_hint: Introduz o código gerado pela tua aplicação de autenticação para confirmar
-    description_html: Se activares a <strong>autenticação em duas etapas</strong>, vais ter de ter o teu telemóvel contigo para entrar na tua conta, que vai gerar os tokens necessários à validação do teu acesso.
+    description_html: Se activares a <strong>autenticação de dois factores</strong>, vais ter de ter o teu telemóvel contigo para entrar na tua conta, que vai gerar os tokens necessários à validação do teu acesso.
     enable: Activar
     instructions_html: "<strong>Digitaliza este código QR numa aplicação TOTP no teu telemóvel</strong>. De agora em diante, essa aplicação vai gerar tokens que deves introduzir para poderes aceder à sua conta."
     manual_instructions: 'Se não consegues digitalizar o código QR e precisas de o introduzir manualmente, aqui está o código em texto:'
@@ -1597,7 +1597,7 @@ pt-PT:
     relationships: Seguindo e seguidores
     statuses_cleanup: Auto-apagar toots
     strikes: Advertências de moderação
-    two_factor_authentication: Autenticação em duas etapas
+    two_factor_authentication: Autenticação de dois factores
     webauthn_authentication: Chaves de segurança
   statuses:
     attached:
@@ -1705,13 +1705,13 @@ pt-PT:
   two_factor_authentication:
     add: Adicionar
     disable: Desactivar
-    disabled_success: Autenticação em duas etapas desactivada com sucesso
+    disabled_success: Autenticação de dois factores desactivada com sucesso
     edit: Editar
-    enabled: A autenticação em duas etapas está activada
-    enabled_success: Autenticação em duas etapas activada com sucesso
+    enabled: A autenticação de dois factores está activada
+    enabled_success: Autenticação de dois factores activada com sucesso
     generate_recovery_codes: Gerar códigos para recuperar conta
-    lost_recovery_codes: Os códigos de recuperação permitem que recupere o acesso à sua conta caso perca o seu telemóvel. Se perder os códigos de recuperação, pode criar uns novos aqui. Os seus códigos antigos serão revogados.
-    methods: Métodos de autenticação em duas etapas
+    lost_recovery_codes: Códigos de recuperação permite que você recupere o acesso a sua conta se você perder seu telefone. Se você perder os códigos de recuperação, você pode regera-los aqui. Seus códigos antigos serão invalidados.
+    methods: Métodos de autenticação de dois factores
     otp: Aplicação de autenticação
     recovery_codes: Cópia de segurança dos códigos de recuperação
     recovery_codes_regenerated: Códigos de recuperação foram correctamente gerados
