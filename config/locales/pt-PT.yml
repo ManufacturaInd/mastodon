@@ -1127,7 +1127,7 @@ pt-PT:
     reset_password: Criar nova palavra-passe
     rules:
       accept: Aceitar
-      back: Retroceder
+      back: Voltar
       invited_by: 'Pode inscrever-se em %{domain} graças ao convite que recebeu de:'
       preamble: "Caso queiras ter uma conta neste servidor, estas são as regras da casa."
       preamble_invited: Antes de prosseguir, por favor, considere as regras base definidas pelos moderadores de %{domain}.
