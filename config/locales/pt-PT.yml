@@ -1093,6 +1093,8 @@ pt-PT:
       back: Retroceder
       preamble: "Caso queiras ter uma conta neste servidor, estas são as regras da casa."
       title: Só uma coisinha...
+      accept: Aceitar
+      back: Voltar
     security: Mudar palavra-passe
     set_new_password: Editar palavra-passe
     setup:
