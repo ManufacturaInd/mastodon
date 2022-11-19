@@ -33,7 +33,7 @@ pt-PT:
         autofollow: As pessoas que aderem através do convite seguir-te-ão automaticamente
         avatar: PNG, GIF ou JPG. Ficheiros até %{size}. Vão ser reduzidos para %{dimensions}px
         bot: Esta conta executa acções automatizadas e pode não ser monitorizada
-        context: Um ou múltiplos contextos nos quais o filtro deve ser aplicado
+        context: Um ou vários contextos nos quais o filtro deve ser aplicado
         current_password: Por motivos de segurança, introduz a palavra-passe da conta actual
         current_username: Para confirmar, introduz o nome de utilizador da conta actual
         digest: Enviado após um longo período de inactividade e apenas se foste mencionado na tua ausência
@@ -170,13 +170,14 @@ pt-PT:
       appeal:
         text: Explica porque se deve reverter esta decisão
       defaults:
+        action: O que fazer com toots filtrados
         autofollow: Convidar para seguir a tua conta
         avatar: Imagem de Perfil
         bot: Esta conta é um bot
         chosen_languages: Filtrar línguas
         confirm_new_password: Confirmar nova palavra-passe
         confirm_password: Confirmar palavra-passe
-        context: Filtrar contextos
+        context: Contextos onde aplicar os filtros
         current_password: Palavra-passe actual
         data: Dados
         discoverable: Sugerir esta conta a outros
@@ -185,7 +186,7 @@ pt-PT:
         expires_in: Expira em
         fields: Metadados de perfil
         header: Cabeçalho
-        honeypot: "%{label} (não preencher)"
+        honeypot: '%{label} (não preencher)'
         inbox_url: URL da caixa de entrada do repetidor
         irreversible: Expandir em vez de esconder
         locale: Idioma

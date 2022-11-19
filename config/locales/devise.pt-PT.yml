@@ -8,10 +8,10 @@ pt-PT:
     failure:
       already_authenticated: A tua sessão já está aberta.
       inactive: A tua conta ainda não está ativada.
-      invalid: "%{authentication_keys} ou palavra-passe inválida :-("
+      invalid: '%{authentication_keys} ou palavra-passe inválida :-('
       last_attempt: Tens mais uma tentativa antes de a tua conta ser bloqueada.
       locked: A tua conta está bloqueada.
-      not_found_in_database: "%{authentication_keys} ou palavra-passe inválida :-("
+      not_found_in_database: '%{authentication_keys} ou palavra-passe inválida :-('
       pending: A tua conta está ainda a aguardar revisão.
       timeout: A tua sessão expirou. Por favor, entra de novo para continuares.
       unauthenticated: Precisas de entrar na tua conta ou de te registares antes de continuar.
@@ -48,7 +48,7 @@ pt-PT:
         title: Solicitar nova palavra-passe
       two_factor_disabled:
         explanation: A autenticação de dois factores para a sua conta foi desativada. É agora possível aceder apenas com o seu endereço de e-mail e palavra-passe.
-        subject: 'Ciberlândia: Autenticação de duas etapas desactivada'
+        subject: 'Ciberlândia: Autenticação de dois factores desactivada'
         title: 2FA desativado
       two_factor_enabled:
         explanation: A autenticação de dois factores foi ativada para a sua conta. Um token, gerado pela aplicação TOTP emparelhada, será necessário para aceder.
@@ -87,7 +87,7 @@ pt-PT:
       updated: A tua palavra-passe foi alterada. Estás agora autenticado na tua conta.
       updated_not_active: A tua palavra-passe foi alterada.
     registrations:
-      destroyed: A tua conta foi cancelada. Adeus! 
+      destroyed: A tua conta foi cancelada. Adeus!
       signed_up: Damos-te as boas vindas! A tua conta está à tua espera.
       signed_up_but_inactive: A tua conta foi registada, mas ainda não está activa.
       signed_up_but_locked: A sua conta foi registada com sucesso. No entanto, não pudemos iniciar a sua sessão porque a conta está bloqueada.
@@ -111,5 +111,5 @@ pt-PT:
       not_found: não encontrado
       not_locked: não estava bloqueada
       not_saved:
-        one: 'Um erro impediu este %{resource} de ser guardado:'
-        other: "%{count} erros impediram este %{resource} de ser guardado:"
+        one: '1 erro impediu este %{resource} de ser guardado:'
+        other: '%{count} erros impediram este %{resource} de ser guardado:'
