@@ -1,5 +1,8 @@
-// Notes!
-// Sass color functions, "darken" and "lighten" are automatically replaced.
+//
+// Delicioso theme, based on Mastodon-light, made for ciberlandia.pt
+// Copyleft (c) 2022 Manufactura Independente (Ana Isabel Carvalho & Ricardo Lafuente)
+// Made available under the AGPLv3
+//
 
 .glitch.local-settings {
   background: $ui-base-color;
@@ -373,16 +376,16 @@
     no-repeat right 8px center / auto 16px;
 }
 
-/****** MODIFICAÇÕES CIBERLÂNDIA ***********************************/
+/****** CIBERLÂNDIA ***********************************/
 
-/* Tirar cantos redondos */
+/* No rounded corners */
 .column-header,
 textarea,
 .composer--options-wrapper {
   border-radius: 0 !important;
 }
 
-/* Notificações com maior contraste */
+/* Better contrast on positive (green) notifications */
 .flash-message.notice,
 .positive-hint {
   color: #39835d;
@@ -392,7 +395,7 @@ textarea,
   color: #39835d;
 }
 
-/* Botões e elementos com fundo azul devem ter texto branco */
+/* All elements with a blue (primary) background should have white text */
 .admin-wrapper .content__heading__tabs a.selected,
 .admin-wrapper .sidebar ul .simple-navigation-active-leaf a,
 .simple_form .block-button,
@@ -416,27 +419,25 @@ textarea,
   color: white;
 }
 
-/* Sidebar admin com um espaçamento mais compacto */
+/* More compact vertical spacing in the admin sidebar */
 .admin-wrapper .sidebar ul a {
   padding: 5px;
 }
-.admin-wrapper .sidebar ul ul a {
-  padding: 5px 35px;
-}
+.admin-wrapper .sidebar ul ul a,
 .admin-wrapper .sidebar ul .simple-navigation-active-leaf a {
   padding: 5px 35px;
 }
 
-/* Menos espaço abaixo dos títulos nas prefs */
+/* Prefs: Less space under titles */
 .admin-wrapper .content h3 {
   margin-bottom: 5px;
 }
-/* o mesmo com os h3 que têm underline */
+/* same with the underlined headings */
 .admin-wrapper .content h4 {
   padding-bottom: 0;
 }
 
-/* Tornar o menu do glitchsoc mais bonitinho */
+/* Prettify the glitch-soc preferences dialog */
 .glitch.local-settings {
   box-shadow: -1px 10px 23px -3px rgba(51, 51, 155, 0.52);
 }
@@ -452,21 +453,25 @@ textarea,
   background: #df405a24;
 }
 
-/* Hints mais bem colocados */
+/* Place hints a little bit tighter */
 .simple_form .input.with_label .hint {
   font-size: 100%;
   color: #777;
   margin-top: 0;
 }
 
-/* Badge das notificações mais destacado */
+/* Proper positioning for notifications badge */
 .icon-with-badge__badge {
   color: #fff;
   font-weight: bold;
   font-size: 12px;
+  left: -12px;
+  top: 0px;
+  border: none;
 }
 
-/* Casa de Partida com fundo neutro */
+/* Getting started column (advanced UI) or right sidebar (simple UI) 
+ * with neutral background and tighter spacing */
 #Casa-de-partida,
 .getting-started__wrapper,
 .getting-started__wrapper .column-subheading,
@@ -487,14 +492,7 @@ div[data-column='getting-started'] .scrollable {
   color: #999;
 }
 
-/* Recolocar o aviso de notificações */
-.icon-with-badge__badge {
-  left: -12px;
-  top: 0px;
-  border: none;
-}
-
-/* Padding mais apertado nas forms */
+/* Tighter padding in forms */
 .simple_form .input.boolean .label_input > label {
   padding-top: 0;
 }
