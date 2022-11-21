@@ -9,6 +9,7 @@ const messages = {
   'navigation_bar.app_settings': 'Configurações',
   'navigation_bar.featured_users': 'Contas em destaque',
   'navigation_bar.info': 'Acerca da Ciberlândia',
+  'navigation_bar.misc': 'Outras opções',
   'getting_started.onboarding': 'Mostra-me o que há por aqui',
   'onboarding.page_one.federation': 'A Ciberlândia é uma \'instância\' do Mastodon. O Mastodon é uma rede de servidores autónomos que se juntam para formar uma grande rede social. A esses servidores chamamos instâncias.',
   'onboarding.page_one.welcome': 'Damos-te as boas vindas à Ciberlândia!',

@@ -1,5 +1,5 @@
 {
-  "about.blocks": "Servidores moderados",
+  "about.blocks": "Instâncias bloqueadas",
   "about.contact": "Contacto:",
   "about.disclaimer": "O Mastodon é um software livre, e uma marca registada da Mastodon gGmbH.",
   "about.domain_blocks.comment": "Motivo",
@@ -11,7 +11,7 @@
   "about.domain_blocks.silenced.title": "Limitados",
   "about.domain_blocks.suspended.explanation": "Nenhum dado dessas instâncias será processado, armazenado ou trocado, tornando qualquer interação ou comunicação com os utilizadores dessas instâncias impossível.",
   "about.domain_blocks.suspended.title": "Supensos",
-  "about.not_available": "Esta informação não foi disponibilizada neste servidor.",
+  "about.not_available": "Esta instância não divulga a sua lista de instâncias bloqueadas.",
   "about.powered_by": "Rede social descentralizada baseada no {mastodon}",
   "about.rules": "Regras da instância",
   "account.account_note_header": "Nota",
