@@ -6,7 +6,7 @@ pt-PT:
     about_this: Sobre esta instância
     active_count_after: activo
     active_footnote: Utilizadores activos mensais (UAM)
-    administered_by: 'Administração'
+    administered_by: Administração
     api: API
     apps: Apps móveis
     apps_platforms: Usar o Mastodon a partir do iOS, Android e outras plataformas
@@ -30,9 +30,9 @@ pt-PT:
     logout_before_registering: Já tens sessão iniciada.
     privacy_policy: Termos & Política de Privacidade
     rules: Regras da Ciberlândia
-    rules_html: 'Este é um resumo das regras a seguir se pretendes ter uma conta nesta instância.'
+    rules_html: Este é um resumo das regras a seguir se pretendes ter uma conta nesta instância.
     see_whats_happening: O que está a acontecer
-    server_stats: 'População'
+    server_stats: População
     source_code: Código fonte
     status_count_after:
       one: publicação
@@ -384,8 +384,8 @@ pt-PT:
       listed: Inventariado
       new:
         title: Adicionar novo emoji local
-      not_permitted: Não estás autorizado a executar esta acção 
       no_emoji_selected: Nenhum emoji foi seleccionado, por isso não há nada para fazer
+      not_permitted: Não estás autorizado a executar esta acção
       overwrite: Gravar por cima
       shortcode: Código de atalho
       shortcode_hint: Pelo menos 2 caracteres, apenas caracteres alfanuméricos e underscores
@@ -1093,8 +1093,6 @@ pt-PT:
       back: Retroceder
       preamble: "Caso queiras ter uma conta neste servidor, estas são as regras da casa."
       title: Só uma coisinha...
-      accept: Aceitar
-      back: Voltar
     security: Mudar palavra-passe
     set_new_password: Editar palavra-passe
     setup:
@@ -1532,7 +1530,7 @@ pt-PT:
     over_total_limit: Excedeste o limite total de %{limit} publicações agendadas
     too_soon: A data de agendamento tem de ser futura
   search:
-    search_or_paste: "Pesquisar..."
+    search_or_paste: Pesquisar...
   sessions:
     activity: Última actividade
     browser: Navegador

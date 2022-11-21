@@ -23,59 +23,59 @@ pt-PT:
         explanation: Criaste uma conta na Ciberlândia com este endereço de e-mail, não foi? O botão abaixo vai levar-te ao próximo passo.
         explanation_when_pending: Pediste um convite para %{host} com este endereço de e-mail. Logo que confirmes o teu endereço de e-mail, vamos rever a tua inscrição. Podes iniciar sessão para alterar os teus dados ou eliminar a tua conta, mas não vais poder aceder à maioria das funções até à tua conta ser aprovada. Se a tua inscrição não for aceite, os teus dados vão ser eliminados. Se não solicitaste este convite, por favor não ligues a este e-mail.
         extra_html: Por favor lê <a href="%{terms_path}">as regras da instância</a> e os <a href="%{policy_path}">termos de serviço</a>.
-        subject: "Ciberlândia: Instruções de confirmação %{instance}"
+        subject: 'Ciberlândia: Instruções de confirmação %{instance}'
         title: Verificar o endereço de e-mail
       email_changed:
-        explanation: "O e-mail associado à tua conta vai ser alterado para:"
+        explanation: 'O e-mail associado à tua conta vai ser alterado para:'
         extra: Se não pediste para alterar o teu e-mail, é possível que alguém tenha conseguido aceder à tua conta. Muda imediatamente a tua palavra-passe ou entra em contacto com a administração da instância se tiveres ficado sem acesso à tua conta.
-        subject: "Ciberlândia: E-mail alterado"
+        subject: 'Ciberlândia: E-mail alterado'
         title: Novo endereço de e-mail
       password_change:
         explanation: A palavra-passe da tua conta foi alterada.
         extra: Se não pediste para alterar a tua palavra-passe, é possível que alguém tenha conseguido aceder à tua conta. Muda imediatamente a tua palavra-passe ou entra em contacto com a administração da instância se tiveres ficado sem acesso à tua conta.
-        subject: "Ciberlândia: Nova palavra-passe"
+        subject: 'Ciberlândia: Nova palavra-passe'
         title: Palavra-passe alterada
       reconfirmation_instructions:
         explanation: Confirma o teu novo endereço para alterar o e-mail.
         extra: Se esta mudança não foi iniciada por ti, não ligues a esta mensagem. O endereço de e-mail para a tua conta na Ciberlândia não vai mudar enquanto não acederes ao link acima.
-        subject: "Ciberlândia: Confirmação de e-mail %{instance}"
+        subject: 'Ciberlândia: Confirmação de e-mail %{instance}'
         title: Validar o endereço de e-mail
       reset_password_instructions:
         action: Alterar palavra-passe
         explanation: Pediste a alteração da palavra-passe da tua conta.
         extra: Se não fez este pedido, por favor ignore este e-mail. A sua palavra-passe não irá mudar se não aceder ao link acima e criar uma nova.
-        subject: "Ciberlândia: Instruções para alterar a palavra-passe"
+        subject: 'Ciberlândia: Instruções para alterar a palavra-passe'
         title: Solicitar nova palavra-passe
       two_factor_disabled:
         explanation: A autenticação de dois factores para a sua conta foi desativada. É agora possível aceder apenas com o seu endereço de e-mail e palavra-passe.
-        subject: "Ciberlândia: Autenticação de dois factores desactivada"
+        subject: 'Ciberlândia: Autenticação de dois factores desactivada'
         title: 2FA desativado
       two_factor_enabled:
         explanation: A autenticação de dois factores foi ativada para a sua conta. Um token, gerado pela aplicação TOTP emparelhada, será necessário para aceder.
-        subject: "Ciberlândia: Autenticação de dois factores activada"
+        subject: 'Ciberlândia: Autenticação de dois factores activada'
         title: 2FA ativado
       two_factor_recovery_codes_changed:
         explanation: Os códigos de recuperação anteriores foram invalidados e novos foram gerados.
-        subject: "Ciberlândia: Gerados novos códigos de recuperação de dois factores"
+        subject: 'Ciberlândia: Gerados novos códigos de recuperação de dois factores'
         title: Códigos de recuperação 2FA alterados
       unlock_instructions:
-        subject: "Ciberlândia: Instruções para desbloquear a tua conta"
+        subject: 'Ciberlândia: Instruções para desbloquear a tua conta'
       webauthn_credential:
         added:
           explanation: A seguinte chave de segurança foi adicionada à sua conta
-          subject: "Ciberlândia: Nova chave de segurança"
+          subject: 'Ciberlândia: Nova chave de segurança'
           title: Foi adicionada uma nova chave de segurança
         deleted:
           explanation: A seguinte chave de segurança foi eliminada da sua conta
-          subject: "Ciberlândia: Chave de segurança eliminada"
+          subject: 'Ciberlândia: Chave de segurança eliminada'
           title: Uma das suas chaves de segurança foi eliminada
       webauthn_disabled:
         explanation: A autenticação com chave de segurança foi desativada para sua conta. É agora possível aceder à sua conta utilizando apenas o token gerado pelo aplicativo TOTP pareado.
-        subject: "Ciberlândia: Autenticação com chave de segurança desativada"
+        subject: 'Ciberlândia: Autenticação com chave de segurança desativada'
         title: Chaves de segurança desativadas
       webauthn_enabled:
         explanation: A autenticação com chave de segurança foi ativada para sua conta. A sua chave de segurança pode agora ser utilizada para aceder à sua conta.
-        subject: "Ciberlândia: Autenticação com chave de segurança ativada"
+        subject: 'Ciberlândia: Autenticação com chave de segurança ativada'
         title: Chaves de segurança ativadas
     omniauth_callbacks:
       failure: Não foi possível autenticar %{kind} porque "%{reason}".
@@ -111,5 +111,5 @@ pt-PT:
       not_found: não encontrado
       not_locked: não estava bloqueada
       not_saved:
-        one: "1 erro impediu este %{resource} de ser guardado:"
+        one: '1 erro impediu este %{resource} de ser guardado:'
         other: "%{count} erros impediram este %{resource} de ser guardado:"
