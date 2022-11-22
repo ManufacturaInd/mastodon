@@ -502,3 +502,32 @@ div[data-column='getting-started'] .scrollable {
 .simple_form .input.boolean label.checkbox {
   top: -1px;
 }
+
+/* Lighter form badges */
+.account-role,
+.simple_form .glitch_only,
+.simple_form .not_recommended,
+.simple_form .recommended {
+  border: none;
+  border-radius: 0;
+}
+
+/* Log area */
+.log-entry,
+.log-entry:active,
+.log-entry:focus,
+.log-entry:hover {
+  padding: 5px 5px 5px 60px;
+  background: none;
+  border-bottom: none;
+}
+.log-entry__timestamp {
+  color: #54696a;
+  font-size: 12px;
+}
+.log-entry__avatar .avatar {
+  border-radius: 4px;
+  width: 30px;
+  height: 30px;
+  margin-top: 4px;
+}
