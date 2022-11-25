@@ -2,43 +2,6 @@
 */
 
 @font-face {
-  font-family: 'Liberation Sans';
-  src: local('Liberation Sans Italic'),
-    url('fonts/liberation/LiberationSans-Italic-webfont.woff') format('woff');
-  font-weight: normal;
-  font-display: swap;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Liberation Sans';
-  src: local('Liberation Sans Bold'),
-    url('fonts/liberation/LiberationSans-Bold-webfont.woff') format('woff');
-  font-weight: bold;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Liberation Sans';
-  src: local('Liberation Sans Bold Italic'),
-    url('fonts/liberation/LiberationSans-BoldItalic-webfont.woff')
-      format('woff');
-  font-weight: bold;
-  font-display: swap;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Liberation Sans';
-  src: local('Liberation Sans Regular'),
-    url('fonts/liberation/LiberationSans-Regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'Nacelle';
   src: local('Nacelle Regular'),
     url('fonts/nacelle/Nacelle-Regular.woff2') format('woff2');
@@ -80,7 +43,7 @@
   --ciberdark: #06063a;
   --text-color: #2f2f2f;
   --title-font: 'Abril Fatface', 'Nacelle', sans-serif;
-  --text-font: 'Nacelle', 'Liberation Sans', sans-serif;
+  --text-font: 'Nacelle', sans-serif;
   --ciber-radius: 65px;
 }
 
@@ -422,4 +385,52 @@ input[type='email'] {
   -webkit-appearance: none;
   align-items: center;
   border: 2px solid var(--ciberblue);
+}
+
+/* Mobile
+*/
+
+@media only screen and (max-width: 769px) {
+  main,
+  .top-navbar,
+  .regras-etiqueta {
+    display: block;
+  }
+
+  .block,
+  .regras-etiqueta .inner {
+    margin-top: 0.5rem;
+  }
+
+  .inner {
+    padding: 2rem;
+  }
+
+  .top-navbar header {
+    margin-bottom: 0.5rem;
+    padding: 1.5rem;
+  }
+
+  .top-navbar .intro-block {
+    padding: 2rem;
+  }
+
+  .signup p.disabled {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 1344px) {
+  .top-navbar,
+  main {
+    width: 90%;
+    margin: 2rem auto;
+  }
+  .top-navbar {
+    margin: 2rem auto 0.5rem;
+  }
+  main {
+    margin: 0 auto 2rem;
+  }
 }
