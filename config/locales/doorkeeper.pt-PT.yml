@@ -60,11 +60,11 @@ pt-PT:
       error:
         title: Ocorreu um erro
       new:
-        prompt_html: "%{client_name} quer autorização para aceder à sua conta. É uma aplicação externa. <strong>Se não confias nesta aplicação, então não a deves autorizar.</strong>"
+        prompt_html: "%{client_name}, uma aplicação externa, está a pedir-nos autorização para aceder à tua conta. <strong>Se não reconheces ou não confias nesta aplicação, então não a autorizes.</strong>"
         review_permissions: Rever autorizações
-        title: Autorização é necessária
+        title: Autorização necessária
       show:
-        title: Copiar o código desta autorização e colar na aplicação.
+        title: Agora copia o código desta autorização e cola na aplicação.
     authorized_applications:
       buttons:
         revoke: Revogar
