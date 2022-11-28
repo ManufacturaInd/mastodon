@@ -1487,26 +1487,26 @@ pt-PT:
     redirecting_to: A sua conta está a ser redireccionada para %{acct}.
     set_redirect: Definir redireccionamento
     warning:
-      backreference_required: A nova conta deve primeiro ser configurada para que esta seja referenciada
+      backreference_required: A nova conta deve ser configurada com um pseudónimo indicando esta como a fonte
       before: 'Antes de continuar, leia cuidadosamente estas notas:'
-      cooldown: Após a migração, há um período de tempo de espera durante o qual não poderá voltar a migrar
-      disabled_account: Posteriormente, a sua conta actual não será totalmente utilizável. No entanto, continuará a ter acesso à exportação de dados, bem como à reativação.
-      followers: Esta acção irá migrar todos os seguidores da conta actual para a nova conta
-      only_redirect_html: Em alternativa, pode <a href="%{path}">apenas colocar um redireccionamento no seu perfil</a>.
-      other_data: Nenhum outro dado será migrado automaticamente
-      redirect: O perfil da sua conta actual será actualizado com um aviso de redireccionamento e será excluído das pesquisas
+      cooldown: Depois da migração, há um período de tempo de espera durante o qual não podes fazer nova migração
+      disabled_account: No final, a tua conta actual vai ser limitada, mas continuas a ter acesso à exportação de dados e à reactivação.
+      followers: Todos os seguidores vão ser transferidos para a nova conta
+      only_redirect_html: Em alternativa, podes simplesmente <a href="%{path}">colocar um redireccionamento no teu perfil</a>.
+      other_data: Nenhum outro dado vai ser migrado automaticamente
+      redirect: O perfil da tua conta actual vai passar a ter um aviso de redireccionamento e vai ser excluído das pesquisas
   moderation:
     title: Moderação
   move_handler:
-    carry_blocks_over_text: Este utilizador migrou de %{acct}, que você tinha bloqueado.
-    carry_mutes_over_text: Este utilizador migrou de %{acct}, que você tinha silenciado.
-    copy_account_note_text: 'Este utilizador migrou de %{acct}, aqui estão as suas notas anteriores sobre ele:'
+    carry_blocks_over_text: Este utilizador migrou de %{acct}, que tinhas bloqueado.
+    carry_mutes_over_text: Este utilizador migrou de %{acct}, que tinhas silenciado.
+    copy_account_note_text: 'Este utilizador migrou de %{acct}, e estas são as tuas notas anteriores:'
   navigation:
     toggle_menu: Alternar o menu
   notification_mailer:
     admin:
       report:
-        subject: "%{name} submeteu uma denúncia"
+        subject: "%{name} enviou uma denúncia"
       sign_up:
         subject: "%{name} inscreveu-se"
     favourite:
@@ -1514,7 +1514,7 @@ pt-PT:
       subject: "%{name} adicionou a sua publicação aos marcadores"
       title: Novo marcador
     follow:
-      body: "%{name} é teu seguidor!"
+      body: "%{name} está agora a seguir-te!"
       subject: "%{name} começou a seguir-te"
       title: Novo seguidor
     follow_request:
@@ -1816,12 +1816,12 @@ pt-PT:
     enabled: A autenticação de dois factores está activada
     enabled_success: Autenticação de dois factores activada com sucesso
     generate_recovery_codes: Gerar códigos para recuperar conta
-    lost_recovery_codes: Códigos de recuperação permite que você recupere o acesso a sua conta se você perder seu telefone. Se você perder os códigos de recuperação, você pode regera-los aqui. Seus códigos antigos serão invalidados.
+    lost_recovery_codes: Códigos de recuperação permitem que recuperes o acesso à tua conta se perderes o teu telefone. Se perderes os códigos de recuperação, podes gerá-los novamente aqui. Os teus códigos antigos vão ser invalidados.
     methods: Métodos de autenticação de dois factores
     otp: Aplicação de autenticação
     recovery_codes: Cópia de segurança dos códigos de recuperação
-    recovery_codes_regenerated: Códigos de recuperação foram correctamente gerados
-    recovery_instructions_html: Se perder o seu telemóvel, poderá usar um dos códigos de recuperação para voltar a ter acesso à sua conta. <strong>Guarde os códigos de recuperação em lugar seguro</strong>. Por exemplo, pode imprimi-los e guardá-los junto doutros documentos importantes.
+    recovery_codes_regenerated: Códigos de recuperação foram gerados com sucesso
+    recovery_instructions_html: Se alguma vez perderes o teu telefone, podes usar um dos códigos de recuperação para voltares a ter acesso à tua conta. <strong>Mantém os códigos de recuperação seguros</strong>. Por exemplo, podes imprimi-los e guardá-los junto a outros documentos importantes.
     webauthn: Chaves de segurança
   user_mailer:
     appeal_approved:
@@ -1854,19 +1854,19 @@ pt-PT:
         delete_statuses: Algumas das tuas publicações foram consideradas como violando uma ou mais normas da comunidade e foram removidas pelos moderadores de %{instance}.
         disable: Não podes mais utilizar a sua conta, mas o teu perfil e outros dados permanecem intactos. Podes solicitar uma cópia dos teus dados, alterar as definições da conta ou apagá-la.
         mark_statuses_as_sensitive: Algumas das suas publicações foram marcadas como sensíveis pelos moderadores de %{instance}. Isto significa que as pessoas terão de clicar na media nas publicações, antes de ser exibida uma pré-visualização. No futuro, quando publicar, lembre-se que pode você mesmo marcar a media como sensível.
-        sensitive: A partir de agora, todos os ficheiros de media que carregue serão marcados como sensíveis e escondidos atrás de um aviso de "clicar-para-continuar".
-        silence: Pode ainda utilizar a sua conta mas apenas as pessoas que já o seguem poderão ver as suas mensagens neste servidor, e poderá ser excluído de várias funcionalidades de divulgação. No entanto, outros poderão ainda segui-lo manualmente.
+        sensitive: A partir de agora, todos os ficheiros de media que envies vão ser marcados como sensíveis e escondidos atrás de um aviso de "clicar-para-continuar".
+        silence: Podes ainda utilizar a tua conta mas apenas as pessoas que já te seguem poderão ver as tuas mensagens neste servidor, e poderás ser excluído de várias funcionalidades de divulgação. No entanto, outras contas podem ainda seguir-te manualmente.
         suspend: Não pode mais utilizar a sua conta, e o seu perfil e outros dados já não se encontram acessíveis. Poderá ainda iniciar sessão para solicitar uma cópia dos seus dados até os mesmos serem totalmente removidos em cerca de 30 dias, porém reteremos alguns dados básicos para o impedir evitar a suspensão.
       reason: 'Motivo:'
       statuses: 'Publicações citadas:'
       subject:
-        delete_statuses: As suas publicações em %{acct} foram removidas
+        delete_statuses: As tuas publicações em %{acct} foram apagadas
         disable: A tua conta %{acct} foi congelada
-        mark_statuses_as_sensitive: As suas publicações em %{acct} foram marcadas como problemáticas
+        mark_statuses_as_sensitive: As tuas publicações em %{acct} foram marcadas como sensíveis
         none: Aviso para %{acct}
-        sensitive: A partir de agora, as suas publicações em %{acct} serão marcadas como problemáticas
-        silence: A sua conta %{acct} foi limitada
-        suspend: A sua conta %{acct} foi suspensa
+        sensitive: As tuas publicações em %{acct} vão ser marcadas como sensíveis de agora em diante
+        silence: A tua conta %{acct} foi limitada
+        suspend: A tua conta %{acct} foi suspensa
       title:
         delete_statuses: Publicações removidas
         disable: Conta congelada
@@ -1876,21 +1876,21 @@ pt-PT:
         silence: Conta limitada
         suspend: Conta suspensa
     welcome:
-      edit_profile_action: Configurar o perfil
-      edit_profile_step: Pode personalizar o seu perfil carregando uma imagem de perfil, alterando o nome a exibir, entre outras opções. Pode optar por rever os novos seguidores antes de estes o poderem seguir.
-      explanation: Aqui estão algumas dicas para começar
+      edit_profile_action: Editar o teu perfil
+      edit_profile_step: Podes personalizar o teu perfil colocando uma imagem, mudando o nome a mostrar, entre outras opções. Podes optar por rever os novos seguidores antes de estes te poderem seguir.
+      explanation: Algumas dicas para começar
       final_action: Começar a publicar
       final_step: 'Publica já algo! Mesmo sem seguidores, as tuas mensagens públicas podem ser vistas por outros na timeline local e em hashtags. Podes apresentar-te com a hashtag #introductions.'
-      full_handle: O seu nome completo
-      full_handle_hint: Isto é o que tem de facultar aos seus amigos para que eles lhe possam enviar mensagens ou segui-lo a partir de outra instância.
+      full_handle: O teu nome completo
+      full_handle_hint: Passa isto aos teus amigos para que te possam enviar mensagens ou seguir a partir de outra instância.
       subject: Bem-vindo ao Mastodon
-      title: Bem-vindo a bordo, %{name}!
+      title: Olá, %{name}!
   users:
     follow_limit_reached: Não pode seguir mais do que %{limit} pessoas
     go_to_sso_account_settings: Ir para as definições de conta do seu fornecedor de identidade
     invalid_otp_token: Código de autenticação inválido
-    otp_lost_help_html: Se perdeu o acesso a ambos, pode entrar em contacto com %{email}
-    seamless_external_login: Tu estás ligado via um serviço externo. Por isso, as configurações da palavra-passe e do e-mail não estão disponíveis.
+    otp_lost_help_html: Se perdeste o acesso a ambos, podes entrar em contacto com %{email}
+    seamless_external_login: Estás ligado através de um serviço externo. Por isso, as configurações da palavra-passe e do e-mail não estão disponíveis.
     signed_in_as: 'Registado como:'
   verification:
     extra_instructions_html: <strong>Dica:</strong> A ligação no teu site pode ser invisível. A parte importante é <code>rel="me"</code> que impede a personificação em sites com conteúdo gerado pelo utilizador. Podes até utilizar uma etiqueta <code>link</code> no cabeçalho da página em vez de <code>a</code>, mas o HTML deve ser acessível sem executar JavaScript.
