@@ -48,7 +48,8 @@ describe StatusLengthValidator do
     end
 
     it 'does not count non-autolinkable URLs as 23 characters flat' do
-      text   = ('a' * 476) + "http://#{'b' * 30}.com/example"
+      chars = StatusLengthValidator::MAX_CHARS - 1 - 23
+      text   = ('a' * chars) + "http://#{'b' * 30}.com/example"
       status = double(spoiler_text: '', text: text, errors: double(add: nil), local?: true, reblog?: false)
 
       subject.validate(status)
