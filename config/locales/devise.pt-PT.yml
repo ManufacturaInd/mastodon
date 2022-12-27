@@ -21,7 +21,7 @@ pt-PT:
         action: Verificar o teu endereço de e-mail
         action_with_app: Confirmar e regressar a %{app}
         explanation: Criaste uma conta na Ciberlândia com este endereço de e-mail, não foi? O botão abaixo vai levar-te ao próximo passo.
-        explanation_when_pending: Pediste um convite para %{host} com este endereço de e-mail. Logo que confirmes o teu endereço de e-mail, vamos rever a tua inscrição. Podes iniciar sessão para alterar os teus dados ou eliminar a tua conta, mas não vais poder aceder à maioria das funções até à tua conta ser aprovada. Se a tua inscrição não for aceite, os teus dados vão ser eliminados. Se não solicitaste este convite, por favor não ligues a este e-mail.
+        explanation_when_pending: Pediste um convite para a Ciberlândia com este endereço de e-mail. Logo que o valides no link abaixo, vamos rever a tua inscrição. Podes iniciar sessão para alterar os teus dados ou eliminar a tua conta, mas não vais poder aceder à maioria das funções até à tua conta ser aprovada. Se a tua inscrição não for aceite, os teus dados vão ser eliminados. Se não solicitaste este convite, por favor não ligues a este e-mail.
         extra_html: Por favor lê <a href="%{terms_path}">as regras da instância</a> e os <a href="%{policy_path}">termos de serviço</a>.
         subject: 'Ciberlândia: Instruções de confirmação %{instance}'
         title: Verificar o endereço de e-mail
