@@ -19,7 +19,7 @@ pt-PT:
         description_html: Estás prestes a importar uma lista de bloqueios de domínios. Revê essa lista com cuidado, especialmente se não foste tu a criá-la.
         existing_relationships_warning: Relações de seguidores existentes
         private_comment_description_html: 'Para te ajudar a seguir de onde vêm os bloqueios importados, cada bloqueio importado vai ser criado com um comentário privado: <q>%{comment}</q>'
-        private_comment_template: Importado de %{source} em %{date}
+        private_comment_template: 'Importado de %{source} em %{date}'
         title: Importar bloqueios de domínio
       new:
         title: Importar bloqueios de domínio
