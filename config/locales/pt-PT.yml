@@ -645,7 +645,7 @@ pt-PT:
         silence_description_html: O perfil será visível apenas para aqueles que já o seguem ou o procurem manualmente, limitando severamente o seu alcance. Pode sempre ser revertido.
         suspend_description_html: O perfil e todo o seu conteúdo tornar-se-ão inacessíveis até serem eventualmente apagados. A interacção com a conta será impossível. Reversível no prazo de 30 dias.
       actions_description_html: Decide a acção a tomar para resolver esta denúncia. Se decidires por uma acção punitiva contra a conta denunciada, vai ser enviado um e-mail de notificação, exceto quando seleccionada a categoria <strong>Spam</strong>.
-      actions_description_remote_html: Decide a acção a tomar para resolver esta denúncia. Isso apenas afetará como <strong>o teu</strong> servidor comunica com esta conta remota e gere o seu conteúdo.
+      actions_description_remote_html: Decide a acção a tomar para resolver esta denúncia. Isto só vai afectar como <strong>o teu</strong> servidor comunica com esta conta remota e lida com o seu conteúdo.
       add_to_report: Juntar à denúncia
       are_you_sure: Tem a certeza?
       assign_to_self: Atribuída a mim
@@ -675,8 +675,8 @@ pt-PT:
         placeholder: Descreve as acções que foram tomadas ou quaisquer outras actualizações relacionadas...
         title: Notas
       notes_description_html: Visualiza e deixa anotações para outros moderadores e para ti no futuro
-      processed_msg: 'Relatório #%{id} processado com sucesso'
-      quick_actions_description_html: 'Tome uma acção rápida ou role para baixo para ver o conteúdo denunciado:'
+      processed_msg: 'Relatório #%{id} processado'
+      quick_actions_description_html: 'Toma uma acção rápida ou vê o conteúdo denunciado abaixo:'
       remote_user_placeholder: o utilizador remoto de %{instance}
       reopen: Reabrir denúncia
       report: 'Denúncia #%{id}'
