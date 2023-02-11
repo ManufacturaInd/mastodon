@@ -641,7 +641,7 @@ pt-PT:
         delete_description_html: As publicações denunciadas vão ser eliminadas e uma advertência vai ser registada para ajudar a escalar acções em futuras infracções.
         mark_as_sensitive_description_html: Os media nas publicações denunciadas vão ser marcados como sensíveis e uma advertência será registada para ajudar a escalar acções em futuras infracções.
         other_description_html: Ver mais opções para controlar o comportamento da conta e personalizar a comunicação para a conta denunciada.
-        resolve_description_html: Nenhuma acção vai ser tomada contra a conta denunciada, nenhuma advertência será registada, e a denuncia será fechada.
+        resolve_description_html: Nenhuma acção vai ser tomada contra a conta denunciada, nenhuma advertência será registada, e a denúncia será fechada.
         silence_description_html: O perfil será visível apenas para aqueles que já o seguem ou o procurem manualmente, limitando severamente o seu alcance. Pode sempre ser revertido.
         suspend_description_html: O perfil e todo o seu conteúdo tornar-se-ão inacessíveis até serem eventualmente apagados. A interacção com a conta será impossível. Reversível no prazo de 30 dias.
       actions_description_html: Decide a acção a tomar para resolver esta denúncia. Se decidires por uma acção punitiva contra a conta denunciada, vai ser enviado um e-mail de notificação, exceto quando seleccionada a categoria <strong>Spam</strong>.
