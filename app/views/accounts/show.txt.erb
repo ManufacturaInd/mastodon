@@ -1,6 +1,6 @@
 <% @statuses.each do |status| %>
 <% plain_text_status = (extract_status_plain_text status).gsub("\n", " ") %>
 <% if !plain_text_status.empty? %>
-<%= status.created_at.rfc3339 %>      <%= plain_text_status %>
+<%= status.created_at.rfc3339 %>	<%= plain_text_status %>
 <% end %>
 <% end %>
