@@ -1081,6 +1081,11 @@ pt-PT:
     migrate_account_html: Se quiseres redireccionar esta conta para uma outra, podes <a href="%{path}">configurar isso aqui</a>.
     or_log_in_with: Ou iniciar sessão com
     privacy_policy_agreement_html: Eu li e concordo com a <a href="%{privacy_policy_path}" target="_blank">política de privacidade</a>
+    progress:
+      confirm: Confirmar
+      details: Detalhes
+      review: Rever
+      rules: Regras
     providers:
       cas: CAS
       saml: SAML
@@ -1105,6 +1110,7 @@ pt-PT:
     sign_up:
       preamble: Com uma conta na Ciberlândia, podes seguir qualquer outra pessoa no fediverso Mastodon, independentemente do servidor onde a conta esteja alojada.
       title: Vamos lá inscrever-te na Ciberlândia.
+      manual_review: Porque te queres juntar à Ciberlândia? (é uma pergunta a sério e estamos interessados na resposta)
     status:
       account_status: Estado da conta
       confirming: A aguardar que concluas a confirmação do e-mail.
