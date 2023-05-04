@@ -1115,10 +1115,10 @@ pt-PT:
     or_log_in_with: Ou iniciar sessão com
     privacy_policy_agreement_html: Eu li e concordo com a <a href="%{privacy_policy_path}" target="_blank">política de privacidade</a>
     progress:
-      confirm: Confirmar e-mail
-      details: Os seus dados
-      review: A nossa avaliação
-      rules: Aceitar regras
+      confirm: Confirmar
+      details: Detalhes
+      review: Rever
+      rules: Regras
     providers:
       cas: CAS
       saml: SAML
@@ -1149,6 +1149,7 @@ pt-PT:
       manual_review: Inscrições no %{domain} passam por uma revisão manual pelos nossos moderadores. Para nos ajudar a processar o seu pedido de inscrição, escreva um pouco sobre si e o porquê de quer uma conta no %{domain}.
       preamble: Com uma conta na Ciberlândia, podes seguir qualquer outra pessoa no fediverso Mastodon, independentemente do servidor onde a conta esteja alojada.
       title: Vamos lá inscrever-te na Ciberlândia.
+      manual_review: Porque te queres juntar à Ciberlândia? (é uma pergunta a sério e estamos interessados na resposta)
     status:
       account_status: Estado da conta
       confirming: A aguardar que concluas a confirmação do e-mail.
