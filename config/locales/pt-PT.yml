@@ -1091,7 +1091,7 @@ pt-PT:
       saml: SAML
     register: Criar uma conta
     registration_closed: "%{instance} não está a aceitar novos membros"
-    resend_confirmation: Reenviar instruções de confirmação
+    resend_confirmation: Reenviar link de confirmação
     reset_password: Criar nova palavra-passe
     rules:
       accept: Aceitar
@@ -1101,8 +1101,10 @@ pt-PT:
     security: Mudar palavra-passe
     set_new_password: Editar palavra-passe
     setup:
-      email_below_hint_html: Se o endereço de e-mail abaixo não estiver correcto, podes alterá-lo aqui e receber um novo e-mail de confirmação.
-      email_settings_hint_html: O e-mail de confirmação foi enviado para %{email}. Se esse endereço de e-mail não estiver correcto, podes alterá-lo nas definições da tua conta.
+      email_below_hint_html: Se o endereço de e-mail abaixo estiver incorreto, pode alterá-lo aqui e receber um novo e-mail de confirmação.
+      email_settings_hint_html: O e-mail de confirmação foi enviado para %{email}. Se esse endereço de e-mail não estiver correto, pode alterá-lo nas definições da conta.
+      link_not_received: Não recebeu um link?
+      new_confirmation_instructions_sent: Receberá um novo e-mail com o link de confirmação daqui a poucos minutos!
       title: Configuração
     sign_in:
       preamble_html: Iniciar sessão com as suas credenciais de <strong>%{domain}</strong>. Se a sua conta estiver hospedada noutro servidor, não poderá iniciar sessão aqui.
