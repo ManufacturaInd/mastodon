@@ -1,6 +1,7 @@
 ---
 pt-PT:
   simple_form:
+    glitch_only: Glitch
     hints:
       account_alias:
         acct: Indica o utilizador@domínio da conta de onde pretendes migrar
