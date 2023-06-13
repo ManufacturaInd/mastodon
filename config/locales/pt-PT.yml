@@ -860,7 +860,7 @@ pt-PT:
       media:
         title: Media
       metadata: Metadados
-      no_status_selected: Nenhum estado foi alterado porque nenhum foi selecionado
+      no_status_selected: Nenhum estado foi alterado porque nenhum foi seleccionado
       open: Abrir publicação
       original_status: Publicação original
       reblogs: Re-publicacões
@@ -1835,8 +1835,8 @@ pt-PT:
       subject: O seu recurso de %{date} foi rejeitado
       title: Recurso rejeitado
     backup_ready:
-      explanation: Pediu uma cópia integral de salvaguarda da sua conta Mastodon. Já está pronta para descarregar!
-      subject: O seu arquivo está pronto para descarregar
+      explanation: Pediste uma cópia integral de backup da tua conta. Já está pronta para descarregar!
+      subject: O teu arquivo está pronto para descarregar
       title: Arquivo de ficheiros
     suspicious_sign_in:
       change_password: mudes a tua palavra-passe
