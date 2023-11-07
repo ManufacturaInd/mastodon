@@ -578,6 +578,7 @@ cy:
       total_reported: Adroddiadau amdanyn nhw
       total_storage: Atodiadau cyfryngau
       totals_time_period_hint_html: Mae'r cyfansymiau sy'n cael eu dangos isod yn cynnwys data am y cyfnod cyfan.
+      unknown_instance: Nid oes cofnod o'r parth hwn ar y gweinydd hwn ar hyn o bryd.
     invites:
       deactivate_all: Dadweithredu popeth
       filter:
@@ -1866,6 +1867,7 @@ cy:
       default: "%b %d, %Y, %H:%M"
       month: "%b %Y"
       time: "%H:%M"
+      with_time_zone: "%b %d, %Y, %H:%M %Z"
   translation:
     errors:
       quota_exceeded: Aethpwyd y tu hwnt i gwota defnydd y gweinydd cyfan ar gyfer y gwasanaeth cyfieithu.

@@ -586,6 +586,7 @@ pt-PT:
       total_reported: Denúncias sobre eles
       total_storage: Anexos de media
       totals_time_period_hint_html: Os totais exibidos abaixo incluem dados referentes ao tempo total.
+      unknown_instance: Atualmente não há registo deste domínio neste servidor.
     invites:
       deactivate_all: Desactivar todos
       filter:
@@ -1156,6 +1157,7 @@ pt-PT:
       functional: A tua conta está totalmente operacional.
       pending: A tua inscrição está à espera de revisão pela nossa equipa, o que pode demorar algum tempo. Vais receber um e-mail se a tua conta for aprovada.
       redirecting_to: A tua conta está inactiva porque está actualmente a ser redireccionada para %{acct}.
+      self_destruct: Como a Ciberlândia vai fechar, o acesso à tua conta é limitado.
       view_strikes: Vê as advertências contra a tua conta
     too_fast: Formulário enviado demasiado rapidamente, tenta outra vez.
     trouble_logging_in: Problemas a iniciar sessão?
@@ -1633,8 +1635,9 @@ pt-PT:
     over_daily_limit: Excedeste o limite de %{limit} publicações agendadas para esse dia
     over_total_limit: Excedeste o limite total de %{limit} publicações agendadas
     too_soon: A data de agendamento tem de ser futura
-  search:
-    search_or_paste: Pesquisar...
+  self_destruct:
+    lead_html: Infelizmente, a Ciberlândia vai fechar. Se tens uma conta não vais poder continuar a usá-la, mas ainda podes pedir uma cópia dos teus dados.
+    title: Este servidor vai fechar
   sessions:
     activity: Última actividade
     browser: Navegador

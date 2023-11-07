@@ -1,7 +1,7 @@
 ---
 sl:
   about:
-    about_mastodon_html: 'Družbeno omrežje prihodnosti: brez oglasov, brez nadzora korporacij, etično oblikovanje in decentralizacija! Ohranite lastništvo nad svojimi podatki z Mastodonom!'
+    about_mastodon_html: 'Družbeno omrežje prihodnosti: brez oglasov, brez nadzora korporacij, etično oblikovano in decentralizirano! Ohranite lastništvo nad svojimi podatki z Mastodonom!'
     contact_missing: Ni nastavljeno
     contact_unavailable: Ni na voljo
     hosted_on: Mastodon gostuje na %{domain}
@@ -869,6 +869,7 @@ sl:
         action: Glejte razpoložljive posodobitve
       software_version_patch_check:
         action: Glejte razpoložljive posodobitve
+        message_html: Na voljo je posodobitev Mastodona s popravki hroščev.
       upload_check_privacy_error:
         action: Preverite tukaj za več informacij
         message_html: "<strong>Vaš spletni strežnik je napačno nastavljen. Zasebnost vaših uporabnikov je izpostavljena tveganjem.</strong>"
