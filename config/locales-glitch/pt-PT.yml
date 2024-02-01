@@ -56,8 +56,6 @@ pt-PT:
     captcha_confirmation:
       hint_html: Só mais um passo! Para confirmares a tua conta, este servidor exige que resolvas um CAPTCHA. Podes <a href="/about/more">entrar em contacto com o administrador do servidor</a> se tiveres dúvidas ou precisares de ajuda.
       title: Verificação
-  compose_form:
-    spoiler: Esconder o texto por trás de um aviso de conteúdo
   generic:
     use_this: Usar isto
   settings:
