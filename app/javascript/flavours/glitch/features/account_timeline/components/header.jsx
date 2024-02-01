@@ -7,9 +7,10 @@ import { NavLink, withRouter } from 'react-router-dom';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import ImmutablePureComponent from 'react-immutable-pure-component';
 
-import ActionBar from 'flavours/glitch/features/account/components/action_bar';
-import InnerHeader from 'flavours/glitch/features/account/components/header';
 import { WithRouterPropTypes } from 'flavours/glitch/utils/react_router';
+
+import ActionBar from '../../account/components/action_bar';
+import InnerHeader from '../../account/components/header';
 
 import MemorialNote from './memorial_note';
 import MovedNote from './moved_note';
@@ -17,7 +18,7 @@ import MovedNote from './moved_note';
 class Header extends ImmutablePureComponent {
 
   static propTypes = {
-    account: ImmutablePropTypes.map,
+    account: ImmutablePropTypes.record,
     onFollow: PropTypes.func.isRequired,
     onBlock: PropTypes.func.isRequired,
     onMention: PropTypes.func.isRequired,

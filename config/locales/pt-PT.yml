@@ -477,6 +477,7 @@ pt-PT:
       view: Ver domínios bloqueados
     email_domain_blocks:
       add_new: Adicionar novo
+      allow_registrations_with_approval: Permitir inscrições com aprovação
       attempts_over_week:
         one: "%{count} tentativa na última semana"
         other: "%{count} tentativas de inscrição na última semana"
@@ -663,6 +664,7 @@ pt-PT:
       created_at: Denunciado
       delete_and_resolve: Eliminar publicações
       forwarded: Encaminhado
+      forwarded_replies_explanation: Esta denúncia é de um utilizador remoto e sobre conteúdo remoto. Foi encaminhada para si porque o conteúdo denunciado é em resposta a um dos seus utilizadores.
       forwarded_to: Encaminhado para %{domain}
       mark_as_resolved: Marcar como resolvido
       mark_as_sensitive: Marcar como problemático
@@ -1095,6 +1097,14 @@ pt-PT:
       title: Verificação de segurança
     change_password: Palavra-passe
     confirmations:
+      awaiting_review: O seu endereço de correio eletrónico foi confirmado! A equipa %{domain} está agora a rever a sua inscrição. Receberá uma mensagem de correio eletrónico se aprovarem a sua conta!
+      awaiting_review_title: A sua inscrição está a ser revista
+      clicking_this_link: clicar nesta hiperligação
+      login_link: iniciar sessão
+      proceed_to_login_html: Pode agora prosseguir para %{login_link}.
+      redirect_to_app_html: Devia ter sido reencaminhado para a aplicação <strong>%{app_name}</strong>. Se isso não aconteceu, tente %{clicking_this_link} ou volte manualmente para a aplicação.
+      registration_complete: O seu registo sem %{domain} está agora concluído!
+      welcome_title: Bem-vindo(a), %{name}!
       wrong_email_hint: Se esse endereço de e-mail não estiver correcto, poderás alterá-lo nas configurações da conta.
     delete_account: Apagar conta
     delete_account_html: Se quiseres eliminar a tua conta, podes <a href="%{path}">continuar aqui</a> para confirmar.
@@ -1423,6 +1433,7 @@ pt-PT:
       '86400': 1 dia
     expires_in_prompt: Nunca
     generate: Gerar
+    invalid: Este convite não é válido
     invited_by: 'Foste convidado por:'
     max_uses:
       one: 1 uso
@@ -1600,6 +1611,9 @@ pt-PT:
     errors:
       limit_reached: Alcançado limite de reações diferentes
       unrecognized_emoji: não é um emoji reconhecido
+  redirects:
+    prompt: Se confia nesta hiperligação, clique nela para continuar.
+    title: Está a deixar %{instance}.
   relationships:
     activity: Actividade da conta
     confirm_follow_selected_followers: De certeza que queres seguir os seguidores seleccionados?
@@ -1662,6 +1676,7 @@ pt-PT:
       unknown_browser: Navegador Desconhecido
       weibo: Weibo
     current_session: Sessão actual
+    date: Data
     description: "%{browser} em %{platform}"
     explanation: Estes são os navegadores que estão com sessão iniciada na tua conta do Mastodon.
     ip: IP
@@ -1832,15 +1847,24 @@ pt-PT:
       action: Ir para a sua conta
       explanation: O recurso à advertência contra a tua conta de %{strike_date}, que enviaste a %{appeal_date}, foi aceite. A tua conta encontra-se novamente em situação regular.
       subject: O teu recurso de %{date} foi aceite
+      subtitle: A tua conta está novamente em situação regular.
       title: Recurso aceite
     appeal_rejected:
       explanation: O recurso à advertência contra a tua conta de %{strike_date}, que enviaste a %{appeal_date}, foi rejeitado.
-      subject: O seu recurso de %{date} foi rejeitado
+      subject: O teu recurso de %{date} foi rejeitado
+      subtitle: O teu recurso foi rejeitado.
       title: Recurso rejeitado
     backup_ready:
       explanation: Pediste uma cópia integral de backup da tua conta. Já está pronta para descarregar!
+      extra: Está pronta para transferir!
       subject: O teu arquivo está pronto para descarregar
       title: Arquivo de ficheiros
+    failed_2fa:
+      details: 'Aqui estão os detalhes da tentativa de entrada:'
+      explanation: Alguém tentou entrar em sua conta mas forneceu um segundo fator de autenticação inválido.
+      further_actions_html: Se não foi você, recomendamos que %{action} imediatamente, pois pode ter sido comprometido.
+      subject: Falha na autenticação do segundo fator
+      title: Falha na autenticação do segundo fator
     suspicious_sign_in:
       change_password: mudes a tua palavra-passe
       details: 'Aqui estão os pormenores:'
@@ -1894,6 +1918,7 @@ pt-PT:
     go_to_sso_account_settings: Ir para as definições de conta do seu fornecedor de identidade
     invalid_otp_token: Código de autenticação inválido
     otp_lost_help_html: Se perdeste o acesso a ambos, podes entrar em contacto com %{email}
+    rate_limited: Demasiadas tentativas de autenticação. Tenta novamente mais tarde.
     seamless_external_login: Estás ligado através de um serviço externo. Por isso, as configurações da palavra-passe e do e-mail não estão disponíveis.
     signed_in_as: 'Registado como:'
   verification:

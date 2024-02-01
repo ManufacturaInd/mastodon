@@ -49,14 +49,17 @@ pt-PT:
       two_factor_disabled:
         explanation: A autenticação de dois factores para a sua conta foi desativada. É agora possível aceder apenas com o seu endereço de e-mail e palavra-passe.
         subject: 'Ciberlândia: Autenticação de dois factores desactivada'
+        subtitle: A autenticação de dois factores foi desactivada para a sua conta.
         title: 2FA desativado
       two_factor_enabled:
         explanation: A autenticação de dois factores foi ativada para a sua conta. Um token, gerado pela aplicação TOTP emparelhada, será necessário para aceder.
         subject: 'Ciberlândia: Autenticação de dois factores activada'
+        subtitle: A autenticação de dois factores foi activada para sua conta.
         title: 2FA ativado
       two_factor_recovery_codes_changed:
         explanation: Os códigos de recuperação anteriores foram invalidados e novos foram gerados.
         subject: 'Ciberlândia: Gerados novos códigos de recuperação de dois factores'
+        subtitle: Os códigos de recuperação anteriores foram invalidados e foram gerados novos.
         title: Códigos de recuperação 2FA alterados
       unlock_instructions:
         subject: 'Ciberlândia: Instruções para desbloquear a tua conta'
@@ -70,12 +73,14 @@ pt-PT:
           subject: 'Ciberlândia: Chave de segurança eliminada'
           title: Uma das suas chaves de segurança foi eliminada
       webauthn_disabled:
-        explanation: A autenticação com chave de segurança foi desativada para sua conta. É agora possível aceder à sua conta utilizando apenas o token gerado pelo aplicativo TOTP pareado.
-        subject: 'Ciberlândia: Autenticação com chave de segurança desativada'
-        title: Chaves de segurança desativadas
+        explanation: A autenticação com chave de segurança foi desactivada para sua conta. É agora possível aceder à sua conta utilizando apenas o token gerado pelo aplicativo TOTP configurado.
+        extra: Agora o login só é possível usando o token gerado pelo aplicativo TOTP configurado.
+        subject: 'Ciberlândia: Autenticação com chave de segurança desactivada'
+        title: Chaves de segurança desactivadas
       webauthn_enabled:
-        explanation: A autenticação com chave de segurança foi ativada para sua conta. A sua chave de segurança pode agora ser utilizada para aceder à sua conta.
-        subject: 'Ciberlândia: Autenticação com chave de segurança ativada'
+        explanation: A autenticação com chave de segurança foi activada para sua conta. A sua chave de segurança pode agora ser utilizada para aceder à sua conta.
+        extra: Agora a sua chave de segurança pode ser usada para login.
+        subject: 'Ciberlândia: Autenticação com chave de segurança activada'
         title: Chaves de segurança ativadas
     omniauth_callbacks:
       failure: Não foi possível autenticar %{kind} porque "%{reason}".

@@ -9,11 +9,17 @@ import { withRouter } from 'react-router-dom';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { connect } from 'react-redux';
 
+import ImageIcon from '@/material-icons/400-24px/image.svg?react';
+import InsertChartIcon from '@/material-icons/400-24px/insert_chart.svg?react';
+import LinkIcon from '@/material-icons/400-24px/link.svg?react';
+import MovieIcon from '@/material-icons/400-24px/movie.svg?react';
+import MusicNoteIcon from '@/material-icons/400-24px/music_note.svg?react';
 import { Icon } from 'flavours/glitch/components/icon';
 import { autoPlayGif, languages as preloadedLanguages } from 'flavours/glitch/initial_state';
 import { decode as decodeIDNA } from 'flavours/glitch/utils/idna';
 
-import Permalink from './permalink';
+
+import { Permalink } from './permalink';
 
 const textMatchesTarget = (text, origin, host) => {
   return (text === origin || text === host
@@ -69,6 +75,15 @@ const isLinkMisleading = (link) => {
   return !(textMatchesTarget(text, origin, host) || textMatchesTarget(text.toLowerCase(), origin, host));
 };
 
+/**
+ *
+ * @param {any} status
+ * @returns {string}
+ */
+export function getStatusContent(status) {
+  return status.getIn(['translation', 'contentHtml']) || status.get('contentHtml');
+}
+
 class TranslateButton extends PureComponent {
 
   static propTypes = {
@@ -118,6 +133,7 @@ class StatusContent extends PureComponent {
 
   static propTypes = {
     status: ImmutablePropTypes.map.isRequired,
+    statusContent: PropTypes.string,
     expanded: PropTypes.bool,
     collapsed: PropTypes.bool,
     onExpandedToggle: PropTypes.func,
@@ -327,6 +343,7 @@ class StatusContent extends PureComponent {
       tagLinks,
       rewriteMentions,
       intl,
+      statusContent,
     } = this.props;
 
     const hidden = this.props.onExpandedToggle ? !this.props.expanded : this.state.hidden;
@@ -334,7 +351,7 @@ class StatusContent extends PureComponent {
     const targetLanguages = this.props.languages?.get(status.get('language') || 'und');
     const renderTranslate = this.props.onTranslate && this.context.identity.signedIn && ['public', 'unlisted'].includes(status.get('visibility')) && status.get('search_index').trim().length > 0 && targetLanguages?.includes(contentLocale);
 
-    const content = { __html: status.getIn(['translation', 'contentHtml']) || status.get('contentHtml') };
+    const content = { __html: statusContent ?? getStatusContent(status) };
     const spoilerContent = { __html: status.getIn(['translation', 'spoilerHtml']) || status.get('spoilerHtml') };
     const language = status.getIn(['translation', 'language']) || status.get('language');
     const classNames = classnames('status__content', {
@@ -370,12 +387,21 @@ class StatusContent extends PureComponent {
           />,
         ];
         if (mediaIcons) {
+          const mediaComponents = {
+            'link': LinkIcon,
+            'picture-o': ImageIcon,
+            'tasks': InsertChartIcon,
+            'video-camera': MovieIcon,
+            'music': MusicNoteIcon,
+          };
+
           mediaIcons.forEach((mediaIcon, idx) => {
             toggleText.push(
               <Icon
                 fixedWidth
                 className='status__content__spoiler-icon'
                 id={mediaIcon}
+                icon={mediaComponents[mediaIcon]}
                 aria-hidden='true'
                 key={`icon-${idx}`}
               />,
