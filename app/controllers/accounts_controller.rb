@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class AccountsController < ApplicationController
+  OFFSET        = 0
   PAGE_SIZE     = 20
   PAGE_SIZE_MAX = 200
 
@@ -24,7 +25,8 @@ class AccountsController < ApplicationController
         expires_in 1.minute, public: true
 
         limit     = params[:limit].present? ? [params[:limit].to_i, PAGE_SIZE_MAX].min : PAGE_SIZE
-        @statuses = filtered_statuses.without_reblogs.limit(limit)
+        offset    = params[:offset].present? ? params[:offset].to_i : OFFSET
+        @statuses = filtered_statuses.without_reblogs.limit(limit).offset(offset)
         @statuses = cache_collection(@statuses, Status)
       end
 

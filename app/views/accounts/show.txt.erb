@@ -10,10 +10,17 @@
 # and human interaction in general, mainly in Portuguese language.
 # Learn more at https://ciberlandia.pt
 #
-# By default you will only see the 20 most recent statuses. If you want to see
-# more, add the parameter "limit" to your URL. For instance, if you want 1000
-# statuses, do it like this:
-# <%= account_url %>.txt?limit=1000
+# By default, you will only see the 20 most recent statuses.
+#
+# You can also set parameters "limit" and "offset" in your query string if
+# you want to fetch more statuses. Please note that you can only fetch up
+# to 200 statuses at a time. 
+#
+# E.g. to get the latest 200 statuses:
+# <%= account_url %>.txt?limit=200
+#
+# E.g. to skip the latest 200 status, and fetch the 200 previous ones:
+# <%= account_url %>.txt?offset=200&limit=200
 #
 # nick        = @<%= @account.local_username_and_domain %>
 # url         = <%= account_url %>.txt
