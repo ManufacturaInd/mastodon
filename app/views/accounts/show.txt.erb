@@ -35,7 +35,7 @@
 <%     plain_text_status += " ![#{media_description}](#{media_url})" %>
 <%   end %>
 <%   if !plain_text_status.empty? %>
-<%     plain_text_status = " [#{status.id}] #{plain_text_status}" %>
+<%     plain_text_status = " (\##{status.id}) #{plain_text_status}" %>
 <%=    status.created_at.rfc3339 %>	<%= plain_text_status %>
 <%   end %>
 <% end %>
