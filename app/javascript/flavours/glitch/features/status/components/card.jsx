@@ -13,6 +13,7 @@ import OpenInNewIcon from '@/material-icons/400-24px/open_in_new.svg?react';
 import PlayArrowIcon from '@/material-icons/400-24px/play_arrow-fill.svg?react';
 import { Blurhash } from 'flavours/glitch/components/blurhash';
 import { Icon }  from 'flavours/glitch/components/icon';
+import { MoreFromAuthor } from 'flavours/glitch/components/more_from_author';
 import { RelativeTimestamp } from 'flavours/glitch/components/relative_timestamp';
 import { useBlurhash } from 'flavours/glitch/initial_state';
 import { decode as decodeIDNA } from 'flavours/glitch/utils/idna';
@@ -82,6 +83,10 @@ export default class Card extends PureComponent {
     this.setState({ embedded: true });
   };
 
+  handleExternalLinkClick = (e) => {
+    e.stopPropagation();
+  };
+
   setRef = c => {
     this.node = c;
   };
@@ -122,6 +127,7 @@ export default class Card extends PureComponent {
     const interactive = card.get('type') === 'video';
     const language    = card.get('language') || '';
     const largeImage  = (card.get('image')?.length > 0 && card.get('width') > card.get('height')) || interactive;
+    const showAuthor  = !!card.getIn(['authors', 0, 'accountId']);
 
     const description = (
       <div className='status-card__content'>
@@ -132,7 +138,7 @@ export default class Card extends PureComponent {
 
         <strong className='status-card__title' title={card.get('title')} lang={language}>{card.get('title')}</strong>
 
-        {card.get('author_name').length > 0 ? <span className='status-card__author'><FormattedMessage id='link_preview.author' defaultMessage='By {name}' values={{ name: <strong>{card.get('author_name')}</strong> }} /></span> : <span className='status-card__description' lang={language}>{card.get('description')}</span>}
+        {!showAuthor && (card.get('author_name').length > 0 ? <span className='status-card__author'><FormattedMessage id='link_preview.author' defaultMessage='By {name}' values={{ name: <strong>{card.get('author_name')}</strong> }} /></span> : <span className='status-card__description' lang={language}>{card.get('description')}</span>)}
       </div>
     );
 
@@ -191,7 +197,7 @@ export default class Card extends PureComponent {
               <div className='status-card__actions' onClick={this.handleEmbedClick} role='none'>
                 <div>
                   <button type='button' onClick={this.handleEmbedClick}><Icon id='play' icon={PlayArrowIcon} /></button>
-                  <a href={card.get('url')} target='_blank' rel='noopener noreferrer'><Icon id='external-link' icon={OpenInNewIcon} /></a>
+                  <a href={card.get('url')} onClick={this.handleExternalLinkClick} target='_blank' rel='noopener noreferrer'><Icon id='external-link' icon={OpenInNewIcon} /></a>
                 </div>
               </div>
             ) : spoilerButton}
@@ -221,10 +227,14 @@ export default class Card extends PureComponent {
     }
 
     return (
-      <a href={card.get('url')} className={classNames('status-card', { expanded: largeImage })} target='_blank' rel='noopener noreferrer' ref={this.setRef}>
-        {embed}
-        {description}
-      </a>
+      <>
+        <a href={card.get('url')} className={classNames('status-card', { expanded: largeImage, bottomless: showAuthor })} target='_blank' rel='noopener noreferrer' ref={this.setRef}>
+          {embed}
+          {description}
+        </a>
+
+        {showAuthor && <MoreFromAuthor accountId={card.getIn(['authors', 0, 'accountId'])} />}
+      </>
     );
   }
 

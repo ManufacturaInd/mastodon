@@ -15,8 +15,10 @@ import { HotKeys } from 'react-hotkeys';
 import { changeLayout } from 'flavours/glitch/actions/app';
 import { synchronouslySubmitMarkers, submitMarkers, fetchMarkers } from 'flavours/glitch/actions/markers';
 import { INTRODUCTION_VERSION } from 'flavours/glitch/actions/onboarding';
+import { HoverCardController } from 'flavours/glitch/components/hover_card_controller';
 import { Permalink } from 'flavours/glitch/components/permalink';
-import PictureInPicture from 'flavours/glitch/features/picture_in_picture';
+import { PictureInPicture } from 'flavours/glitch/features/picture_in_picture';
+import { identityContextPropShape, withIdentity } from 'flavours/glitch/identity_context';
 import { layoutFromWindow } from 'flavours/glitch/is_mobile';
 import { WithRouterPropTypes } from 'flavours/glitch/utils/react_router';
 
@@ -50,10 +52,13 @@ import {
   DirectTimeline,
   HashtagTimeline,
   Notifications,
+  NotificationRequests,
+  NotificationRequest,
   FollowRequests,
   FavouritedStatuses,
   BookmarkedStatuses,
   FollowedTags,
+  LinkTimeline,
   ListTimeline,
   Blocks,
   DomainBlocks,
@@ -83,7 +88,6 @@ const mapStateToProps = state => ({
   hasMediaAttachments: state.getIn(['compose', 'media_attachments']).size > 0,
   canUploadMore: !state.getIn(['compose', 'media_attachments']).some(x => ['audio', 'video'].includes(x.get('type'))) && state.getIn(['compose', 'media_attachments']).size < 4,
   isWide: state.getIn(['local_settings', 'stretch']),
-  dropdownMenuIsOpen: state.dropdownMenu.openId !== null,
   unreadNotifications: state.getIn(['notifications', 'unread']),
   showFaviconBadge: state.getIn(['local_settings', 'notifications', 'favicon_badge']),
   hicolorPrivacyIcons: state.getIn(['local_settings', 'hicolor_privacy_icons']),
@@ -95,7 +99,7 @@ const mapStateToProps = state => ({
 const keyMap = {
   help: '?',
   new: 'n',
-  search: 's',
+  search: ['s', '/'],
   forceNew: 'option+n',
   toggleComposeSpoilers: 'option+x',
   focusColumn: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
@@ -128,12 +132,8 @@ const keyMap = {
 };
 
 class SwitchingColumnsArea extends PureComponent {
-
-  static contextTypes = {
-    identity: PropTypes.object,
-  };
-
   static propTypes = {
+    identity: identityContextPropShape,
     children: PropTypes.node,
     location: PropTypes.object,
     singleColumn: PropTypes.bool,
@@ -168,7 +168,7 @@ class SwitchingColumnsArea extends PureComponent {
 
   render () {
     const { children, singleColumn } = this.props;
-    const { signedIn } = this.context.identity;
+    const { signedIn } = this.props.identity;
     const pathName = this.props.location.pathname;
 
     let redirect;
@@ -212,8 +212,11 @@ class SwitchingColumnsArea extends PureComponent {
             <WrappedRoute path='/public/remote' exact component={Firehose} componentParams={{ feedType: 'public:remote' }} content={children} />
             <WrappedRoute path={['/conversations', '/timelines/direct']} component={DirectTimeline} content={children} />
             <WrappedRoute path='/tags/:id' component={HashtagTimeline} content={children} />
+            <WrappedRoute path='/links/:url' component={LinkTimeline} content={children} />
             <WrappedRoute path='/lists/:id' component={ListTimeline} content={children} />
-            <WrappedRoute path='/notifications' component={Notifications} content={children} />
+            <WrappedRoute path='/notifications' component={Notifications} content={children} exact />
+            <WrappedRoute path='/notifications/requests' component={NotificationRequests} content={children} exact />
+            <WrappedRoute path='/notifications/requests/:id' component={NotificationRequest} content={children} exact />
             <WrappedRoute path='/favourites' component={FavouritedStatuses} content={children} />
 
             <WrappedRoute path='/bookmarks' component={BookmarkedStatuses} content={children} />
@@ -259,12 +262,8 @@ class SwitchingColumnsArea extends PureComponent {
 }
 
 class UI extends PureComponent {
-
-  static contextTypes = {
-    identity: PropTypes.object.isRequired,
-  };
-
   static propTypes = {
+    identity: identityContextPropShape,
     dispatch: PropTypes.func.isRequired,
     children: PropTypes.node,
     isWide: PropTypes.bool,
@@ -274,7 +273,6 @@ class UI extends PureComponent {
     hasMediaAttachments: PropTypes.bool,
     canUploadMore: PropTypes.bool,
     intl: PropTypes.object.isRequired,
-    dropdownMenuIsOpen: PropTypes.bool,
     unreadNotifications: PropTypes.number,
     showFaviconBadge: PropTypes.bool,
     hicolorPrivacyIcons: PropTypes.bool,
@@ -321,7 +319,7 @@ class UI extends PureComponent {
       this.dragTargets.push(e.target);
     }
 
-    if (e.dataTransfer && Array.from(e.dataTransfer.types).includes('Files') && this.props.canUploadMore && this.context.identity.signedIn) {
+    if (e.dataTransfer && Array.from(e.dataTransfer.types).includes('Files') && this.props.canUploadMore && this.props.identity.signedIn) {
       this.setState({ draggingOver: true });
     }
   };
@@ -349,7 +347,7 @@ class UI extends PureComponent {
     this.setState({ draggingOver: false });
     this.dragTargets = [];
 
-    if (e.dataTransfer && e.dataTransfer.files.length >= 1 && this.props.canUploadMore && this.context.identity.signedIn) {
+    if (e.dataTransfer && e.dataTransfer.files.length >= 1 && this.props.canUploadMore && this.props.identity.signedIn) {
       this.props.dispatch(uploadCompose(e.dataTransfer.files));
     }
   };
@@ -401,7 +399,7 @@ class UI extends PureComponent {
   };
 
   componentDidMount () {
-    const { signedIn } = this.context.identity;
+    const { signedIn } = this.props.identity;
 
     window.addEventListener('beforeunload', this.handleBeforeUnload, false);
     window.addEventListener('resize', this.handleResize, { passive: true });
@@ -483,7 +481,7 @@ class UI extends PureComponent {
   handleHotkeyNew = e => {
     e.preventDefault();
 
-    const element = this.node.querySelector('.compose-form__autosuggest-wrapper textarea');
+    const element = this.node.querySelector('.autosuggest-textarea__textarea');
 
     if (element) {
       element.focus();
@@ -600,7 +598,7 @@ class UI extends PureComponent {
 
   render () {
     const { draggingOver } = this.state;
-    const { children, isWide, location, dropdownMenuIsOpen, layout, moved } = this.props;
+    const { children, isWide, location, layout, moved } = this.props;
 
     const className = classNames('ui', {
       'wide': isWide,
@@ -632,7 +630,7 @@ class UI extends PureComponent {
 
     return (
       <HotKeys keyMap={keyMap} handlers={handlers} ref={this.setHotkeysRef} attach={window} focused>
-        <div className={className} ref={this.setRef} style={{ pointerEvents: dropdownMenuIsOpen ? 'none' : null }}>
+        <div className={className} ref={this.setRef}>
           {moved && (<div className='flash-message alert'>
             <FormattedMessage
               id='moved_to_warning'
@@ -647,12 +645,13 @@ class UI extends PureComponent {
 
           <Header />
 
-          <SwitchingColumnsArea location={location} singleColumn={layout === 'mobile' || layout === 'single-column'}>
+          <SwitchingColumnsArea identity={this.props.identity} location={location} singleColumn={layout === 'mobile' || layout === 'single-column'}>
             {children}
           </SwitchingColumnsArea>
 
           {layout !== 'mobile' && <PictureInPicture />}
           <NotificationsContainer />
+          <HoverCardController />
           <LoadingBarContainer className='loading-bar' />
           <ModalContainer />
           <UploadArea active={draggingOver} onClose={this.closeUploadModal} />
@@ -663,4 +662,4 @@ class UI extends PureComponent {
 
 }
 
-export default connect(mapStateToProps)(injectIntl(withRouter(UI)));
+export default connect(mapStateToProps)(injectIntl(withRouter(withIdentity(UI))));

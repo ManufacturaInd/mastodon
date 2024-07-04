@@ -45,14 +45,11 @@ pt-PT:
         current_password: Por motivos de segurança, introduz a palavra-passe da conta actual
         current_username: Para confirmar, introduz o nome de utilizador da conta actual
         digest: Enviado após um longo período de inactividade e apenas se foste mencionado na tua ausência
-        discoverable: Permitir que a tua conta seja descoberta por outros através de recomendações, destaques e outras formas
         email: Vai ser enviado um e-mail de confirmação
-        fields: Podes ter no máximo 4 caixas no teu perfil
         header: PNG, GIF ou JPG. Ficheiros até %{size}. Vão ser reduzidos para %{dimensions}px
         inbox_url: Copia o URL da página inicial do repetidor que queres usar
         irreversible: Publicações filtradas vão ser definitivamente apagadas, mesmo que o filtro seja removido posteriormente
         locale: A língua do interface de utilizador, e-mails e notificações push
-        locked: Exige aprovação manual de seguidores
         password: Usa pelo menos 8 caracteres
         phrase: Será correspondido independentemente da capitalização ou do aviso de conteúdo duma publicação
         scopes: APIs a que deve ser concedido acesso. Se escolheres uma abrangência de nível superior, não é preciso seleccioná-las individualmente.
@@ -88,11 +85,13 @@ pt-PT:
           warn: Ocultar o conteúdo filtrado por trás de um aviso mencionando o título do filtro
       form_admin_settings:
         activity_api_enabled: Contagem, em blocos semanais, de publicações locais, utilizadores ativos e novos registos
-        backups_retention_period: Manter os ficheiros gerados pelos utilizadores durante um número concreto de dias.
+        app_icon: WEBP, PNG, GIF ou JPG. Substitui o ícone padrão do aplicativo em dispositivos móveis por um ícone personalizado.
+        backups_retention_period: Os utilizadores têm a possibilidade de gerar arquivos das suas mensagens para descarregar mais tarde. Quando definido para um valor positivo, estes arquivos serão automaticamente eliminados do seu armazenamento após o número de dias especificado.
         bootstrap_timeline_accounts: Estas contas serão destacadas no topo das recomendações aos novos utilizadores.
         closed_registrations_message: Apresentado quando as inscrições estiverem encerradas
-        content_cache_retention_period: Publicações de outros servidores serão apagadas decorrido o número de dias especificado, se estiver definido um valor positivo. Isso pode ser irreversível.
+        content_cache_retention_period: Todas as publicações de outros servidores (incluindo boosts e respostas) serão eliminadas após o número de dias especificado, independentemente de qualquer interação do utilizador local com essas publicações. Isto inclui publicações em que um utilizador local as tenha marcado como favoritas ou adicionado aos items salvos. As menções privadas entre utilizadores de instâncias diferentes também se perderão e serão impossíveis de restaurar. A utilização desta definição destina-se a instâncias para fins especiais e quebra muitas expectativas dos utilizadores quando implementada para utilização geral.
         custom_css: Pode aplicar estilos personalizados na versão web do Mastodon.
+        favicon: WEBP, PNG, GIF ou JPG. Substitui o ícone de favorito padrão do Mastodon por um ícone personalizado.
         mascot: Sobrepõe-se à ilustração no interface web multi-colunas.
         media_cache_retention_period: Os ficheiros de media descarregados serão excluídos após o número de dias especificado, quando definido com um valor positivo, e descarregados novamente quando solicitados.
         peers_api_enabled: Uma lista de nomes de domínio que este servidor encontrou no fediverso. Nenhum dado é incluído aqui sobre se a tua conta federa com um determinado servidor, apenas que o teu servidor o conhece. Este serviço é utilizado por serviços que recolhem estatísticas na federação, em termos gerais.
@@ -127,6 +126,7 @@ pt-PT:
           sign_up_requires_approval: Novas inscrições vão exigir aprovação
         severity: Escolhe o que acontece com os pedidos deste IP
       rule:
+        hint: Opcional. Forneça mais detalhes sobre a regra
         text: Descreve uma regra ou requisito para os utilizadores nesta instância. Tenta mantê-la curta e simples
       sessions:
         otp: 'Introduz o código de autenticação 2FA gerado pelo teu telemóvel ou usa um dos teus códigos de recuperação:'
@@ -322,6 +322,7 @@ pt-PT:
           patch: Notificar sobre atualizações de correções de problemas
         trending_tag: Nova tendência requer revisão
       rule:
+        hint: Informação Adicional
         text: Regra
       settings:
         indexable: Incluir página de perfil nos motores de busca

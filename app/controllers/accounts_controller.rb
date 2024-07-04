@@ -25,9 +25,8 @@ class AccountsController < ApplicationController
         expires_in 1.minute, public: true
 
         limit     = params[:limit].present? ? [params[:limit].to_i, PAGE_SIZE_MAX].min : PAGE_SIZE
-        offset    = params[:offset].present? ? params[:offset].to_i : OFFSET
-        @statuses = filtered_statuses.without_reblogs.limit(limit).offset(offset)
-        @statuses = cache_collection(@statuses, Status)
+        @statuses = filtered_statuses.without_reblogs.limit(limit)
+        @statuses = preload_collection(@statuses, Status)
       end
 
       format.json do
@@ -51,7 +50,7 @@ class AccountsController < ApplicationController
   end
 
   def default_statuses
-    @account.statuses.not_local_only.where(visibility: [:public, :unlisted])
+    @account.statuses.not_local_only.distributable_visibility
   end
 
   def only_media_scope
