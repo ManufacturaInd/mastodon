@@ -343,7 +343,6 @@ pt-PT:
         indexable: Incluir página de perfil nos motores de busca
         show_application: Mostrar de que aplicação criou uma publicação
       tag:
-<<<<<<< HEAD
         listable: Permitir que esta hashtag apareça em pesquisas e no 'Quem por cá anda'
         name: Hashtag
         trendable: Permitir que esta hashtag apareça em destaque
