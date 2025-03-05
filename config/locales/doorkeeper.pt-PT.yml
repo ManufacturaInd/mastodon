@@ -4,9 +4,9 @@ pt-PT:
     attributes:
       doorkeeper/application:
         name: Nome da aplicação
-        redirect_uri: URI de redireccionamento
+        redirect_uri: URI de redirecionamento
         scopes: Âmbitos
-        website: Página na teia da aplicação
+        website: Site da aplicação
     errors:
       models:
         doorkeeper/application:
@@ -29,13 +29,13 @@ pt-PT:
       edit:
         title: Editar aplicação
       form:
-        error: Ups! Verifique que o formulário não tem erros
+        error: Oops! Verifica que o formulário não tem erros
       help:
-        native_redirect_uri: Usa %{native_redirect_uri} para testes locais
-        redirect_uri: Utiliza uma linha por URI
-        scopes: Separe as esferas de acção com espaços. Deixe em branco para usar autorizações predefinidas.
+        native_redirect_uri: Usar %{native_redirect_uri} para testes locais
+        redirect_uri: Usar uma linha por URI
+        scopes: Separa os âmbitos de aplicação com espaços. Deixa em branco para utilizar os âmbitos de aplicação predefinidos.
       index:
-        application: Aplicações
+        application: Aplicação
         callback_url: URL de retorno
         delete: Eliminar
         empty: Não tens aplicações configuradas.
@@ -43,14 +43,14 @@ pt-PT:
         new: Nova aplicação
         scopes: Âmbitos
         show: Mostrar
-        title: As suas aplicações
+        title: As tuas aplicações
       new:
         title: Nova aplicação
       show:
         actions: Ações
-        application_id: Id de Aplicação
-        callback_urls: Callback urls
-        scopes: Autorizações
+        application_id: Chave da aplicação
+        callback_urls: URLs de retorno
+        scopes: Âmbitos
         secret: Segredo
         title: 'Aplicação: %{name}'
     authorizations:
@@ -97,7 +97,7 @@ pt-PT:
           unknown: O token de acesso é inválido
         resource_owner_authenticator_not_configured: A procura pelo proprietário do recurso falhou porque Doorkeeper.configure.resource_owner_authenticator não foi configurado.
         server_error: O servidor de autorização encontrou uma condição inesperada que impediu o cumprimento do pedido .
-        temporarily_unavailable: O servidor de autorização não é capaz de lidar com o pedido devido a uma sobrecarga ou mantenimento do servidor.
+        temporarily_unavailable: O servidor de autorização não pode atualmente tratar o pedido devido a uma sobrecarga temporária ou à manutenção do servidor.
         unauthorized_client: O cliente não está autorizado a realizar esta solicitação usando este método.
         unsupported_grant_type: O tipo de concessão de autorização não é suportado pelo servidor de autorização.
         unsupported_response_type: O servidor de autorização não suporta este tipo de resposta.
@@ -124,21 +124,21 @@ pt-PT:
         admin/reports: Administração de denúncias
         all: Acesso total à sua conta Mastodon
         blocks: Bloqueios
-        bookmarks: Itens Salvos
+        bookmarks: Marcadores
         conversations: Conversas
-        crypto: Encriptação ponta-a-ponta
+        crypto: Encriptação ponta a ponta
         favourites: Favoritos
         filters: Filtros
-        follow: A seguir, a silenciar, e a bloquear
+        follow: A seguir, a ocultar e a bloquear
         follows: Seguidores
         lists: Listas
-        media: Anexos de media
-        mutes: Silenciados
+        media: Anexos multimédia
+        mutes: Ocultados
         notifications: Notificações
-        profile: O seu perfil Mastodon
-        push: Notificações push
+        profile: O teu perfil Mastodon
+        push: Notificações "push"
         reports: Denúncias
-        search: Pesquisa
+        search: Pesquisar
         statuses: Publicações
     layouts:
       admin:

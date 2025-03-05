@@ -13,14 +13,13 @@ import { HotKeys } from 'react-hotkeys';
 import FlagIcon from '@/material-icons/400-24px/flag-fill.svg?react';
 import PersonIcon from '@/material-icons/400-24px/person-fill.svg?react';
 import PersonAddIcon from '@/material-icons/400-24px/person_add-fill.svg?react';
+import { Account } from 'flavours/glitch/components/account';
 import { Icon }  from 'flavours/glitch/components/icon';
 import { Permalink } from 'flavours/glitch/components/permalink';
-import AccountContainer from 'flavours/glitch/containers/account_container';
 import StatusContainer from 'flavours/glitch/containers/status_container';
 import { WithRouterPropTypes } from 'flavours/glitch/utils/react_router';
 
 import FollowRequestContainer from '../containers/follow_request_container';
-import NotificationOverlayContainer from '../containers/overlay_container';
 
 import { ModerationWarning } from './moderation_warning';
 import { RelationshipsSeveranceEvent } from './relationships_severance_event';
@@ -92,7 +91,7 @@ class Notification extends ImmutablePureComponent {
     e.preventDefault();
 
     const { notification, onMention } = this.props;
-    onMention(notification.get('account'), this.props.history);
+    onMention(notification.get('account'));
   };
 
   handleHotkeyFavourite = () => {
@@ -132,8 +131,7 @@ class Notification extends ImmutablePureComponent {
             </span>
           </div>
 
-          <AccountContainer id={account.get('id')} hidden={this.props.hidden} />
-          <NotificationOverlayContainer notification={notification} />
+          <Account id={account.get('id')} hidden={this.props.hidden} />
         </div>
       </HotKeys>
     );
@@ -154,7 +152,6 @@ class Notification extends ImmutablePureComponent {
           </div>
 
           <FollowRequestContainer id={account.get('id')} withNote={false} hidden={this.props.hidden} />
-          <NotificationOverlayContainer notification={notification} />
         </div>
       </HotKeys>
     );
@@ -365,8 +362,7 @@ class Notification extends ImmutablePureComponent {
             </span>
           </div>
 
-          <AccountContainer id={account.get('id')} hidden={this.props.hidden} />
-          <NotificationOverlayContainer notification={notification} />
+          <Account id={account.get('id')} hidden={this.props.hidden} />
         </div>
       </HotKeys>
     );
@@ -385,7 +381,7 @@ class Notification extends ImmutablePureComponent {
       <bdi>
         <Permalink
           className='notification__display-name'
-          href={account.get('url')}
+          href={targetAccount.get('url')}
           title={targetAccount.get('acct')}
           to={`/@${targetAccount.get('acct')}`}
           dangerouslySetInnerHTML={targetDisplayNameHtml}
@@ -406,7 +402,6 @@ class Notification extends ImmutablePureComponent {
           </div>
 
           <Report account={account} report={notification.get('report')} hidden={this.props.hidden} />
-          <NotificationOverlayContainer notification={notification} />
         </div>
       </HotKeys>
     );

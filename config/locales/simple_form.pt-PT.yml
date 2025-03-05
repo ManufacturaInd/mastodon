@@ -3,13 +3,14 @@ pt-PT:
   simple_form:
     hints:
       account:
+        attribution_domains: Um por linha. Protege contra falsas atribuições.
         discoverable: As suas publicações e perfil públicos podem ser destacados ou recomendados em várias áreas do Mastodon e o seu perfil pode ser sugerido a outros utilizadores.
         display_name: O seu nome completo ou o seu nome divertido.
         fields: A sua página inicial, os seus pronomes, idade e tudo o que quiser.
         indexable: As suas mensagens públicas podem aparecer nos resultados da pesquisa no Mastodon. Independentemente disso, as pessoas que interagiram com as suas publicações podem ser capazes de as pesquisar.
-        note: 'Pode @mencionar outras pessoas ou #hashtags.'
+        note: 'Pode @mencionar outras pessoas e usar #etiquetas.'
         show_collections: As pessoas podem navegar pelas listas das pessoas que segue e dos seus seguidores. Independentemente disso, as pessoas que segue verão que você as segue.
-        unlocked: As pessoas podem segui-lo/a sem pedir a sua aprovação. Desmarque se quiser rever os pedidos para seguir e escolher se aceita ou rejeita os novos seguidores.
+        unlocked: As pessoas poderão segui-lo sem pedir aprovação. Desmarque se pretender rever os pedidos de seguimento e escolha se pretende aceitar ou rejeitar novos seguidores.
       account_alias:
         acct: Indica o utilizador@domínio da conta de onde pretendes migrar
       account_migration:
@@ -85,11 +86,11 @@ pt-PT:
           warn: Ocultar o conteúdo filtrado por trás de um aviso mencionando o título do filtro
       form_admin_settings:
         activity_api_enabled: Contagem, em blocos semanais, de publicações locais, utilizadores ativos e novos registos
-        app_icon: WEBP, PNG, GIF ou JPG. Substitui o ícone padrão do aplicativo em dispositivos móveis por um ícone personalizado.
-        backups_retention_period: Os utilizadores têm a possibilidade de gerar arquivos das suas mensagens para descarregar mais tarde. Quando definido para um valor positivo, estes arquivos serão automaticamente eliminados do seu armazenamento após o número de dias especificado.
+        app_icon: WEBP, PNG, GIF ou JPG. Substitui o ícone padrão da aplicação em dispositivos móveis por um ícone personalizado.
+        backups_retention_period: Os utilizadores têm a possibilidade de gerar arquivos das suas publicações para descarregar mais tarde. Quando definido para um valor positivo, estes arquivos serão automaticamente eliminados do seu armazenamento após o número de dias especificado.
         bootstrap_timeline_accounts: Estas contas serão destacadas no topo das recomendações aos novos utilizadores.
         closed_registrations_message: Apresentado quando as inscrições estiverem encerradas
-        content_cache_retention_period: Todas as publicações de outros servidores (incluindo boosts e respostas) serão eliminadas após o número de dias especificado, independentemente de qualquer interação do utilizador local com essas publicações. Isto inclui publicações em que um utilizador local as tenha marcado como favoritas ou adicionado aos items salvos. As menções privadas entre utilizadores de instâncias diferentes também se perderão e serão impossíveis de restaurar. A utilização desta definição destina-se a instâncias para fins especiais e quebra muitas expectativas dos utilizadores quando implementada para utilização geral.
+        content_cache_retention_period: Todas as mensagens de outros servidores (incluindo impulsos e respostas) serão eliminadas após o número de dias especificado, independentemente de qualquer interação do utilizador local com essas mensagens. Isto inclui mensagens em que um utilizador local as tenha marcado ou adicionado aos favoritos. As menções privadas entre utilizadores de instâncias diferentes também se perderão e serão impossíveis de restaurar. A utilização desta definição destina-se a instâncias para fins especiais e quebra muitas expectativas dos utilizadores quando implementada para utilização geral.
         custom_css: Pode aplicar estilos personalizados na versão web do Mastodon.
         favicon: WEBP, PNG, GIF ou JPG. Substitui o ícone de favorito padrão do Mastodon por um ícone personalizado.
         mascot: Sobrepõe-se à ilustração no interface web multi-colunas.
@@ -107,9 +108,9 @@ pt-PT:
         theme: Tema de interface aplicado às novas contas.
         thumbnail: Uma imagem de aproximadamente 2:1, mostrada ao lado da informação deste servidor.
         timeline_preview: Os visitantes sem sessão iniciada poderão consultar as publicações públicas mais recentes disponíveis no servidor.
-        trendable_by_default: Ignorar a revisão manual do conteúdo em alta. Elementos em avulso poderão ainda assim ser retirados das tendências mesmo após a sua apresentação.
-        trends: As publicações em alta mostram quais as publicações, etiquetas e notícias que estão a ganhar destaque no seu servidor.
-        trends_as_landing_page: Mostrar conteúdo de tendências para usuários logados e visitantes em vez de uma descrição deste servidor. Requer que as tendências sejam ativadas.
+        trendable_by_default: Ignorar a revisão manual do conteúdo de tendências. Os itens individuais ainda podem ser removidos das tendências após a apresentação.
+        trends: As tendências mostram quais as publicações, etiquetas e notícias que estão a ganhar destaque no seu servidor.
+        trends_as_landing_page: Mostrar conteúdo de tendências a utilizadores e visitantes com sessão terminada em vez de uma descrição deste servidor. Requer que as tendências estejam ativadas.
       form_challenge:
         current_password: Estás a entrar numa área restrita
       imports:
@@ -136,6 +137,18 @@ pt-PT:
         show_application: Independentemente disso será sempre possível ver em que aplicação publicaste a tua mensagem.
       tag:
         name: Só podes alterar a capitalização das letras para, por exemplo, torná-las mais legíveis
+      terms_of_service:
+        changelog: Pode ser estruturado com sintaxe Markdown.
+        text: Pode ser estruturado com sintaxe Markdown.
+      terms_of_service_generator:
+        admin_email: Os avisos legais incluem contra-avisos, ordens judiciais, pedidos de remoção e pedidos de aplicação da lei.
+        arbitration_address: Pode ser o mesmo que o endereço físico acima ou “N/A” se utilizar e-mail
+        arbitration_website: Pode ser um formulário web ou “N/A” se for utilizado o e-mail
+        choice_of_law: A legislação interna do estado, território, região ou cidade que deve regular qualquer conflito.
+        dmca_address: Para operadores dos EUA, utilize o endereço registado no Diretório de Agentes Designados DMCA. A listagem de uma caixa postal está disponível mediante pedido direto. Utilize o DMCA Designated Agent Post Office Box Waiver Request para enviar uma mensagem de correio eletrónico ao Copyright Office e descreva que é um moderador de conteúdos baseado em casa que receia vingança ou represálias pelas suas ações e que necessita de utilizar uma caixa postal para retirar o seu endereço de casa da vista do público.
+        dmca_email: Pode ser o mesmo e-mail utilizado para “Endereço de e-mail para avisos legais” acima
+        domain: Identificação única do serviço online que está a prestar.
+        jurisdiction: Indique o país de residência de quem paga as contas. Se se tratar de uma empresa ou outra entidade, indique o país onde está constituída, bem como a cidade, região, território ou estado, consoante o caso.
       user:
         chosen_languages: Quando seleccionado, só publicações nas línguas escolhidas vão ser mostradas nas timelines públicas
         role: O cargo controla as credenciais que o utilizador tem
@@ -151,11 +164,12 @@ pt-PT:
         url: Para onde os eventos vão ser enviados
     labels:
       account:
+        attribution_domains: Websites autorizados a atribuir-lhe crédito
         discoverable: Destacar perfil e publicações nos algoritmos de descoberta
         fields:
           name: Rótulo
           value: Conteúdo
-        indexable: Incluir mensagens públicas nos resultados da pesquisa
+        indexable: Incluir mensagens públicas nos resultados de pesquisas
         show_collections: Mostrar quem sigo e os meus seguidores no perfil
         unlocked: Aceitar automaticamente novos seguidores
       account_alias:
@@ -169,11 +183,11 @@ pt-PT:
         include_statuses: Incluir no e-mail as publicações denunciadas
         send_email_notification: Notificar o utilizador por e-mail
         text: Aviso personalizado
-        type: Acção
+        type: Ação
         types:
           disable: Congelar
           none: Enviar um aviso
-          sensitive: Problemático
+          sensitive: Sensível
           silence: Limitar
           suspend: Suspender
         warning_preset_id: Usar um aviso pré-definido
@@ -182,7 +196,7 @@ pt-PT:
         ends_at: Fim do evento
         scheduled_at: Agendar publicação
         starts_at: Início do evento
-        text: Comunicado
+        text: Mensagem de manutenção
       appeal:
         text: Explica porque se deve reverter esta decisão
       defaults:
@@ -200,7 +214,7 @@ pt-PT:
         email: Endereço de correio electrónico
         expires_in: Expira em
         fields: Metadados de perfil
-        header: Cabeçalho
+        header: Imagem de cabeçalho
         honeypot: "%{label} (não preencher)"
         inbox_url: URL da caixa de entrada do repetidor
         irreversible: Expandir em vez de esconder
@@ -227,7 +241,7 @@ pt-PT:
         setting_default_sensitive: Sempre marcar media como sensível
         setting_delete_modal: Pedir confirmação antes de apagar uma publicação
         setting_disable_swiping: Desativar os movimentos de deslize
-        setting_display_media: Visualização de media
+        setting_display_media: Visualização de multimédia
         setting_display_media_default: Pré-definição
         setting_display_media_hide_all: Esconder todos
         setting_display_media_show_all: Mostrar todos
@@ -267,8 +281,9 @@ pt-PT:
         closed_registrations_message: Mensagem personalizada quando as inscrições não estão disponíveis
         content_cache_retention_period: Período de retenção de conteúdo em cache
         custom_css: CSS personalizado
+        favicon: Ícone de favoritos
         mascot: Mascote personalizada (legado)
-        media_cache_retention_period: Período de retenção de ficheiros de media em cache
+        media_cache_retention_period: Período de retenção de ficheiros multimédia em cache
         peers_api_enabled: Publicar lista de servidores descobertos na API
         profile_directory: Habilitar 'Quem por cá anda'
         registrations_mode: Quem se pode inscrever
@@ -305,7 +320,7 @@ pt-PT:
           sign_up_requires_approval: Limitar inscrições
         severity: Regra
       notification_emails:
-        appeal: Alguém recorreu de uma decisão de moderação
+        appeal: Alguém contestou uma decisão de moderação
         digest: Enviar e-mails de resumo
         favourite: Quando alguém adiciona uma publicação tua aos favoritos
         follow: Quando alguém começar a seguir-te
@@ -328,12 +343,25 @@ pt-PT:
         indexable: Incluir página de perfil nos motores de busca
         show_application: Mostrar de que aplicação criou uma publicação
       tag:
+<<<<<<< HEAD
         listable: Permitir que esta hashtag apareça em pesquisas e no 'Quem por cá anda'
         name: Hashtag
         trendable: Permitir que esta hashtag apareça em destaque
         usable: Permitir que as publicações utilizem esta hashtag
+      terms_of_service:
+        changelog: O que mudou?
+        text: Termos do serviço
+      terms_of_service_generator:
+        admin_email: Endereço de e-mail para avisos legais
+        arbitration_address: Endereço físico para avisos de arbitragem
+        arbitration_website: Website para enviar avisos de arbitragem
+        choice_of_law: Escolha da legislação
+        dmca_address: Endereço físico para avisos DMCA / direitos autorais
+        dmca_email: Endereço de e-mail para avisos DMCA/direitos autorais
+        domain: Domínio
+        jurisdiction: Jurisdição legal
       user:
-        role: Cargo
+        role: Função
         time_zone: Fuso horário
       user_role:
         color: Cor do distintivo

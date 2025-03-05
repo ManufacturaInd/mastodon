@@ -8,7 +8,7 @@ RSpec.describe Admin::AccountAction do
   describe '#save!' do
     subject              { account_action.save! }
 
-    let(:account)        { Fabricate(:user, role: UserRole.find_by(name: 'Admin')).account }
+    let(:account)        { Fabricate(:admin_user).account }
     let(:target_account) { Fabricate(:account) }
     let(:type)           { 'disable' }
 
@@ -69,7 +69,7 @@ RSpec.describe Admin::AccountAction do
       end
     end
 
-    it 'sends email to target account user', :sidekiq_inline do
+    it 'sends email to target account user', :inline_jobs do
       emails = capture_emails { subject }
 
       expect(emails).to contain_exactly(

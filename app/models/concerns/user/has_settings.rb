@@ -51,6 +51,10 @@ module User::HasSettings
     settings['web.use_system_emoji_font']
   end
 
+  def setting_system_scrollbars_ui
+    settings['web.use_system_scrollbars']
+  end
+
   def setting_noindex
     settings['noindex']
   end
@@ -101,6 +105,10 @@ module User::HasSettings
 
   def setting_disable_swiping
     settings['web.disable_swiping']
+  end
+
+  def setting_disable_hover_cards
+    settings['web.disable_hover_cards']
   end
 
   def setting_always_send_emails

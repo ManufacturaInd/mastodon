@@ -1,13 +1,11 @@
 import { useCallback, useEffect } from 'react';
 
-import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
+import { useIntl, defineMessages } from 'react-intl';
+
+import classNames from 'classnames';
 
 import { useIdentity } from '@/mastodon/identity_context';
-import {
-  fetchRelationships,
-  followAccount,
-  unfollowAccount,
-} from 'mastodon/actions/accounts';
+import { fetchRelationships, followAccount } from 'mastodon/actions/accounts';
 import { openModal } from 'mastodon/actions/modal';
 import { Button } from 'mastodon/components/button';
 import { LoadingIndicator } from 'mastodon/components/loading_indicator';
@@ -24,7 +22,8 @@ const messages = defineMessages({
 
 export const FollowButton: React.FC<{
   accountId?: string;
-}> = ({ accountId }) => {
+  compact?: boolean;
+}> = ({ accountId, compact }) => {
   const intl = useIntl();
   const dispatch = useAppDispatch();
   const { signedIn } = useIdentity();
@@ -56,33 +55,18 @@ export const FollowButton: React.FC<{
       );
     }
 
-    if (!relationship) return;
+    if (!relationship || !accountId) return;
 
     if (accountId === me) {
       return;
-    } else if (relationship.following || relationship.requested) {
+    } else if (account && (relationship.following || relationship.requested)) {
       dispatch(
-        openModal({
-          modalType: 'CONFIRM',
-          modalProps: {
-            message: (
-              <FormattedMessage
-                id='confirmations.unfollow.message'
-                defaultMessage='Are you sure you want to unfollow {name}?'
-                values={{ name: <strong>@{account?.acct}</strong> }}
-              />
-            ),
-            confirm: intl.formatMessage(messages.unfollow),
-            onConfirm: () => {
-              dispatch(unfollowAccount(accountId));
-            },
-          },
-        }),
+        openModal({ modalType: 'CONFIRM_UNFOLLOW', modalProps: { account } }),
       );
     } else {
       dispatch(followAccount(accountId));
     }
-  }, [dispatch, intl, accountId, relationship, account, signedIn]);
+  }, [dispatch, accountId, relationship, account, signedIn]);
 
   let label;
 
@@ -94,10 +78,10 @@ export const FollowButton: React.FC<{
     label = <LoadingIndicator />;
   } else if (relationship.following && relationship.followed_by) {
     label = intl.formatMessage(messages.mutual);
-  } else if (!relationship.following && relationship.followed_by) {
-    label = intl.formatMessage(messages.followBack);
   } else if (relationship.following || relationship.requested) {
     label = intl.formatMessage(messages.unfollow);
+  } else if (relationship.followed_by) {
+    label = intl.formatMessage(messages.followBack);
   } else {
     label = intl.formatMessage(messages.follow);
   }
@@ -107,8 +91,10 @@ export const FollowButton: React.FC<{
       <a
         href='/settings/profile'
         target='_blank'
-        rel='noreferrer noopener'
-        className='button button-secondary'
+        rel='noopener'
+        className={classNames('button button-secondary', {
+          'button--compact': compact,
+        })}
       >
         {label}
       </a>
@@ -118,8 +104,14 @@ export const FollowButton: React.FC<{
   return (
     <Button
       onClick={handleClick}
-      disabled={relationship?.blocked_by || relationship?.blocking}
+      disabled={
+        relationship?.blocked_by ||
+        relationship?.blocking ||
+        (!(relationship?.following || relationship?.requested) &&
+          (account?.suspended || !!account?.moved))
+      }
       secondary={following}
+      compact={compact}
       className={following ? 'button--destructive' : undefined}
     >
       {label}

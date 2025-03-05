@@ -1,13 +1,15 @@
 name: Ruby Linting
 on:
+  merge_group:
   push:
-    branches-ignore:
-      - 'dependabot/**'
-      - 'renovate/**'
+    branches:
+      - 'main'
+      - 'stable-*'
     paths:
       - 'Gemfile*'
       - '.rubocop*.yml'
       - '.ruby-version'
+      - 'bin/rubocop'
       - 'config/brakeman.ignore'
       - '**/*.rb'
       - '**/*.rake'
@@ -18,6 +20,7 @@ on:
       - 'Gemfile*'
       - '.rubocop*.yml'
       - '.ruby-version'
+      - 'bin/rubocop'
       - 'config/brakeman.ignore'
       - '**/*.rb'
       - '**/*.rake'

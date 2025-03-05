@@ -42,10 +42,10 @@ class REST::V1::InstanceSerializer < ActiveModel::Serializer
 
   def poll_limits
     {
-      max_options: PollValidator::MAX_OPTIONS,
-      max_option_chars: PollValidator::MAX_OPTION_CHARS,
-      min_expiration: PollValidator::MIN_EXPIRATION,
-      max_expiration: PollValidator::MAX_EXPIRATION,
+      max_options: PollOptionsValidator::MAX_OPTIONS,
+      max_option_chars: PollOptionsValidator::MAX_OPTION_CHARS,
+      min_expiration: PollExpirationValidator::MIN_EXPIRATION,
+      max_expiration: PollExpirationValidator::MAX_EXPIRATION,
     }
   end
 
@@ -59,14 +59,6 @@ class REST::V1::InstanceSerializer < ActiveModel::Serializer
 
   def urls
     { streaming_api: Rails.configuration.x.streaming_api_base_url }
-  end
-
-  def usage
-    {
-      users: {
-        active_month: instance_presenter.active_user_count(4),
-      },
-    }
   end
 
   def configuration
@@ -83,7 +75,7 @@ class REST::V1::InstanceSerializer < ActiveModel::Serializer
       },
 
       media_attachments: {
-        supported_mime_types: MediaAttachment::IMAGE_MIME_TYPES + MediaAttachment::VIDEO_MIME_TYPES + MediaAttachment::AUDIO_MIME_TYPES,
+        supported_mime_types: MediaAttachment.supported_mime_types,
         image_size_limit: MediaAttachment::IMAGE_LIMIT,
         image_matrix_limit: Attachmentable::MAX_MATRIX_LIMIT,
         video_size_limit: MediaAttachment::VIDEO_LIMIT,
@@ -92,10 +84,10 @@ class REST::V1::InstanceSerializer < ActiveModel::Serializer
       },
 
       polls: {
-        max_options: PollValidator::MAX_OPTIONS,
-        max_characters_per_option: PollValidator::MAX_OPTION_CHARS,
-        min_expiration: PollValidator::MIN_EXPIRATION,
-        max_expiration: PollValidator::MAX_EXPIRATION,
+        max_options: PollOptionsValidator::MAX_OPTIONS,
+        max_characters_per_option: PollOptionsValidator::MAX_OPTION_CHARS,
+        min_expiration: PollExpirationValidator::MIN_EXPIRATION,
+        max_expiration: PollExpirationValidator::MAX_EXPIRATION,
       },
     }
   end

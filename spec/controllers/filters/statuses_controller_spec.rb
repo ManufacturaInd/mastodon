@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe Filters::StatusesController do
+RSpec.describe Filters::StatusesController do
   render_views
 
   describe 'GET #index' do
@@ -23,11 +23,9 @@ describe Filters::StatusesController do
           get :index, params: { filter_id: filter }
         end
 
-        it 'returns http success' do
+        it 'returns http success and private cache control headers' do
           expect(response).to have_http_status(200)
-        end
 
-        it 'returns private cache control headers' do
           expect(response.headers['Cache-Control']).to include('private, no-store')
         end
       end

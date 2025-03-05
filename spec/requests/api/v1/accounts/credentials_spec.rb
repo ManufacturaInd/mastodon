@@ -20,7 +20,9 @@ RSpec.describe 'credentials API' do
 
       expect(response)
         .to have_http_status(200)
-      expect(body_as_json).to include({
+      expect(response.content_type)
+        .to start_with('application/json')
+      expect(response.parsed_body).to include({
         source: hash_including({
           discoverable: false,
           indexable: false,
@@ -36,8 +38,10 @@ RSpec.describe 'credentials API' do
         subject
 
         expect(response).to have_http_status(200)
+        expect(response.content_type)
+          .to start_with('application/json')
 
-        expect(body_as_json).to include({
+        expect(response.parsed_body).to include({
           locked: true,
         })
       end
@@ -60,6 +64,7 @@ RSpec.describe 'credentials API' do
         indexable: true,
         locked: false,
         note: 'Hello!',
+        attribution_domains: ['example.com'],
         source: {
           privacy: 'unlisted',
           sensitive: true,
@@ -75,15 +80,19 @@ RSpec.describe 'credentials API' do
       it 'returns http success' do
         subject
         expect(response).to have_http_status(200)
+        expect(response.content_type)
+          .to start_with('application/json')
       end
     end
 
     describe 'with invalid data' do
-      let(:params) { { note: "This is too long. #{'a' * Account::NOTE_LENGTH_LIMIT}" } }
+      let(:params) { { note: 'a' * 2 * Account::NOTE_LENGTH_LIMIT } }
 
       it 'returns http unprocessable entity' do
         subject
         expect(response).to have_http_status(422)
+        expect(response.content_type)
+          .to start_with('application/json')
       end
     end
 
@@ -92,8 +101,10 @@ RSpec.describe 'credentials API' do
 
       expect(response)
         .to have_http_status(200)
+      expect(response.content_type)
+        .to start_with('application/json')
 
-      expect(body_as_json).to include({
+      expect(response.parsed_body).to include({
         source: hash_including({
           discoverable: true,
           indexable: true,
@@ -111,7 +122,8 @@ RSpec.describe 'credentials API' do
           display_name: eq("Alice Isn't Dead"),
           note: 'Hello!',
           avatar: exist,
-          header: exist
+          header: exist,
+          attribution_domains: ['example.com']
         )
     end
 

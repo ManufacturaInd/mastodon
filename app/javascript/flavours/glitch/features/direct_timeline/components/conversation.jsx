@@ -18,7 +18,7 @@ import ReplyIcon from '@/material-icons/400-24px/reply.svg?react';
 import { replyCompose } from 'flavours/glitch/actions/compose';
 import { markConversationRead, deleteConversation } from 'flavours/glitch/actions/conversations';
 import { openModal } from 'flavours/glitch/actions/modal';
-import { muteStatus, unmuteStatus, revealStatus, hideStatus } from 'flavours/glitch/actions/statuses';
+import { muteStatus, unmuteStatus, toggleStatusSpoilers } from 'flavours/glitch/actions/statuses';
 import AttachmentList from 'flavours/glitch/components/attachment_list';
 import AvatarComposite from 'flavours/glitch/components/avatar_composite';
 import { IconButton } from 'flavours/glitch/components/icon_button';
@@ -37,8 +37,6 @@ const messages = defineMessages({
   delete: { id: 'conversation.delete', defaultMessage: 'Delete conversation' },
   muteConversation: { id: 'status.mute_conversation', defaultMessage: 'Mute conversation' },
   unmuteConversation: { id: 'status.unmute_conversation', defaultMessage: 'Unmute conversation' },
-  replyConfirm: { id: 'confirmations.reply.confirm', defaultMessage: 'Reply' },
-  replyMessage: { id: 'confirmations.reply.message', defaultMessage: 'Replying now will overwrite the message you are currently composing. Are you sure you want to proceed?' },
 });
 
 const getAccounts = createSelector(
@@ -64,19 +62,6 @@ export const Conversation = ({ conversation, scrollKey, onMoveUp, onMoveDown }) 
   // glitch-soc additions
   const sharedCWState = useSelector(state => state.getIn(['state', 'content_warnings', 'shared_state']));
   const [expanded, setExpanded] = useState(undefined);
-
-  const parseClick = useCallback((e, destination) => {
-    if (e.button === 0 && !(e.ctrlKey || e.altKey || e.metaKey)) {
-      if (destination === undefined) {
-        if (unread) {
-          dispatch(markConversationRead(id));
-        }
-        destination = `/statuses/${lastStatus.get('id')}`;
-      }
-      history.push(destination);
-      e.preventDefault();
-    }
-  }, [dispatch, history, unread, id, lastStatus]);
 
   const handleMouseEnter = useCallback(({ currentTarget }) => {
     if (autoPlayGif) {
@@ -121,19 +106,12 @@ export const Conversation = ({ conversation, scrollKey, onMoveUp, onMoveDown }) 
       let state = getState();
 
       if (state.getIn(['compose', 'text']).trim().length !== 0) {
-        dispatch(openModal({
-          modalType: 'CONFIRM',
-          modalProps: {
-            message: intl.formatMessage(messages.replyMessage),
-            confirm: intl.formatMessage(messages.replyConfirm),
-            onConfirm: () => dispatch(replyCompose(lastStatus, history)),
-          },
-        }));
+        dispatch(openModal({ modalType: 'CONFIRM_REPLY', modalProps: { status: lastStatus } }));
       } else {
-        dispatch(replyCompose(lastStatus, history));
+        dispatch(replyCompose(lastStatus));
       }
     });
-  }, [dispatch, lastStatus, history, intl]);
+  }, [dispatch, lastStatus]);
 
   const handleDelete = useCallback(() => {
     dispatch(deleteConversation(id));
@@ -156,11 +134,7 @@ export const Conversation = ({ conversation, scrollKey, onMoveUp, onMoveDown }) 
   }, [dispatch, lastStatus]);
 
   const handleShowMore = useCallback(() => {
-    if (lastStatus.get('hidden')) {
-      dispatch(revealStatus(lastStatus.get('id')));
-    } else {
-      dispatch(hideStatus(lastStatus.get('id')));
-    }
+    dispatch(toggleStatusSpoilers(lastStatus.get('id')));
 
     if (lastStatus.get('spoiler_text')) {
       setExpanded(!expanded);
@@ -203,14 +177,9 @@ export const Conversation = ({ conversation, scrollKey, onMoveUp, onMoveDown }) 
     toggleHidden: handleShowMore,
   };
 
-  let media = null;
-  if (lastStatus.get('media_attachments').size > 0) {
-    media = <AttachmentList compact media={lastStatus.get('media_attachments')} />;
-  }
-
   return (
     <HotKeys handlers={handlers}>
-      <div className={classNames('conversation focusable muted', { 'conversation--unread': unread })} tabIndex={0}>
+      <div className={classNames('conversation focusable muted', { unread })} tabIndex={0}>
         <div className='conversation__avatar' onClick={handleClick} role='presentation'>
           <AvatarComposite accounts={accounts} size={48} />
         </div>
@@ -228,12 +197,18 @@ export const Conversation = ({ conversation, scrollKey, onMoveUp, onMoveDown }) 
 
           <StatusContent
             status={lastStatus}
-            parseClick={parseClick}
+            onClick={handleClick}
             expanded={sharedCWState ? lastStatus.get('hidden') : expanded}
             onExpandedToggle={handleShowMore}
             collapsible
-            media={media}
           />
+
+          {lastStatus.get('media_attachments').size > 0 && (
+            <AttachmentList
+              compact
+              media={lastStatus.get('media_attachments')}
+            />
+          )}
 
           <div className='status__action-bar'>
             <IconButton className='status__action-bar-button' title={intl.formatMessage(messages.reply)} icon='reply' iconComponent={ReplyIcon} onClick={handleReply} />
