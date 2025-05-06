@@ -318,12 +318,26 @@ const expiresInFromExpiresAt = expires_at => {
 
 const mergeLocalHashtagResults = (suggestions, prefix, tagHistory) => {
   prefix = prefix.toLowerCase();
+
   if (suggestions.length < 4) {
     const localTags = tagHistory.filter(tag => tag.toLowerCase().startsWith(prefix) && !suggestions.some(suggestion => suggestion.type === 'hashtag' && suggestion.name.toLowerCase() === tag.toLowerCase()));
-    return suggestions.concat(localTags.slice(0, 4 - suggestions.length).toJS().map(tag => ({ type: 'hashtag', name: tag })));
-  } else {
-    return suggestions;
+    suggestions = suggestions.concat(localTags.slice(0, 4 - suggestions.length).toJS().map(tag => ({ type: 'hashtag', name: tag })));
   }
+
+  // Prefer capitalization from personal history, unless personal history is all lower-case
+  const fixSuggestionCapitalization = (suggestion) => {
+    if (suggestion.type !== 'hashtag')
+      return suggestion;
+
+    const tagFromHistory = tagHistory.find((tag) => tag.localeCompare(suggestion.name, undefined, { sensitivity: 'accent' }) === 0);
+
+    if (!tagFromHistory || tagFromHistory.toLowerCase() === tagFromHistory)
+      return suggestion;
+
+    return { ...suggestion, name: tagFromHistory };
+  };
+
+  return suggestions.map(fixSuggestionCapitalization);
 };
 
 const normalizeSuggestions = (state, { accounts, emojis, tags, token }) => {
@@ -587,9 +601,9 @@ export const composeReducer = (state = initialState, action) => {
 
       if (action.status.get('poll')) {
         map.set('poll', ImmutableMap({
-          options: action.status.getIn(['poll', 'options']).map(x => x.get('title')),
-          multiple: action.status.getIn(['poll', 'multiple']),
-          expires_in: expiresInFromExpiresAt(action.status.getIn(['poll', 'expires_at'])),
+          options: ImmutableList(action.status.get('poll').options.map(x => x.title)),
+          multiple: action.status.get('poll').multiple,
+          expires_in: expiresInFromExpiresAt(action.status.get('poll').expires_at),
         }));
       }
     });
@@ -618,9 +632,9 @@ export const composeReducer = (state = initialState, action) => {
 
       if (action.status.get('poll')) {
         map.set('poll', ImmutableMap({
-          options: action.status.getIn(['poll', 'options']).map(x => x.get('title')),
-          multiple: action.status.getIn(['poll', 'multiple']),
-          expires_in: expiresInFromExpiresAt(action.status.getIn(['poll', 'expires_at'])),
+          options: ImmutableList(action.status.get('poll').options.map(x => x.title)),
+          multiple: action.status.get('poll').multiple,
+          expires_in: expiresInFromExpiresAt(action.status.get('poll').expires_at),
         }));
       }
     });
