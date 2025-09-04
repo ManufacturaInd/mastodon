@@ -321,7 +321,6 @@ ms:
       title: Emoji sendiri
       uncategorized: Tidak dikategorikan
       unlist: Nyahsenaraikan
-      unlisted: Dinyahsenaraikan
       update_failed_msg: Tidak boleh mengemaskini emoji tersebut
       updated_msg: Emoji berjaya dikemaskini!
       upload: Muat naik
@@ -717,7 +716,6 @@ ms:
         preamble: Memaparkan kandungan yang menarik adalah penting dalam memasukkan pengguna baharu yang mungkin tidak mengenali sesiapa Mastodon. Kawal cara pelbagai ciri penemuan berfungsi pada server anda.
         profile_directory: Direktori profil
         public_timelines: Garis masa awam
-        publish_discovered_servers: Terbitkan pelayan yang ditemui
         publish_statistics: Terbitkan statistik
         title: Penemuan
         trends: Sohor kini
@@ -1555,13 +1553,10 @@ ms:
       reblog: Rangsangan tidak boleh disematkan
     title: '%{name}: "%{quote}"'
     visibilities:
-      direct: Terus
       private: Pengikut sahaja
       private_long: Hanya tunjukkan kepada pengikut
       public: Awam
-      public_long: Semua orang boleh melihat
       unlisted: Tidak tersenarai
-      unlisted_long: Semua orang boleh melihat, tetapi tidak disenaraikan pada garis masa awam
   statuses_cleanup:
     enabled: Padam hantaran lama secara automatik
     enabled_hint: Memadamkan pos anda secara automatik setelah mereka mencapai ambang umur yang ditentukan, melainkan ia sepadan dengan salah satu pengecualian di bawah

@@ -366,7 +366,6 @@ sl:
       title: Emotikoni po meri
       uncategorized: Brez kategorije
       unlist: Ne prikaži na seznamu
-      unlisted: Neuvrščeni
       update_failed_msg: Tega emotikona ni bilo mogoče posodobiti
       updated_msg: Emotikon je uspešno posodobljen!
       upload: Pošlji
@@ -815,7 +814,6 @@ sl:
         preamble: Izpostavljanje zanimivih vsebin je ključno za pridobivanje novih uporabnikov, ki morda ne poznajo nikogar na Mastodonu. Nadzirajte, kako različne funkcionalnosti razkritja delujejo na vašem strežniku.
         profile_directory: Imenik profilov
         public_timelines: Javne časovnice
-        publish_discovered_servers: Objavi odkrite strežnike
         publish_statistics: Objavi statistiko
         title: Razkrivanje
         trends: Trendi
@@ -1913,13 +1911,10 @@ sl:
       reblog: Izpostavitev ne more biti pripeta
     title: "%{name}: »%{quote}«"
     visibilities:
-      direct: Neposredno
       private: Samo sledilci
       private_long: Prikaži samo sledilcem
       public: Javno
-      public_long: Vsi lahko vidijo
       unlisted: Ni prikazano
-      unlisted_long: Vsi lahko vidijo, vendar ni objavljeno na javnih časovnicah
   statuses_cleanup:
     enabled: Samodejno izbriši stare objave
     enabled_hint: Samodejno izbriše vaše objave, ko dosežejo določen starostni prag, razen če ne ustrezajo eni od spodnjih izjem
@@ -2105,7 +2100,6 @@ sl:
       post_action: Sestavi
       post_step: Pozdravite cel svet z besedilom, fotografijami, videoposnetki ali anketami.
       post_title: Ustvarite svojo prvo objavo
-      share_action: Delite
       share_step: Naj prijatelji izvejo, kako vas najdejo na Mastodonu.
       share_title: Delite svoj profil Mastodon z drugimi
       sign_in_action: Prijava

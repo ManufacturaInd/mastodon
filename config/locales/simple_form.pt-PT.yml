@@ -53,25 +53,20 @@ pt-PT:
         locale: A língua do interface de utilizador, e-mails e notificações push
         password: Usa pelo menos 8 caracteres
         phrase: Será correspondido independentemente da capitalização ou do aviso de conteúdo duma publicação
-        scopes: APIs a que deve ser concedido acesso. Se escolheres uma abrangência de nível superior, não é preciso seleccioná-las individualmente.
-        setting_aggregate_reblogs: Não mostrar novas re-publicações que foram partilhadas recentemente (só afecta as novas partilhas)
-        setting_always_send_emails: Normalmente as notificações por e-mail não são enviadas quando estiveres a utilizar ativamente o Mastodon
-        setting_default_content_type_html: Os teus toots vão ser lidos como estando em HTML
-        setting_default_content_type_markdown: Os teus toots vão ser lidos como estando formatados em Markdown
-        setting_default_content_type_plain: Os teus toots vão ser lidos como texto simples sem formatação
-        setting_default_language: O idioma dos teus toots pode ser detectado automaticamente, mas nem sempre é fiável
-        setting_default_sensitive: Media sensíveis aparecem ocultos e podem ser revelados com um clique
-        setting_display_media_default: Esconder media sensíveis
-        setting_display_media_hide_all: Esconder todos os media
-        setting_display_media_show_all: Mostrar sempre media sensíveis
-        setting_hide_network: Quem tu segues e quem te segue não vai ser mostrado no teu perfil
-        setting_noindex: Afecta o teu perfil público e as páginas das tuas publicações
-        setting_show_application: A aplicação que usas para publicar vai ser mostrada na vista detalhada das tuas publicações
-        setting_skin: Muda a skin do tema
-        setting_use_blurhash: Os gradientes são baseados nas cores das imagens escondidas, mas ofuscam os detalhes
-        setting_use_pending_items: Ocultar actualizações da timeline atrás de um clique em vez de rolar automaticamente a lista
-        username: O teu nome de utilizador será único em %{domain}
-        whole_word: Quando a palavra-chave ou expressão-chave é apenas alfanumérica, ela só vai ser aplicada se corresponder à palavra completa
+        scopes: Quais as API a que a aplicação terá permissão para aceder. Se selecionar um âmbito de nível superior, não precisa de selecionar âmbitos individuais.
+        setting_aggregate_reblogs: Não mostrar os novos impulsos para publicações que tenham sido recentemente impulsionadas (apenas afeta os impulsos recentemente recebidos)
+        setting_always_send_emails: Normalmente as notificações por e-mail não serão enviadas quando estiver a utilizar ativamente o Mastodon
+        setting_default_quote_policy: Esta configuração só terá efeito nas publicações criadas com a próxima versão do Mastodon, mas pode desde já selecionar a sua preferência.
+        setting_default_sensitive: Os multimédia sensíveis são ocultados por predefinição e podem ser revelados com um clique/toque
+        setting_display_media_default: Esconder multimédia marcada como sensível
+        setting_display_media_hide_all: Esconder sempre toda a multimédia
+        setting_display_media_show_all: Mostrar sempre a multimédia
+        setting_emoji_style: Como apresentar emojis. "Auto" tenta usar emojis nativos, mas reverte para Twemoji em navegadores mais antigos.
+        setting_system_scrollbars_ui: Aplica-se apenas a navegadores de desktop baseados no Safari e Chrome
+        setting_use_blurhash: Os gradientes são baseados nas cores das imagens escondidas, mas ofuscam quaisquer pormenores
+        setting_use_pending_items: Ocultar as atualizações da cronologia após um clique em vez de percorrer automaticamente a cronologia
+        username: Podes utilizar letras, números e traços inferiores (_)
+        whole_word: Quando a palavra-chave ou expressão-chave é somente alfanumérica, ela só será aplicada se corresponder à palavra completa
       domain_allow:
         domain: Este domínio vai ser capaz de obter dados desta instância e os dados dele recebidos serão processados e armazenados
       email_domain_block:
@@ -109,9 +104,9 @@ pt-PT:
         theme: Tema de interface aplicado às novas contas.
         thumbnail: Uma imagem de aproximadamente 2:1, mostrada ao lado da informação deste servidor.
         timeline_preview: Os visitantes sem sessão iniciada poderão consultar as publicações públicas mais recentes disponíveis no servidor.
-        trendable_by_default: Ignorar a revisão manual do conteúdo de tendências. Os itens individuais ainda podem ser removidos das tendências após a apresentação.
+        trendable_by_default: Ignorar a revisão manual do conteúdo em destaque. Os itens individuais poderão ainda assim ser posteriormente removidos das tendências.
         trends: As tendências mostram quais as publicações, etiquetas e notícias que estão a ganhar destaque no seu servidor.
-        trends_as_landing_page: Mostrar conteúdo de tendências a utilizadores e visitantes com sessão terminada em vez de uma descrição deste servidor. Requer que as tendências estejam ativadas.
+        trends_as_landing_page: Mostrar conteúdo em destaque a utilizadores sem sessão iniciada e visitantes, ao invés de uma descrição deste servidor. Requer que os destaques estejam ativados.
       form_challenge:
         current_password: Estás a entrar numa área restrita
       imports:
@@ -153,15 +148,21 @@ pt-PT:
         jurisdiction: Indique o país de residência de quem paga as contas. Se se tratar de uma empresa ou outra entidade, indique o país onde está constituída, bem como a cidade, região, território ou estado, consoante o caso.
         min_age: Não deve ter menos do que a idade mínima exigida pela legislação da sua jurisdição.
       user:
-        chosen_languages: Quando seleccionado, só publicações nas línguas escolhidas vão ser mostradas nas timelines públicas
-        date_of_birth: Temos de ter a certeza de que tens pelo menos %{age} para usar o Mastodon. Não vamos guardar esta informação.
-        role: O cargo controla as credenciais que o utilizador tem
+        chosen_languages: Quando selecionado, só serão mostradas nas cronologias públicas as publicações nos idiomas escolhidos
+        date_of_birth:
+          one: Temos de nos certificar que tem pelo menos %{count} para utilizar %{domain}. Não vamos guardar esta informação.
+          other: Temos de nos certificar que tem pelo menos %{count} para utilizar %{domain}. Não vamos guardar esta informação.
+        role: A função controla as permissões que o utilizador tem.
       user_role:
-        color: Cor a ser utilizada para este cargo em todo o interface de utilizador, como RGB no formato hexadecimal
-        highlighted: Isto torna o cargo visível publicamente
-        name: Nome público do cargo, se o cargo for definido para ser mostrado como um distintivo
-        permissions_as_keys: Utilizadores com este cargo têm acesso a...
-        position: Cargos mais altos decidem a resolução de conflitos em certas situações. Certas acções só podem ser executadas em cargos com menor prioridade
+        color: Cor a ser utilizada para a função em toda a interface de utilizador, como RGB no formato hexadecimal
+        highlighted: Isto torna a função visível publicamente
+        name: Nome público da função, se esta estiver definida para ser apresentada com um emblema
+        permissions_as_keys: Utilizadores com esta função terão acesso a...
+        position: Funções mais altas decidem a resolução de conflitos em certas situações. Certas ações só podem ser executadas com certas funções com uma menor prioridade
+      username_block:
+        allow_with_approval: Em vez de impedir totalmente a inscrição, as inscrições correspondentes exigirão a sua aprovação
+        comparison: Tenha em atenção o Problema de Scunthorpe ao bloquear correspondências parciais
+        username: Terá correspondência independentemente das maiúsculas e minúsculas e de homógrafos comuns, como "4" para "a" ou "3" para "e"
       webhook:
         events: Selecciona os eventos a enviar
         template: Compõe o teu próprio conteúdo JSON utilizando a interpolação de variáveis. Deixar em branco para o JSON predefinido.
@@ -229,26 +230,24 @@ pt-PT:
         note: Biografia
         otp_attempt: Código de autenticação de dois factores
         password: Palavra-passe
-        phrase: Palavra ou expressão-chave
-        setting_advanced_layout: Ativar interface multi-colunas
-        setting_aggregate_reblogs: Agrupar partilhas em timelines
-        setting_always_send_emails: Enviar notificações de email sempre
-        setting_auto_play_gif: Reproduzir GIFs automaticamente
-        setting_boost_modal: Pedir confirmação antes de re-publicar
-        setting_crop_images: Cortar imagens em publicações não expandidas para o formato 16x9
-        setting_default_content_type: Formato preferido para os teus toots
-        setting_default_content_type_html: HTML
-        setting_default_content_type_markdown: Markdown
-        setting_default_content_type_plain: Texto simples
-        setting_default_language: Língua da publicação
-        setting_default_privacy: Privacidade da publicação
-        setting_default_sensitive: Sempre marcar media como sensível
-        setting_delete_modal: Pedir confirmação antes de apagar uma publicação
+        phrase: Palavra-chave ou frase
+        setting_advanced_layout: Ativar interface web avançada
+        setting_aggregate_reblogs: Agrupar impulsos em linhas de tempo
+        setting_always_send_emails: Enviar sempre notificações por e-mail
+        setting_auto_play_gif: Reproduzir GIF automaticamente
+        setting_boost_modal: Mostrar caixa de diálogo de confirmação antes de impulsionar
+        setting_default_language: Idioma de publicação
+        setting_default_privacy: Visibilidade da publicação
+        setting_default_quote_policy: Quem pode citar
+        setting_default_sensitive: Marcar sempre os multimédia como sensíveis
+        setting_delete_modal: Solicitar confirmação antes de eliminar uma publicação
+        setting_disable_hover_cards: Desativar visualização de perfil ao passar o cursor
         setting_disable_swiping: Desativar os movimentos de deslize
         setting_display_media: Visualização de multimédia
         setting_display_media_default: Pré-definição
         setting_display_media_hide_all: Esconder todos
         setting_display_media_show_all: Mostrar todos
+        setting_emoji_style: Estilo de emojis
         setting_expand_spoilers: Expandir sempre as publicações marcadas com avisos de conteúdo
         setting_favourite_modal: Pedir confirmação antes de favoritar
         setting_hide_followers_count: Esconder o teu número de seguidores
@@ -307,8 +306,8 @@ pt-PT:
         thumbnail: Miniatura do servidor
         timeline_preview: Permitir acesso não autenticado às timelines públicas
         trendable_by_default: Permitir tendências sem revisão prévia
-        trends: Activar tendências
-        trends_as_landing_page: Usar tendências como página inicial
+        trends: Ativar destaques
+        trends_as_landing_page: Usar destaques como página de apresentação
       interactions:
         must_be_follower: Bloquear notificações de não-seguidores
         must_be_following: Bloquear notificações de pessoas que não segues
@@ -328,20 +327,21 @@ pt-PT:
       notification_emails:
         appeal: Alguém contestou uma decisão de moderação
         digest: Enviar e-mails de resumo
-        favourite: Quando alguém adiciona uma publicação tua aos favoritos
-        follow: Quando alguém começar a seguir-te
-        follow_request: Quando alguém solicitar ser teu seguidor
-        mention: Quando alguém te mencionar
-        pending_account: Quando uma nova conta aguarda aprovação
-        reblog: Quando alguém partilhar uma publicação tua
-        report: Nova denúncia enviada
+        favourite: Quando alguém adiciona uma publicação sua aos favoritos
+        follow: Alguém começou a segui-lo
+        follow_request: Alguém pediu para ser seu seguidor
+        mention: Alguém o mencionou
+        pending_account: Uma nova conta aguarda aprovação
+        quote: Alguém o citou
+        reblog: Alguém impulsionou uma publicação sua
+        report: Uma nova denúncia foi submetida
         software_updates:
           all: Notificar todas as atualizações
           critical: Notificar apenas atualizações críticas
           label: Está disponível uma nova versão do Mastodon
           none: Nunca notificar atualizações (não recomendado)
           patch: Notificar sobre atualizações de correções de problemas
-        trending_tag: Nova tendência requer revisão
+        trending_tag: Um novo destaque requer revisão
       rule:
         hint: Informação Adicional
         text: Regra
@@ -350,9 +350,9 @@ pt-PT:
         show_application: Mostrar de que aplicação criou uma publicação
       tag:
         listable: Permitir que esta hashtag apareça em pesquisas e no 'Quem por cá anda'
-        name: Hashtag
-        trendable: Permitir que esta hashtag apareça em destaque
-        usable: Permitir que as publicações utilizem esta hashtag
+        name: Etiqueta
+        trendable: Permitir que esta etiqueta apareça nos destaques
+        usable: Permitir que as publicações usem esta etiqueta localmente
       terms_of_service:
         changelog: O que mudou?
         effective_date: Data de entrada em vigor
@@ -379,6 +379,10 @@ pt-PT:
         name: Nome
         permissions_as_keys: Permissões
         position: Prioridade
+      username_block:
+        allow_with_approval: Permitir inscrições com aprovação
+        comparison: Método de comparação
+        username: Palavra a corresponder
       webhook:
         events: Eventos ativados
         template: Modelo de conteúdo

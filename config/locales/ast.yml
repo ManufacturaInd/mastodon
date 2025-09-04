@@ -319,7 +319,6 @@ ast:
         preamble: L'apaición de conteníu interesante ye fundamental p'atrayer persones nueves que nun conozan nada de Mastodon. Controla'l funcionamientu de delles funciones de descubrimientu d'esti sirvidor.
         profile_directory: Direutoriu de perfiles
         public_timelines: Llinies de tiempu públiques
-        publish_discovered_servers: Espublizamientu de sirvidores descubiertos
         publish_statistics: Espublizamientu d'estadístiques
         title: Descubrimientu
         trends: Tendencies
@@ -812,11 +811,8 @@ ast:
       reblog: Nun se pue fixar una publicación compartida
     title: "%{name}: «%{quote}»"
     visibilities:
-      direct: Mensaxe direutu
       private: Namás siguidores
       private_long: Namás los ven los perfiles siguidores
-      public_long: Tol mundu pue velos
-      unlisted_long: Tol mundu pue velos, mas nun apaecen nes llinies de tiempu públiques
   statuses_cleanup:
     exceptions: Esceiciones
     interaction_exceptions: Esceiciones basaes nes interaiciones

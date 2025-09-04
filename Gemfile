@@ -5,7 +5,6 @@ ruby '>= 3.2.0', '< 3.5.0'
 
 gem 'propshaft'
 gem 'puma', '~> 6.3'
-gem 'rack', '~> 2.2.7'
 gem 'rails', '~> 8.0'
 gem 'thor', '~> 1.2'
 
@@ -52,8 +51,9 @@ gem 'faraday-httpclient'
 gem 'fast_blank', '~> 1.0'
 gem 'fastimage'
 gem 'hiredis', '~> 0.6'
+gem 'hiredis-client'
 gem 'htmlentities', '~> 4.3'
-gem 'http', '~> 5.2.0'
+gem 'http', '~> 5.3.0'
 gem 'http_accept_language', '~> 2.1'
 gem 'httplog', '~> 1.7.0', require: false
 gem 'i18n'
@@ -62,9 +62,9 @@ gem 'inline_svg'
 gem 'irb', '~> 1.8'
 gem 'kaminari', '~> 1.2'
 gem 'link_header', '~> 0.0'
-gem 'linzer', '~> 0.6.1'
+gem 'linzer', '~> 0.7.7'
 gem 'mario-redis-lock', '~> 1.2', require: 'redis_lock'
-gem 'mime-types', '~> 3.6.0', require: 'mime/types/columnar'
+gem 'mime-types', '~> 3.7.0', require: 'mime/types/columnar'
 gem 'mutex_m'
 gem 'nokogiri', '~> 1.15'
 gem 'oj', '~> 3.14'
@@ -74,28 +74,26 @@ gem 'premailer-rails'
 gem 'public_suffix', '~> 6.0'
 gem 'pundit', '~> 2.3'
 gem 'rack-attack', '~> 6.6'
-gem 'rack-cors', '~> 2.0', require: 'rack/cors'
+gem 'rack-cors', require: 'rack/cors'
 gem 'rails-i18n', '~> 8.0'
 gem 'redcarpet', '~> 3.6'
 gem 'redis', '~> 4.5', require: ['redis', 'redis/connection/hiredis']
-gem 'redis-namespace', '~> 1.10'
 gem 'rqrcode', '~> 3.0'
 gem 'ruby-progressbar', '~> 1.13'
 gem 'sanitize', '~> 7.0'
 gem 'scenic', '~> 1.7'
-gem 'sidekiq', '~> 6.5'
+gem 'sidekiq', '< 9'
 gem 'sidekiq-bulk', '~> 0.2.0'
-gem 'sidekiq-scheduler', '~> 5.0'
-gem 'sidekiq-unique-jobs', '~> 7.1'
+gem 'sidekiq-scheduler', '~> 6.0'
+gem 'sidekiq-unique-jobs', '> 8'
 gem 'simple_form', '~> 5.2'
 gem 'simple-navigation', '~> 4.4'
-gem 'stoplight', '~> 4.1'
+gem 'stoplight', github: 'ClearlyClaire/stoplight', ref: 'f13e0c0d5e6d34af8d3cfc888871caa84237db42'
 gem 'strong_migrations'
 gem 'tty-prompt', '~> 0.23', require: false
 gem 'twitter-text', '~> 3.1.0'
 gem 'tzinfo-data', '~> 1.2023'
 gem 'webauthn', '~> 3.0'
-gem 'webpacker', '~> 5.4'
 gem 'webpush', github: 'mastodon/webpush', ref: '9631ac63045cfabddacc69fc06e919b4c13eb913'
 
 gem 'json-ld'
@@ -104,17 +102,17 @@ gem 'rdf-normalize', '~> 0.5'
 
 gem 'prometheus_exporter', '~> 2.2', require: false
 
-gem 'opentelemetry-api', '~> 1.5.0'
+gem 'opentelemetry-api', '~> 1.6.0'
 
 group :opentelemetry do
   gem 'opentelemetry-exporter-otlp', '~> 0.30.0', require: false
   gem 'opentelemetry-instrumentation-active_job', '~> 0.8.0', require: false
   gem 'opentelemetry-instrumentation-active_model_serializers', '~> 0.22.0', require: false
   gem 'opentelemetry-instrumentation-concurrent_ruby', '~> 0.22.0', require: false
-  gem 'opentelemetry-instrumentation-excon', '~> 0.23.0', require: false
-  gem 'opentelemetry-instrumentation-faraday', '~> 0.26.0', require: false
-  gem 'opentelemetry-instrumentation-http', '~> 0.24.0', require: false
-  gem 'opentelemetry-instrumentation-http_client', '~> 0.23.0', require: false
+  gem 'opentelemetry-instrumentation-excon', '~> 0.24.0', require: false
+  gem 'opentelemetry-instrumentation-faraday', '~> 0.28.0', require: false
+  gem 'opentelemetry-instrumentation-http', '~> 0.25.0', require: false
+  gem 'opentelemetry-instrumentation-http_client', '~> 0.24.0', require: false
   gem 'opentelemetry-instrumentation-net_http', '~> 0.23.0', require: false
   gem 'opentelemetry-instrumentation-pg', '~> 0.30.0', require: false
   gem 'opentelemetry-instrumentation-rack', '~> 0.26.0', require: false
@@ -139,7 +137,7 @@ group :test do
 
   # Browser integration testing
   gem 'capybara', '~> 3.39'
-  gem 'selenium-webdriver'
+  gem 'capybara-playwright-driver'
 
   # Used to reset the database between system tests
   gem 'database_cleaner-active_record'
@@ -148,7 +146,7 @@ group :test do
   gem 'climate_control'
 
   # Validate schemas in specs
-  gem 'json-schema', '~> 5.0'
+  gem 'json-schema', '~> 6.0'
 
   # Test harness fo rack components
   gem 'rack-test', '~> 2.1'
@@ -203,7 +201,7 @@ group :development, :test do
   gem 'faker', '~> 3.2'
 
   # Generate factory objects
-  gem 'fabrication', '~> 2.30'
+  gem 'fabrication'
 
   # Profiling tools
   gem 'memory_profiler', require: false
@@ -225,8 +223,10 @@ gem 'connection_pool', require: false
 gem 'xorcist', '~> 1.1'
 
 gem 'net-http', '~> 0.6.0'
-gem 'rubyzip', '~> 2.3'
+gem 'rubyzip', '~> 3.0'
 
 gem 'hcaptcha', '~> 7.1'
 
 gem 'mail', '~> 2.8'
+
+gem 'vite_rails', '~> 3.0.19'
