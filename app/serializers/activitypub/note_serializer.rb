@@ -34,11 +34,11 @@ class ActivityPub::NoteSerializer < ActivityPub::Serializer
   attribute :voters_count, if: :poll_and_voters_count?
 
   attribute :quote, if: :quote?
-  attribute :quote, key: :_misskey_quote, if: :quote?
-  attribute :quote, key: :quote_uri, if: :quote?
+  attribute :quote, key: :_misskey_quote, if: :serializable_quote?
+  attribute :quote, key: :quote_uri, if: :serializable_quote?
   attribute :quote_authorization, if: :quote_authorization?
 
-  attribute :interaction_policy, if: -> { Mastodon::Feature.outgoing_quotes_enabled? }
+  attribute :interaction_policy
 
   def id
     raise Mastodon::NotPermittedError, 'Local-only statuses should not be serialized' if object.local_only? && !instance_options[:allow_local_only]
@@ -226,13 +226,17 @@ class ActivityPub::NoteSerializer < ActivityPub::Serializer
     object.quote&.present?
   end
 
+  def serializable_quote?
+    object.quote&.quoted_status&.present?
+  end
+
   def quote_authorization?
     object.quote.present? && ActivityPub::TagManager.instance.approval_uri_for(object.quote).present?
   end
 
   def quote
     # TODO: handle inlining self-quotes
-    ActivityPub::TagManager.instance.uri_for(object.quote.quoted_status)
+    object.quote.quoted_status.present? ? ActivityPub::TagManager.instance.uri_for(object.quote.quoted_status) : { type: 'Tombstone' }
   end
 
   def quote_authorization
@@ -252,15 +256,6 @@ class ActivityPub::NoteSerializer < ActivityPub::Serializer
     {
       canQuote: {
         automaticApproval: approved_uris,
-      },
-      canReply: {
-        always: 'https://www.w3.org/ns/activitystreams#Public',
-      },
-      canLike: {
-        always: 'https://www.w3.org/ns/activitystreams#Public',
-      },
-      canAnnounce: {
-        always: 'https://www.w3.org/ns/activitystreams#Public',
       },
     }
   end

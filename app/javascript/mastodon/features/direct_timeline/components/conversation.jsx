@@ -23,9 +23,9 @@ import { IconButton } from 'mastodon/components/icon_button';
 import { RelativeTimestamp } from 'mastodon/components/relative_timestamp';
 import StatusContent from 'mastodon/components/status_content';
 import { Dropdown } from 'mastodon/components/dropdown_menu';
-import { autoPlayGif } from 'mastodon/initial_state';
 import { makeGetStatus } from 'mastodon/selectors';
 import { LinkedDisplayName } from '@/mastodon/components/display_name';
+import { AnimateEmojiProvider } from '@/mastodon/components/emoji/context';
 
 const messages = defineMessages({
   more: { id: 'status.more', defaultMessage: 'More' },
@@ -56,32 +56,6 @@ export const Conversation = ({ conversation, scrollKey }) => {
   const history = useHistory();
   const lastStatus = useSelector(state => getStatus(state, { id: lastStatusId }));
   const accounts = useSelector(state => getAccounts(state, accountIds));
-
-  const handleMouseEnter = useCallback(({ currentTarget }) => {
-    if (autoPlayGif) {
-      return;
-    }
-
-    const emojis = currentTarget.querySelectorAll('.custom-emoji');
-
-    for (var i = 0; i < emojis.length; i++) {
-      let emoji = emojis[i];
-      emoji.src = emoji.getAttribute('data-original');
-    }
-  }, []);
-
-  const handleMouseLeave = useCallback(({ currentTarget }) => {
-    if (autoPlayGif) {
-      return;
-    }
-
-    const emojis = currentTarget.querySelectorAll('.custom-emoji');
-
-    for (var i = 0; i < emojis.length; i++) {
-      let emoji = emojis[i];
-      emoji.src = emoji.getAttribute('data-static');
-    }
-  }, []);
 
   const handleClick = useCallback(() => {
     if (unread) {
@@ -163,9 +137,9 @@ export const Conversation = ({ conversation, scrollKey }) => {
               {unread && <span className='conversation__unread' />} <RelativeTimestamp timestamp={lastStatus.get('created_at')} />
             </div>
 
-            <div className='conversation__content__names' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <AnimateEmojiProvider className='conversation__content__names'>
               <FormattedMessage id='conversation.with' defaultMessage='With {names}' values={{ names: <span>{names}</span> }} />
-            </div>
+            </AnimateEmojiProvider>
           </div>
 
           <StatusContent

@@ -7,8 +7,9 @@ import { Helmet } from 'react-helmet';
 import { NavLink } from 'react-router-dom';
 
 import { AccountBio } from '@/flavours/glitch/components/account_bio';
+import { AccountFields } from '@/flavours/glitch/components/account_fields';
 import { DisplayName } from '@/flavours/glitch/components/display_name';
-import CheckIcon from '@/material-icons/400-24px/check.svg?react';
+import { AnimateEmojiProvider } from '@/flavours/glitch/components/emoji/context';
 import LockIcon from '@/material-icons/400-24px/lock.svg?react';
 import MoreHorizIcon from '@/material-icons/400-24px/more_horiz.svg?react';
 import NotificationsIcon from '@/material-icons/400-24px/notifications.svg?react';
@@ -37,7 +38,6 @@ import {
   AutomatedBadge,
   GroupBadge,
 } from 'flavours/glitch/components/badge';
-import { Button } from 'flavours/glitch/components/button';
 import { CopyIconButton } from 'flavours/glitch/components/copy_icon_button';
 import { Dropdown } from 'flavours/glitch/components/dropdown_menu';
 import { FollowButton } from 'flavours/glitch/components/follow_button';
@@ -188,14 +188,6 @@ const titleFromAccount = (account: Account) => {
     displayName.trim().length === 0 ? account.username : displayName;
 
   return `${prefix} (@${acct})`;
-};
-
-const dateFormatOptions: Intl.DateTimeFormatOptions = {
-  month: 'short',
-  day: 'numeric',
-  year: 'numeric',
-  hour: '2-digit',
-  minute: '2-digit',
 };
 
 export const AccountHeader: React.FC<{
@@ -383,41 +375,11 @@ export const AccountHeader: React.FC<{
     });
   }, [account]);
 
-  const handleMouseEnter = useCallback(
-    ({ currentTarget }: React.MouseEvent) => {
-      if (autoPlayGif) {
-        return;
-      }
-
-      currentTarget
-        .querySelectorAll<HTMLImageElement>('.custom-emoji')
-        .forEach((emoji) => {
-          emoji.src = emoji.getAttribute('data-original') ?? '';
-        });
-    },
-    [],
-  );
-
-  const handleMouseLeave = useCallback(
-    ({ currentTarget }: React.MouseEvent) => {
-      if (autoPlayGif) {
-        return;
-      }
-
-      currentTarget
-        .querySelectorAll<HTMLImageElement>('.custom-emoji')
-        .forEach((emoji) => {
-          emoji.src = emoji.getAttribute('data-static') ?? '';
-        });
-    },
-    [],
-  );
-
   const suspended = account?.suspended;
   const isRemote = account?.acct !== account?.username;
   const remoteDomain = isRemote ? account?.acct.split('@')[1] : null;
 
-  const menu = useMemo(() => {
+  const menuItems = useMemo(() => {
     const arr: MenuItem[] = [];
 
     if (!account) {
@@ -639,6 +601,15 @@ export const AccountHeader: React.FC<{
     handleUnblockDomain,
   ]);
 
+  const menu = accountId !== me && (
+    <Dropdown
+      disabled={menuItems.length === 0}
+      items={menuItems}
+      icon='ellipsis-v'
+      iconComponent={MoreHorizIcon}
+    />
+  );
+
   if (!account) {
     return null;
   }
@@ -752,21 +723,16 @@ export const AccountHeader: React.FC<{
     );
   }
 
-  if (relationship?.blocking) {
+  const isMovedAndUnfollowedAccount = account.moved && !relationship?.following;
+
+  if (!isMovedAndUnfollowedAccount) {
     actionBtn = (
-      <Button
-        text={intl.formatMessage(messages.unblock, {
-          name: account.username,
-        })}
-        onClick={handleBlock}
+      <FollowButton
+        accountId={accountId}
+        className='account__header__follow-button'
+        labelLength='long'
       />
     );
-  } else {
-    actionBtn = <FollowButton accountId={accountId} />;
-  }
-
-  if (account.moved && !relationship?.following) {
-    actionBtn = '';
   }
 
   if (account.locked) {
@@ -811,12 +777,10 @@ export const AccountHeader: React.FC<{
         <MovedNote accountId={account.id} targetAccountId={account.moved} />
       )}
 
-      <div
+      <AnimateEmojiProvider
         className={classNames('account__header', {
           inactive: !!account.moved,
         })}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
       >
         {!(suspended || hidden || account.moved) &&
           relationship?.requested_by && (
@@ -850,18 +814,11 @@ export const AccountHeader: React.FC<{
               />
             </a>
 
-            <div className='account__header__tabs__buttons'>
+            <div className='account__header__buttons account__header__buttons--desktop'>
+              {!hidden && actionBtn}
               {!hidden && bellBtn}
               {!hidden && shareBtn}
-              {accountId !== me && (
-                <Dropdown
-                  disabled={menu.length === 0}
-                  items={menu}
-                  icon='ellipsis-v'
-                  iconComponent={MoreHorizIcon}
-                />
-              )}
-              {!hidden && actionBtn}
+              {menu}
             </div>
           </div>
 
@@ -890,6 +847,12 @@ export const AccountHeader: React.FC<{
           {account.id !== me && signedIn && !(suspended || hidden) && (
             <FamiliarFollowers accountId={accountId} />
           )}
+
+          <div className='account__header__buttons account__header__buttons--mobile'>
+            {!hidden && actionBtn}
+            {!hidden && bellBtn}
+            {menu}
+          </div>
 
           {!(suspended || hidden) && (
             <div className='account__header__extra'>
@@ -924,52 +887,13 @@ export const AccountHeader: React.FC<{
                     </dd>
                   </dl>
 
-                  {fields.map((pair, i) => (
-                    <dl
-                      key={i}
-                      className={classNames({
-                        verified: pair.verified_at,
-                      })}
-                    >
-                      <dt
-                        dangerouslySetInnerHTML={{
-                          __html: pair.name_emojified,
-                        }}
-                        title={pair.name}
-                        className='translate'
-                      />
-
-                      <dd className='translate' title={pair.value_plain ?? ''}>
-                        {pair.verified_at && (
-                          <span
-                            title={intl.formatMessage(messages.linkVerifiedOn, {
-                              date: intl.formatDate(
-                                pair.verified_at,
-                                dateFormatOptions,
-                              ),
-                            })}
-                          >
-                            <Icon
-                              id='check'
-                              icon={CheckIcon}
-                              className='verified__mark'
-                            />
-                          </span>
-                        )}{' '}
-                        <span
-                          dangerouslySetInnerHTML={{
-                            __html: pair.value_emojified,
-                          }}
-                        />
-                      </dd>
-                    </dl>
-                  ))}
+                  <AccountFields fields={fields} emojis={account.emojis} />
                 </div>
               </div>
             </div>
           )}
         </div>
-      </div>
+      </AnimateEmojiProvider>
 
       <ActionBar account={account} />
 
