@@ -9677,18 +9677,12 @@ noscript {
 
     &__shared {
       display: flex;
-      align-items: center;
+      align-items: baseline;
       color: $darker-text-color;
       gap: 8px;
       justify-content: space-between;
       font-size: 14px;
       line-height: 20px;
-
-      & > span {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-      }
 
       &__pill {
         background: var(--surface-variant-background-color);
@@ -9699,6 +9693,7 @@ noscript {
         font-size: 12px;
         font-weight: 500;
         line-height: 16px;
+        flex-shrink: 0;
       }
 
       &__author-link {
@@ -10748,7 +10743,7 @@ noscript {
   &:hover,
   &:focus,
   &:active {
-    background: color.change($ui-base-color, $alpha: 0.85);
+    background: color.change($white, $alpha: 0.15);
   }
 }
 

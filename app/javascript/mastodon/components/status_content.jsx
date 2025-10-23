@@ -219,7 +219,7 @@ class StatusContent extends PureComponent {
           {children}
         </HandledLink>
       );
-    } else if (element instanceof HTMLParagraphElement && element.classList.contains('quote-inline')) {
+    } else if (element.classList.contains('quote-inline')) {
       return null;
     }
     return undefined;
@@ -269,7 +269,7 @@ class StatusContent extends PureComponent {
               lang={language}
               htmlString={content}
               extraEmojis={status.get('emojis')}
-              onElement={this.handleElement.bind(this)}
+              onElement={this.handleElement}
             />
 
             {poll}
@@ -287,7 +287,7 @@ class StatusContent extends PureComponent {
             lang={language}
             htmlString={content}
             extraEmojis={status.get('emojis')}
-            onElement={this.handleElement.bind(this)}
+            onElement={this.handleElement}
           />
 
           {poll}

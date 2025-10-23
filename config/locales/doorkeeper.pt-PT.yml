@@ -124,7 +124,7 @@ pt-PT:
         admin/reports: Administração de denúncias
         all: Acesso total à sua conta Mastodon
         blocks: Bloqueios
-        bookmarks: Marcadores
+        bookmarks: Itens Salvos
         conversations: Conversas
         crypto: Encriptação ponta a ponta
         favourites: Favoritos
@@ -183,8 +183,8 @@ pt-PT:
       write: publicar por ti
       write:accounts: modificar o seu perfil
       write:blocks: bloquear contas e domínios
-      write:bookmarks: ver estado das publicações guardadas
-      write:conversations: silenciar e eliminar conversas
+      write:bookmarks: guardar publicações
+      write:conversations: ocultar e eliminar conversas
       write:favourites: assinalar como favoritas
       write:filters: criar filtros
       write:follows: seguir pessoas
