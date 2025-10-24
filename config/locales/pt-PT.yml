@@ -1768,7 +1768,7 @@ pt-PT:
       title: Nova citação
     reblog:
       body: 'A tua publicação foi partilhada por %{name}:'
-      subject: "%{name} partilhou a sua publicação"
+      subject: "%{name} partilhou a tua publicação"
       title: Novo impulso
     status:
       subject: "%{name} acabou de publicar"
