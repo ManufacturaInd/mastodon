@@ -109,14 +109,16 @@ const hotkeyMatcherMap = {
   mention: just('m'),
   open: any('enter', 'o'),
   openProfile: just('p'),
-  moveDown: just('j'),
-  moveUp: just('k'),
+  moveDown: any('j', 'pagedown'),
+  moveUp: any('k', 'pageup'),
+  moveToTop: just('0'),
   toggleHidden: just('x'),
   toggleSensitive: just('h'),
   toggleComposeSpoilers: optionPlus('x'),
   openMedia: just('e'),
   onTranslate: just('t'),
   goToHome: sequence('g', 'h'),
+  goToExplore: sequence('g', 'e'),
   goToNotifications: sequence('g', 'n'),
   goToLocal: sequence('g', 'l'),
   goToFederated: sequence('g', 't'),
@@ -145,9 +147,15 @@ const hotkeyMatcherMap = {
 
 type HotkeyName = keyof typeof hotkeyMatcherMap;
 
-export type HandlerMap = Partial<
-  Record<HotkeyName, (event: KeyboardEvent) => void>
->;
+type HandlerFunction =
+  // When a handler returns a boolean, it should indicate whether the
+  // hotkey was handled (i.e. it resulted in an action).
+  // If `false` is returned, `preventDefault` and `stopPropagation`
+  // will not be called on the keyboard event, restoring the key's
+  // native behaviour.
+  ((event: KeyboardEvent) => boolean) | ((event: KeyboardEvent) => void);
+
+export type HandlerMap = Partial<Record<HotkeyName, HandlerFunction>>;
 
 export function useHotkeys<T extends HTMLElement>(handlers: HandlerMap) {
   const ref = useRef<T>(null);
@@ -180,25 +188,24 @@ export function useHotkeys<T extends HTMLElement>(handlers: HandlerMap) {
 
       if (shouldHandleEvent) {
         const matchCandidates: {
-          handler: (event: KeyboardEvent) => void;
+          // A candidate will be have an undefined handler if it's matched,
+          // but handled in a parent component rather than this one.
+          handler: HandlerFunction | undefined;
           priority: number;
         }[] = [];
 
         (Object.keys(hotkeyMatcherMap) as HotkeyName[]).forEach(
           (handlerName) => {
             const handler = handlersRef.current[handlerName];
+            const hotkeyMatcher = hotkeyMatcherMap[handlerName];
 
-            if (handler) {
-              const hotkeyMatcher = hotkeyMatcherMap[handlerName];
+            const { isMatch, priority } = hotkeyMatcher(
+              event,
+              bufferedKeys.current,
+            );
 
-              const { isMatch, priority } = hotkeyMatcher(
-                event,
-                bufferedKeys.current,
-              );
-
-              if (isMatch) {
-                matchCandidates.push({ handler, priority });
-              }
+            if (isMatch) {
+              matchCandidates.push({ handler, priority });
             }
           },
         );
@@ -208,9 +215,11 @@ export function useHotkeys<T extends HTMLElement>(handlers: HandlerMap) {
 
         const bestMatchingHandler = matchCandidates.at(0)?.handler;
         if (bestMatchingHandler) {
-          bestMatchingHandler(event);
-          event.stopPropagation();
-          event.preventDefault();
+          const wasHandled = bestMatchingHandler(event);
+          if (wasHandled !== false) {
+            event.stopPropagation();
+            event.preventDefault();
+          }
         }
 
         // Add last keypress to buffer

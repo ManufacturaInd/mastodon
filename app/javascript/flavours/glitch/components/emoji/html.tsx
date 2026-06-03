@@ -1,9 +1,6 @@
 import { useMemo } from 'react';
 
-import classNames from 'classnames';
-
 import type { CustomEmojiMapArg } from '@/flavours/glitch/features/emoji/types';
-import { isModernEmojiEnabled } from '@/flavours/glitch/utils/environment';
 import type {
   OnAttributeHandler,
   OnElementHandler,
@@ -22,19 +19,8 @@ export interface EmojiHTMLProps {
   onAttribute?: OnAttributeHandler;
 }
 
-export const ModernEmojiHTML = polymorphicForwardRef<'div', EmojiHTMLProps>(
-  (
-    {
-      extraEmojis,
-      htmlString,
-      as: asProp = 'div', // Rename for syntax highlighting
-      className = '',
-      onElement,
-      onAttribute,
-      ...props
-    },
-    ref,
-  ) => {
+export const EmojiHTML = polymorphicForwardRef<'div', EmojiHTMLProps>(
+  ({ extraEmojis, htmlString, onElement, onAttribute, ...props }, ref) => {
     const contents = useMemo(
       () =>
         htmlStringToComponents(htmlString, {
@@ -47,44 +33,11 @@ export const ModernEmojiHTML = polymorphicForwardRef<'div', EmojiHTMLProps>(
 
     return (
       <CustomEmojiProvider emojis={extraEmojis}>
-        <AnimateEmojiProvider
-          {...props}
-          as={asProp}
-          className={className}
-          ref={ref}
-        >
+        <AnimateEmojiProvider {...props} ref={ref}>
           {contents}
         </AnimateEmojiProvider>
       </CustomEmojiProvider>
     );
   },
 );
-ModernEmojiHTML.displayName = 'ModernEmojiHTML';
-
-export const LegacyEmojiHTML = polymorphicForwardRef<'div', EmojiHTMLProps>(
-  (props, ref) => {
-    const {
-      as: asElement,
-      htmlString,
-      extraEmojis,
-      className,
-      onElement,
-      onAttribute,
-      ...rest
-    } = props;
-    const Wrapper = asElement ?? 'div';
-    return (
-      <Wrapper
-        {...rest}
-        ref={ref}
-        dangerouslySetInnerHTML={{ __html: htmlString }}
-        className={classNames(className, 'animate-parent')}
-      />
-    );
-  },
-);
-LegacyEmojiHTML.displayName = 'LegacyEmojiHTML';
-
-export const EmojiHTML = isModernEmojiEnabled()
-  ? ModernEmojiHTML
-  : LegacyEmojiHTML;
+EmojiHTML.displayName = 'EmojiHTML';

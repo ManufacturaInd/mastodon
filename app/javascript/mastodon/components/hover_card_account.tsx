@@ -5,6 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 
+import { useFetchFamiliarFollowers } from '@/mastodon/components/familiar_followers/use_fetch_familiar_followers';
 import { fetchAccount } from 'mastodon/actions/accounts';
 import { AccountBio } from 'mastodon/components/account_bio';
 import { AccountFields } from 'mastodon/components/account_fields';
@@ -18,12 +19,9 @@ import { DisplayName } from 'mastodon/components/display_name';
 import { FollowButton } from 'mastodon/components/follow_button';
 import { LoadingIndicator } from 'mastodon/components/loading_indicator';
 import { ShortNumber } from 'mastodon/components/short_number';
-import { useFetchFamiliarFollowers } from 'mastodon/features/account_timeline/hooks/familiar_followers';
 import { domain } from 'mastodon/initial_state';
 import { getAccountHidden } from 'mastodon/selectors/accounts';
 import { useAppSelector, useAppDispatch } from 'mastodon/store';
-
-import { useLinks } from '../hooks/useLinks';
 
 export const HoverCardAccount = forwardRef<
   HTMLDivElement,
@@ -66,8 +64,6 @@ export const HoverCardAccount = forwardRef<
     !isMutual &&
     !isFollower;
 
-  const handleClick = useLinks();
-
   return (
     <div
       ref={ref}
@@ -97,7 +93,7 @@ export const HoverCardAccount = forwardRef<
               ) : (
                 <FormattedMessage
                   id='limited_account_hint.title'
-                  defaultMessage='This profile has been hidden by the moderators of {domain}.'
+                  defaultMessage='This profile or server has been hidden by the moderators of {domain}.'
                   values={{ domain }}
                 />
               )}
@@ -110,7 +106,7 @@ export const HoverCardAccount = forwardRef<
                   className='hover-card__bio'
                 />
 
-                <div className='account-fields' onClickCapture={handleClick}>
+                <div className='account-fields'>
                   <AccountFields
                     fields={account.fields.take(2)}
                     emojis={account.emojis}
@@ -158,17 +154,19 @@ export const HoverCardAccount = forwardRef<
                 {(isMutual || isFollower) && (
                   <>
                     &middot;
-                    {isMutual ? (
-                      <FormattedMessage
-                        id='account.mutual'
-                        defaultMessage='You follow each other'
-                      />
-                    ) : (
-                      <FormattedMessage
-                        id='account.follows_you'
-                        defaultMessage='Follows you'
-                      />
-                    )}
+                    <span>
+                      {isMutual ? (
+                        <FormattedMessage
+                          id='account.mutual'
+                          defaultMessage='You follow each other'
+                        />
+                      ) : (
+                        <FormattedMessage
+                          id='account.follows_you'
+                          defaultMessage='Follows you'
+                        />
+                      )}
+                    </span>
                   </>
                 )}
               </div>

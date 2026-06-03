@@ -1,9 +1,10 @@
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { FormattedMessage } from 'react-intl';
+import { defineMessage, FormattedMessage, useIntl } from 'react-intl';
 
 import type { Map as ImmutableMap } from 'immutable';
 
+import CancelFillIcon from '@/material-icons/400-24px/cancel-fill.svg?react';
 import { LearnMoreLink } from 'flavours/glitch/components/learn_more_link';
 import StatusContainer from 'flavours/glitch/containers/status_container';
 import { domain } from 'flavours/glitch/initial_state';
@@ -19,6 +20,9 @@ import { makeGetStatusWithExtraInfo } from '../selectors';
 import { getAccountHidden } from '../selectors/accounts';
 
 import { Button } from './button';
+import { IconButton } from './icon_button';
+import type { StatusHeaderRenderFn } from './status/header';
+import { StatusHeader } from './status/header';
 
 const MAX_QUOTE_POSTS_NESTING_LEVEL = 1;
 
@@ -73,7 +77,63 @@ const LimitedAccountHint: React.FC<{ accountId: string }> = ({ accountId }) => {
         defaultMessage='This account has been hidden by the moderators of {domain}.'
         values={{ domain }}
       />
-      <button onClick={reveal} className='link-button'>
+      <button onClick={reveal} className='link-button' type='button'>
+        <FormattedMessage
+          id='status.quote_error.limited_account_hint.action'
+          defaultMessage='Show anyway'
+        />
+      </button>
+    </>
+  );
+};
+
+const FilteredQuote: React.FC<{
+  reveal: VoidFunction;
+  quotedAccountId: string;
+  quoteState: string;
+}> = ({ reveal, quotedAccountId, quoteState }) => {
+  const account = useAppSelector((state) =>
+    quotedAccountId ? state.accounts.get(quotedAccountId) : undefined,
+  );
+
+  const quoteAuthorName = account?.acct;
+  const domain = quoteAuthorName?.split('@')[1];
+
+  let message;
+
+  switch (quoteState) {
+    case 'blocked_account':
+      message = (
+        <FormattedMessage
+          id='status.quote_error.blocked_account_hint.title'
+          defaultMessage="This post is hidden because you've blocked @{name}."
+          values={{ name: quoteAuthorName }}
+        />
+      );
+      break;
+    case 'blocked_domain':
+      message = (
+        <FormattedMessage
+          id='status.quote_error.blocked_domain_hint.title'
+          defaultMessage="This post is hidden because you've blocked {domain}."
+          values={{ domain }}
+        />
+      );
+      break;
+    case 'muted_account':
+      message = (
+        <FormattedMessage
+          id='status.quote_error.muted_account_hint.title'
+          defaultMessage="This post is hidden because you've muted @{name}."
+          values={{ name: quoteAuthorName }}
+        />
+      );
+  }
+
+  return (
+    <>
+      {message}
+      <button onClick={reveal} className='link-button' type='button'>
         <FormattedMessage
           id='status.quote_error.limited_account_hint.action'
           defaultMessage='Show anyway'
@@ -91,6 +151,11 @@ interface QuotedStatusProps {
   nestingLevel?: number;
   onQuoteCancel?: () => void; // Used for composer.
 }
+
+const quoteCancelMessage = defineMessage({
+  id: 'status.quote.cancel',
+  defaultMessage: 'Cancel quote',
+});
 
 export const QuotedStatus: React.FC<QuotedStatusProps> = ({
   quote,
@@ -130,6 +195,11 @@ export const QuotedStatus: React.FC<QuotedStatusProps> = ({
   const isLoaded = loadingState === 'complete';
 
   const isFetchingQuoteRef = useRef(false);
+  const [revealed, setRevealed] = useState(false);
+
+  const reveal = useCallback(() => {
+    setRevealed(true);
+  }, [setRevealed]);
 
   useEffect(() => {
     if (isLoaded) {
@@ -152,6 +222,27 @@ export const QuotedStatus: React.FC<QuotedStatusProps> = ({
   useEffect(() => {
     if (accountId && hiddenAccount) dispatch(fetchRelationships([accountId]));
   }, [accountId, hiddenAccount, dispatch]);
+
+  const intl = useIntl();
+  const headerRenderFn: StatusHeaderRenderFn = useCallback(
+    (props) => (
+      <StatusHeader
+        {...props}
+        contentAfterDate={
+          onQuoteCancel && (
+            <IconButton
+              onClick={onQuoteCancel}
+              className='status__quote-cancel'
+              title={intl.formatMessage(quoteCancelMessage)}
+              icon='cancel-fill'
+              iconComponent={CancelFillIcon}
+            />
+          )
+        }
+      />
+    ),
+    [intl, onQuoteCancel],
+  );
 
   const isFilteredAndHidden = loadingState === 'filtered';
 
@@ -187,6 +278,20 @@ export const QuotedStatus: React.FC<QuotedStatusProps> = ({
       <FormattedMessage
         id='status.quote_error.revoked'
         defaultMessage='Post removed by author'
+      />
+    );
+  } else if (
+    (quoteState === 'blocked_account' ||
+      quoteState === 'blocked_domain' ||
+      quoteState === 'muted_account') &&
+    !revealed &&
+    accountId
+  ) {
+    quoteError = (
+      <FilteredQuote
+        quoteState={quoteState}
+        reveal={reveal}
+        quotedAccountId={accountId}
       />
     );
   } else if (
@@ -234,13 +339,12 @@ export const QuotedStatus: React.FC<QuotedStatusProps> = ({
 
   return (
     <div className='status__quote'>
-      {/* @ts-expect-error Status is not yet typed */}
       <StatusContainer
         isQuotedPost
         id={quotedStatusId}
         contextType={contextType}
         avatarSize={32}
-        onQuoteCancel={onQuoteCancel}
+        headerRenderFn={headerRenderFn}
       >
         {canRenderChildQuote && (
           <QuotedStatus

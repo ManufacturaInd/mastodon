@@ -28,15 +28,14 @@ pt-PT:
         subject: 'Ciberlândia: Instruções de confirmação %{instance}'
         title: Verificar o endereço de e-mail
       email_changed:
-        explanation: 'O e-mail associado à tua conta vai ser alterado para:'
+        explanation: 'O e-mail associado à tua conta será alterado para:'
         extra: Se não pediste para alterar o teu e-mail, é possível que alguém tenha conseguido aceder à tua conta. Muda imediatamente a tua palavra-passe ou entra em contacto com a administração da instância se tiveres ficado sem acesso à tua conta.
-        subject: 'Ciberlândia: E-mail alterado'
+        subject: 'Ciberlância: e-mail alterado'
         title: Novo endereço de e-mail
       password_change:
         explanation: A palavra-passe da tua conta foi alterada.
         extra: Se não pediste para alterar a tua palavra-passe, é possível que alguém tenha conseguido aceder à tua conta. Muda imediatamente a tua palavra-passe ou entra em contacto com a administração da instância se tiveres ficado sem acesso à tua conta.
         subject: 'Ciberlândia: Nova palavra-passe'
-        title: Palavra-passe alterada
       reconfirmation_instructions:
         explanation: Confirma o teu novo endereço para alterar o e-mail.
         extra: Se esta mudança não foi iniciada por ti, não ligues a esta mensagem. O endereço de e-mail para a tua conta na Ciberlândia não vai mudar enquanto não acederes ao link acima.

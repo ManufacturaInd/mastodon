@@ -4,7 +4,7 @@
                   @typescript-eslint/no-unsafe-assignment */
 
 import type { CSSProperties } from 'react';
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 
 import { FormattedMessage } from 'react-intl';
 
@@ -30,10 +30,13 @@ import StatusContent from 'flavours/glitch/components/status_content';
 import { QuotedStatus } from 'flavours/glitch/components/status_quoted';
 import { VisibilityIcon } from 'flavours/glitch/components/visibility_icon';
 import { Audio } from 'flavours/glitch/features/audio';
+import { CollectionPreviewCard } from 'flavours/glitch/features/collections/components/collection_preview_card';
 import scheduleIdleTask from 'flavours/glitch/features/ui/util/schedule_idle_task';
 import { Video } from 'flavours/glitch/features/video';
 import { useIdentity } from 'flavours/glitch/identity_context';
+import type { CollectionAttachment } from 'flavours/glitch/models/status';
 import { useAppSelector } from 'flavours/glitch/store';
+import { compareUrls } from 'flavours/glitch/utils/compare_urls';
 
 import Card from './card';
 
@@ -57,6 +60,8 @@ export const DetailedStatus: React.FC<{
   pictureInPicture: any;
   onToggleHidden?: (status: any) => void;
   onToggleMediaVisibility?: () => void;
+  ancestors?: number;
+  multiColumn?: boolean;
   expanded: boolean;
 }> = ({
   status,
@@ -72,6 +77,8 @@ export const DetailedStatus: React.FC<{
   pictureInPicture,
   onToggleMediaVisibility,
   onToggleHidden,
+  ancestors = 0,
+  multiColumn = false,
   expanded,
 }) => {
   const properStatus = status?.get('reblog') ?? status;
@@ -79,13 +86,6 @@ export const DetailedStatus: React.FC<{
   const [showDespiteFilter, setShowDespiteFilter] = useState(false);
   const nodeRef = useRef<HTMLDivElement>();
 
-  const rewriteMentions = useAppSelector(
-    (state) => state.local_settings.get('rewrite_mentions', false) as boolean,
-  );
-  const tagMisleadingLinks = useAppSelector(
-    (state) =>
-      state.local_settings.get('tag_misleading_links', false) as boolean,
-  );
   const letterboxMedia = useAppSelector(
     (state) =>
       state.local_settings.getIn(['media', 'letterbox'], false) as boolean,
@@ -142,6 +142,30 @@ export const DetailedStatus: React.FC<{
   const handleTranslate = useCallback(() => {
     if (onTranslate) onTranslate(status);
   }, [onTranslate, status]);
+
+  // The component is managed and will change if the status changes
+  // Ancestors can increase when loading a thread, in which case we want to scroll,
+  // or decrease if a post is deleted, in which case we don't want to mess with it
+  const previousAncestors = useRef(-1);
+  useEffect(() => {
+    if (nodeRef.current && previousAncestors.current < ancestors) {
+      nodeRef.current.scrollIntoView(true);
+
+      // In the single-column interface, `scrollIntoView` will put the post behind the header, so compensate for that.
+      if (!multiColumn) {
+        const offset = document
+          .querySelector('.column-header__wrapper')
+          ?.getBoundingClientRect().bottom;
+
+        if (offset) {
+          const scrollingElement = document.scrollingElement ?? document.body;
+          scrollingElement.scrollBy(0, -offset);
+        }
+      }
+    }
+
+    previousAncestors.current = ancestors;
+  }, [ancestors, multiColumn]);
 
   if (!properStatus) {
     return null;
@@ -271,14 +295,42 @@ export const DetailedStatus: React.FC<{
       mediaIcons.push('video-camera');
     }
   } else if (status.get('card') && !status.get('quote')) {
-    media = (
-      <Card
-        sensitive={status.get('sensitive')}
-        onOpenMedia={onOpenMedia}
-        card={status.get('card')}
-      />
-    );
+    const cardUrl: string = status.getIn(['card', 'url']);
+
+    const taggedCollection = status
+      .get('tagged_collections')
+      .find((item: CollectionAttachment) =>
+        compareUrls(item.get('url'), cardUrl),
+      );
+
+    if (taggedCollection) {
+      media = (
+        <CollectionPreviewCard
+          collection={taggedCollection.toJS()}
+          headingLevel='h2'
+        />
+      );
+    } else {
+      media = (
+        <Card
+          key={`${status.get('id')}-${status.get('edited_at')}`}
+          sensitive={status.get('sensitive')}
+          card={status.get('card')}
+        />
+      );
+    }
+
     mediaIcons.push('link');
+  } else if (status.get('tagged_collections').size) {
+    const firstLinkedCollection = status.get('tagged_collections').first();
+    if (firstLinkedCollection) {
+      media = (
+        <CollectionPreviewCard
+          collection={firstLinkedCollection.toJS()}
+          headingLevel='h2'
+        />
+      );
+    }
   }
 
   if (status.get('poll')) {
@@ -315,13 +367,17 @@ export const DetailedStatus: React.FC<{
         to={`/@${status.getIn(['account', 'acct'])}/${status.get('id')}/reblogs`}
         className='detailed-status__link'
       >
-        <span className='detailed-status__reblogs'>
-          <AnimatedNumber value={status.get('reblogs_count')} />
-        </span>
         <FormattedMessage
-          id='status.reblogs'
-          defaultMessage='{count, plural, one {boost} other {boosts}}'
-          values={{ count: status.get('reblogs_count') }}
+          id='status.reblogs_count'
+          defaultMessage='{count, plural, one {{counter} boost} other {{counter} boosts}}'
+          values={{
+            count: status.get('reblogs_count'),
+            counter: (
+              <span className='detailed-status__reblogs'>
+                <AnimatedNumber value={status.get('reblogs_count')} />
+              </span>
+            ),
+          }}
         />
       </Link>
     );
@@ -335,26 +391,34 @@ export const DetailedStatus: React.FC<{
         to={`/@${status.getIn(['account', 'acct'])}/${status.get('id')}/quotes`}
         className='detailed-status__link'
       >
-        <span className='detailed-status__quotes'>
-          <AnimatedNumber value={status.get('quotes_count')} />
-        </span>
         <FormattedMessage
-          id='status.quotes'
-          defaultMessage='{count, plural, one {quote} other {quotes}}'
-          values={{ count: status.get('quotes_count') }}
+          id='status.quotes_count'
+          defaultMessage='{count, plural, one {{counter} quote} other {{counter} quotes}}'
+          values={{
+            count: status.get('quotes_count'),
+            counter: (
+              <span className='detailed-status__quotes'>
+                <AnimatedNumber value={status.get('quotes_count')} />
+              </span>
+            ),
+          }}
         />
       </Link>
     );
   } else {
     quotesLink = (
       <span className='detailed-status__link'>
-        <span className='detailed-status__quotes'>
-          <AnimatedNumber value={status.get('quotes_count')} />
-        </span>
         <FormattedMessage
-          id='status.quotes'
-          defaultMessage='{count, plural, one {quote} other {quotes}}'
-          values={{ count: status.get('quotes_count') }}
+          id='status.quotes_count'
+          defaultMessage='{count, plural, one {{counter} quote} other {{counter} quotes}}'
+          values={{
+            count: status.get('quotes_count'),
+            counter: (
+              <span className='detailed-status__quotes'>
+                <AnimatedNumber value={status.get('quotes_count')} />
+              </span>
+            ),
+          }}
         />
       </span>
     );
@@ -365,13 +429,17 @@ export const DetailedStatus: React.FC<{
       to={`/@${status.getIn(['account', 'acct'])}/${status.get('id')}/favourites`}
       className='detailed-status__link'
     >
-      <span className='detailed-status__favorites'>
-        <AnimatedNumber value={status.get('favourites_count')} />
-      </span>
       <FormattedMessage
-        id='status.favourites'
-        defaultMessage='{count, plural, one {favorite} other {favorites}}'
-        values={{ count: status.get('favourites_count') }}
+        id='status.favourites_count'
+        defaultMessage='{count, plural, one {{counter} favorite} other {{counter} favorites}}'
+        values={{
+          count: status.get('favourites_count'),
+          counter: (
+            <span className='detailed-status__favorites'>
+              <AnimatedNumber value={status.get('favourites_count')} />
+            </span>
+          ),
+        }}
       />
     </Link>
   );
@@ -442,8 +510,6 @@ export const DetailedStatus: React.FC<{
             <StatusContent
               status={status}
               onTranslate={handleTranslate}
-              tagLinks={tagMisleadingLinks}
-              rewriteMentions={rewriteMentions}
               {...(statusContentProps as any)}
             />
 
@@ -454,6 +520,7 @@ export const DetailedStatus: React.FC<{
               <QuotedStatus
                 quote={status.get('quote')}
                 parentQuotePostId={status.get('id')}
+                contextType='thread'
               />
             )}
           </>

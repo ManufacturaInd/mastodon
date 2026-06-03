@@ -15,6 +15,10 @@ module User::HasSettings
     settings['noindex']
   end
 
+  def email_subscriptions_enabled?
+    settings['email_subscriptions']
+  end
+
   def preferred_posting_language
     valid_locale_cascade(settings['default_language'], locale, I18n.locale)
   end
@@ -51,10 +55,6 @@ module User::HasSettings
     settings['web.use_system_font']
   end
 
-  def setting_system_emoji_font
-    settings['web.use_system_emoji_font']
-  end
-
   def setting_system_scrollbars_ui
     settings['web.use_system_scrollbars']
   end
@@ -69,6 +69,14 @@ module User::HasSettings
 
   def setting_skin
     settings['skin']
+  end
+
+  def setting_color_scheme
+    settings['web.color_scheme']
+  end
+
+  def setting_contrast
+    settings['web.contrast']
   end
 
   def setting_display_media
