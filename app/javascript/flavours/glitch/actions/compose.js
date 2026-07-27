@@ -15,6 +15,7 @@ import { useEmoji } from './emojis';
 import { importFetchedAccounts, importFetchedStatus } from './importer';
 import { openModal } from './modal';
 import { updateTimeline } from './timelines';
+import { insertStatusIntoAccountTimelines } from './timelines_typed';
 
 /** @type {AbortController | undefined} */
 let fetchComposeSuggestionsAccountsController;
@@ -64,10 +65,6 @@ export const COMPOSE_LANGUAGE_CHANGE     = 'COMPOSE_LANGUAGE_CHANGE';
 
 export const COMPOSE_EMOJI_INSERT = 'COMPOSE_EMOJI_INSERT';
 
-export const COMPOSE_UPLOAD_CHANGE_REQUEST     = 'COMPOSE_UPLOAD_UPDATE_REQUEST';
-export const COMPOSE_UPLOAD_CHANGE_SUCCESS     = 'COMPOSE_UPLOAD_UPDATE_SUCCESS';
-export const COMPOSE_UPLOAD_CHANGE_FAIL        = 'COMPOSE_UPLOAD_UPDATE_FAIL';
-
 export const COMPOSE_DOODLE_SET        = 'COMPOSE_DOODLE_SET';
 
 export const COMPOSE_POLL_ADD             = 'COMPOSE_POLL_ADD';
@@ -98,7 +95,7 @@ const messages = defineMessages({
 
 export const ensureComposeIsVisible = (getState) => {
   if (!getState().getIn(['compose', 'mounted'])) {
-    browserHistory.push('/publish');
+    browserHistory.push('/publish', { focusTarget: false });
   }
 };
 
@@ -210,14 +207,14 @@ export function directCompose(account) {
  */
 export function submitCompose(overridePrivacy = null, successCallback = undefined) {
   return function (dispatch, getState) {
-    let status     = getState().getIn(['compose', 'text'], '');
-    const media    = getState().getIn(['compose', 'media_attachments']);
-    const statusId = getState().getIn(['compose', 'id'], null);
-    const hasQuote = !!getState().getIn(['compose', 'quoted_status_id']);
-    const spoilers = getState().getIn(['compose', 'spoiler']) || getState().getIn(['local_settings', 'always_show_spoilers_field']);
+    const statusText   = getState().getIn(['compose', 'text'], '');
+    const media        = getState().getIn(['compose', 'media_attachments']);
+    const statusId     = getState().getIn(['compose', 'id'], null);
+    const hasQuote     = !!getState().getIn(['compose', 'quoted_status_id']);
+    const spoilers     = getState().getIn(['compose', 'spoiler']) || getState().getIn(['local_settings', 'always_show_spoilers_field']);
     const spoiler_text = spoilers ? getState().getIn(['compose', 'spoiler_text'], '') : '';
 
-    const fulltext = `${spoiler_text ?? ''}${countableText(status ?? '')}`;
+    const fulltext = `${spoiler_text ?? ''}${countableText(statusText ?? '')}`;
     const hasText = fulltext.trim().length > 0;
 
     if (!(hasText || media.size !== 0 || (hasQuote && spoiler_text?.length))) {
@@ -256,7 +253,7 @@ export function submitCompose(overridePrivacy = null, successCallback = undefine
       url: statusId === null ? '/api/v1/statuses' : `/api/v1/statuses/${statusId}`,
       method: statusId === null ? 'post' : 'put',
       data: {
-        status,
+        status: statusText,
         spoiler_text,
         content_type: getState().getIn(['compose', 'content_type']),
         local_only: getState().getIn(['compose', 'advanced_options', 'do_not_federate']),
@@ -280,7 +277,7 @@ export function submitCompose(overridePrivacy = null, successCallback = undefine
         browserHistory.goBack();
       }
 
-      dispatch(insertIntoTagHistory(response.data.tags, status));
+      dispatch(insertIntoTagHistory(response.data.tags, statusText));
       dispatch(submitComposeSuccess({ ...response.data }));
       if (typeof successCallback === 'function') {
         successCallback(response.data);
@@ -313,12 +310,17 @@ export function submitCompose(overridePrivacy = null, successCallback = undefine
         insertIfOnline('direct');
       }
 
+      dispatch(insertStatusIntoAccountTimelines({ ...response.data }));
+
       if (getState().getIn(['local_settings', 'show_published_toast'])) {
         dispatch(showAlert({
           message: statusId === null ? messages.published : messages.saved,
           action: messages.open,
           dismissAfter: 10000,
-          onClick: () => browserHistory.push(`/@${response.data.account.username}/${response.data.id}`),
+          onClick: () => browserHistory.push(
+            `/@${response.data.account.username}/${response.data.id}`,
+            { focusTarget: 'detailed-status' }
+          ),
         }));
       }
     }).catch(function (error) {
@@ -370,11 +372,6 @@ export function uploadCompose(files) {
 
     if (files.length + media.size + pending > uploadLimit) {
       dispatch(showAlert({ message: messages.uploadErrorLimit }));
-      return;
-    }
-
-    if (getState().getIn(['compose', 'poll'])) {
-      dispatch(showAlert({ message: messages.uploadErrorPoll }));
       return;
     }
 
@@ -497,58 +494,6 @@ export function onChangeMediaFocus(focusX, focusY) {
   };
 }
 
-export function changeUploadCompose(id, params) {
-  return (dispatch, getState) => {
-    dispatch(changeUploadComposeRequest());
-
-    let media = getState().getIn(['compose', 'media_attachments']).find((item) => item.get('id') === id);
-
-    // Editing already-attached media is deferred to editing the post itself.
-    // For simplicity's sake, fake an API reply.
-    if (media && !media.get('unattached')) {
-      const { focus, ...other } = params;
-      const data = { ...media.toJS(), ...other };
-
-      if (focus) {
-        const [x, y] = focus.split(',');
-        data.meta = { focus: { x: parseFloat(x), y: parseFloat(y) } };
-      }
-
-      dispatch(changeUploadComposeSuccess(data, true));
-    } else {
-      api().put(`/api/v1/media/${id}`, params).then(response => {
-        dispatch(changeUploadComposeSuccess(response.data, false));
-      }).catch(error => {
-        dispatch(changeUploadComposeFail(id, error));
-      });
-    }
-  };
-}
-
-export function changeUploadComposeRequest() {
-  return {
-    type: COMPOSE_UPLOAD_CHANGE_REQUEST,
-    skipLoading: true,
-  };
-}
-
-export function changeUploadComposeSuccess(media, attached) {
-  return {
-    type: COMPOSE_UPLOAD_CHANGE_SUCCESS,
-    media: media,
-    attached: attached,
-    skipLoading: true,
-  };
-}
-
-export function changeUploadComposeFail(error) {
-  return {
-    type: COMPOSE_UPLOAD_CHANGE_FAIL,
-    error: error,
-    skipLoading: true,
-  };
-}
-
 export function uploadComposeRequest() {
   return {
     type: COMPOSE_UPLOAD_REQUEST,
@@ -661,7 +606,7 @@ const fetchComposeSuggestionsTags = throttle((dispatch, token) => {
 }, 200, { leading: true, trailing: true });
 
 export function fetchComposeSuggestions(token) {
-  return (dispatch, getState) => {
+  return (dispatch) => {
     switch (token[0]) {
     case ':':
       void fetchComposeSuggestionsEmojis(dispatch, token);

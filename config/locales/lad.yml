@@ -471,7 +471,6 @@ lad:
     email_subscriptions:
       accounts:
         account: Kuento
-        active: Aktivo
       danger_zone:
         disable_feature:
           action: Inkapasita
@@ -1636,7 +1635,6 @@ lad:
     next: Sigiente
     older: Mas viejo
     prev: Anterior
-    truncate: "&hellip;"
   polls:
     errors:
       already_voted: Ya tienes votado en esta anketa

@@ -62,7 +62,6 @@ lt:
         setting_default_sensitive: Jautrioji medija pagal numatytuosius nustatymus yra paslėpta ir gali būti atskleista spustelėjus.
         setting_emoji_style: Kaip rodyti emodžius. „Auto“ bandys naudoti vietinius jaustukus, bet senesnėse naršyklėse grįš prie Tvejaustukų.
         setting_quick_boosting_html: Kai ši funkcija įjungta, paspaudus ant %{boost_icon} Paryškinimo piktogramos, įrašas bus iškart paryškintas, o ne atidarytas išskleidžiamasis meniu „paryškinti/cituoti“. Citavimo veiksmas perkeliamas į %{options_icon} meniu.
-        setting_system_scrollbars_ui: Taikoma tik darbalaukio naršyklėms, karkasiniais „Safari“ ir „Chrome“.
         setting_use_blurhash: Gradientai pagrįsti paslėptų vizualizacijų spalvomis, bet užgožia bet kokias detales.
         setting_use_pending_items: Slėpti laiko skalės naujienas po paspaudimo, vietoj automatinio srauto slinkimo.
         username: Gali naudoti raides, skaičius ir pabraukimus
@@ -70,6 +69,7 @@ lt:
       domain_allow:
         domain: Nurodytas domenas galės gauti duomenis iš šio serverio ir iš jo gaunami duomenys bus apdorojami ir saugomi
       email_domain_block:
+        domain: Tai gali būti domeno vardas, kuris nurodytas el. pašto adrese, arba jo naudojamas MX įrašas. Šie duomenys bus patikrinti registracijos metu.
         with_dns_records: Bus bandoma išspręsti nurodyto domeno DNS įrašus, o rezultatai taip pat bus blokuojami
       featured_tag:
         name: 'Štai keletas pastaruoju metu dažniausiai tavo naudotų grotažymių:'
@@ -128,6 +128,8 @@ lt:
           one: Turime įsitikinti, kad esate bent %{count} norint naudotis %{domain}. Mes to neišsaugosime.
           other: Turime įsitikinti, kad esate bent %{count} norint naudotis %{domain}. Mes to neišsaugosime.
         role: Vaidmuo valdo, kokius leidimus naudotojas turi.
+      user_role:
+        name: Viešas rolės pavadinimas, jei nustatyta, kad rolė turi būti rodomas kaip ženkliukas
     labels:
       account:
         attribution_domains: Svetainės, kuriuose leidžiama jus įvardyti

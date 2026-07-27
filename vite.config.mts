@@ -22,6 +22,7 @@ import svgr from 'vite-plugin-svgr';
 import { MastodonAssetsManifest } from './config/vite/plugin-assets-manifest';
 import { GlitchThemes as MastodonThemes } from './config/vite/plugin-glitch-themes';
 import { MastodonNameLookup } from './config/vite/plugin-name-lookup';
+import { MastodonServiceWorkerChunkPaths } from './config/vite/plugin-sw-chunk-paths';
 import { MastodonServiceWorkerLocales } from './config/vite/plugin-sw-locales';
 
 const jsRoot = path.resolve(__dirname, 'app/javascript');
@@ -32,9 +33,7 @@ export const config: UserConfigFnPromise = async ({ mode, command }) => {
   const isProdBuild = mode === 'production' && command === 'build';
 
   let outDirName = 'packs-dev';
-  if (mode === 'test') {
-    outDirName = 'packs-test';
-  } else if (mode === 'production') {
+  if (mode === 'test' || mode === 'production') {
     outDirName = 'packs';
   }
   const outDir = path.resolve('public', outDirName);
@@ -185,6 +184,7 @@ export const config: UserConfigFnPromise = async ({ mode, command }) => {
       MastodonThemes(),
       MastodonAssetsManifest(),
       MastodonServiceWorkerLocales(),
+      MastodonServiceWorkerChunkPaths(),
       legacy({
         renderLegacyChunks: false,
         modernPolyfills: true,

@@ -66,7 +66,6 @@ es:
         setting_display_media_show_all: Mostrar toda la multimedia sin avisos, incluyendo la marcada como sensible
         setting_emoji_style: Cómo se mostrarán los emojis. "Auto" intentará usar emojis nativos, cambiando a Twemoji en navegadores antiguos.
         setting_quick_boosting_html: Cuando está activado, pulsar en el icono %{boost_icon} Impulsar impulsará inmediatamente en lugar de abrir el menú desplegable Impulsar/Citas. Mueve la acción de citar al menú %{options_icon} (Opciones).
-        setting_system_scrollbars_ui: Solo aplica para navegadores de escritorio basados en Safari y Chrome
         setting_use_blurhash: Los gradientes se basan en los colores de las imágenes ocultas pero haciendo borrosos los detalles
         setting_use_pending_items: Ocultar nuevas publicaciones detrás de un clic en lugar de desplazar automáticamente el feed
         username: Puedes usar letras, números y guiones bajos
@@ -346,6 +345,7 @@ es:
       notification_emails:
         appeal: Alguien ha apelado una decisión de moderación
         digest: Enviar resumen de correos electrónicos
+        end_of_support: La versión actual de Mastodon está cerca de quedarse sin soporte
         favourite: Enviar correo electrónico cuando alguien de a favorito en su publicación
         follow: Enviar correo electrónico cuando alguien te siga
         follow_request: Enviar correo electrónico cuando alguien solicita seguirte
@@ -371,7 +371,7 @@ es:
       tag:
         listable: Permitir que esta etiqueta aparezca en las búsquedas y en el directorio del perfil
         name: Etiqueta
-        trendable: Permitir que esta etiqueta aparezca bajo tendencias
+        trendable: Permitir que esta etiqueta aparezca en tendencia
         usable: Permitir a las publicaciones usar esta etiqueta localmente
       terms_of_service:
         changelog: "¿Qué ha cambiado?"

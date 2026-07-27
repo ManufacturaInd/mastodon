@@ -4,6 +4,7 @@ es:
     about_mastodon_html: 'La red social del futuro: ¡Sin anuncios, sin vigilancia corporativa, diseño ético, y descentralización! ¡Sé dueño de tu información con Mastodon!'
     contact_missing: No establecido
     contact_unavailable: N/D
+    default_thumbnail_description: Dos dibujos de mastodontes sonrientes (que se parecen a elefantes) se lanzan un avión de papel el uno al otro. A su alrededor, un cielo azul claro y planetas flotando con árboles y más mastodontes en ellos.
     hosted_on: Mastodon alojado en %{domain}
     title: Acerca de
   accounts:
@@ -288,7 +289,11 @@ es:
         enable_relay_html: "%{name} activó el relé %{target}"
         enable_sign_in_token_auth_user_html: "%{name} ha habilitado la autenticación por token de correo electrónico para %{target}"
         enable_user_html: "%{name} habilitó el inicio de sesión para el usuario %{target}"
+        listable_tag_html: puede ser recomendada
         memorialize_account_html: "%{name} convirtió la cuenta de %{target} en una página in memoriam"
+        not_listable_tag_html: no puede ser recomendada
+        not_trendable_tag_html: no puede aparecer en tendencia
+        not_usable_tag_html: no puede usarse
         promote_user_html: "%{name} promoción al usuario %{target}"
         publish_terms_of_service_html: "%{name} ha publicado actualizaciones de los términos del servicio"
         reject_appeal_html: "%{name} rechazó la solicitud de moderación de %{target}"
@@ -301,6 +306,7 @@ es:
         sensitive_account_html: "%{name} marcó la multimedia de %{target} como sensible"
         silence_account_html: "%{name} silenció la cuenta de %{target}"
         suspend_account_html: "%{name} suspendió la cuenta de %{target}"
+        trendable_tag_html: puede aparecer en tendencia
         unassigned_report_html: "%{name} des-asignó el informe %{target}"
         unblock_email_account_html: "%{name} ha desbloqueado la dirección de correo de %{target}"
         unsensitive_account_html: "%{name} desmarcó la multimedia de %{target} como sensible"
@@ -313,8 +319,10 @@ es:
         update_ip_block_html: "%{name} cambió la regla para la IP %{target}"
         update_report_html: "%{name} actualizó el informe %{target}"
         update_status_html: "%{name} actualizó la publicación de %{target}"
+        update_tag_html: "%{name} cambió la configuración de %{target} a: "
         update_user_role_html: "%{name} cambió el rol %{target}"
         update_username_block_html: "%{name} actualizó una regla para los nombres de usuario que contienen %{target}"
+        usable_tag_html: puede usarse;
       deleted_account: cuenta eliminada
       empty: No se encontraron registros.
       filter_by_action: Filtrar por acción
@@ -500,13 +508,28 @@ es:
     email_subscriptions:
       accounts:
         account: Cuenta
-        active: Activa
         empty:
           hint: Aún no hay cuentas con suscriptores.
           no_lists_yet: Aún no hay listas
-        inactive: Inactiva
         last_email: Último correo electrónico
         lead: Las cuentas que han habilitado la función y tienen suscriptores se mostrarán a continuación.
+        show:
+          confirm_disable_feature: |-
+            ¿Desactivar boletines de correo electrónico de %{name}? No se enviarán actualizaciones por correo electrónico para esta cuenta. El usuario aún podrá reactivar esta función en los ajustes de su cuenta.
+            Para eliminar el acceso a esta función permanentemente, modifica los permisos de la cuenta en Roles.
+          confirm_remove_subscriber: "%{email} no recibirá más correos electrónicos de %{name}. Esta acción no se puede deshacer."
+          consent: Los subscriptores solo han autorizado recibir publicaciones por email. No utilices esta lista para otros propósitos.
+          date: Fecha de suscripción
+          disable_feature: Desactivar función
+          disabled: La función ha sido desactivada y ya no se enviarán correos electrónicos a esta lista.
+          email: Dirección de correo electrónico
+          empty:
+            hint: Nadie se ha suscrito a esta cuenta aún.
+            no_subscribers_yet: Sin suscriptores aún
+          enable_feature: Activar función
+          no_access_html: Esta cuenta ya no tiene los permisos necesarios para activar la función. Modifica esto en <a href="%{roles_path}">Roles</a>.
+          title: Boletines de correo electrónico de %{name}
+          view_account: Ver cuenta
         status: Estado
         subscribers: Suscriptores
         title: Listas de correo
@@ -716,6 +739,8 @@ es:
       new:
         title: Crear nueva regla IP
       no_ip_block_selected: No se han cambiado reglas IP, ya que no se ha seleccionado ninguna
+      reset: Restablecer
+      search: Buscar
       title: Reglas IP
     relationships:
       title: Relaciones de %{acct}
@@ -990,13 +1015,17 @@ es:
       critical_update: Crítica— por favor actualiza rápidamente
       description: Se recomienda mantener actualizada tu instalación de Mastodon para beneficiarte de las últimas correcciones y características. Además, a veces es crítico actualizar Mastodon de manera oportuna para evitar problemas de seguridad. Por estas razones, Mastodon comprueba si hay actualizaciones cada 30 minutos, y te notificará de acuerdo a tus preferencias de notificación por correo electrónico.
       documentation_link: Aprender más
+      nearing_eol: El soporte para la rama que estás ejecutando se acabará el %{date}. Por favor, considera actualizar.
       release_notes: Notas de la versión
+      supported_until: El soporte termina el %{date}
       title: Actualizaciones disponibles
       type: Tipo
       types:
         major: Versión principal
         minor: Versión menor
         patch: Versión de parche — correcciones de errores y cambios fáciles de aplicar
+      unsupported_branch: La rama que estás ejecutando no tiene soporte. Por favor, actualiza lo antes posible.
+      unsupported_since: Sin soporte desde el %{date}
       version: Versión
     statuses:
       account: Autor
@@ -1212,6 +1241,7 @@ es:
           other: Usada por %{count} personas durante la última semana
       title: Recomendaciones y Tendencias
       trending: En tendencia
+    update_available: Actualización disponible
     username_blocks:
       add_new: Añadir nueva
       block_registrations: Bloquear registros
@@ -1261,6 +1291,15 @@ es:
     auto_close_registrations:
       body: Debido a la falta de moderadores activos, los registros en %{instance} han sido cambiados automáticamente para requerir revisión manual, para evitar que %{instance} se utilice potencialmente como plataforma por malos actores. Puedes volver a cambiarlo para abrir los registros en cualquier momento.
       subject: Se ha cambiado automáticamente el registro de %{instance} para requerir aprobación
+    end_of_support_out_of_support_warning:
+      body: La versión de Mastodon actualmente en uso en tu servidor ya no tiene soporte. ¡Te recomendamos que actualices lo antes posible!
+      subject: "¡Mastodon %{branch} usado en %{instance} no tiene soporte!"
+    end_of_support_three_months_warning:
+      body: La versión de Mastodon actualmente en uso en tu servidor dejará de tener soporte en 3 meses. Es posible que quieras actualizar a una rama más reciente con antelación.
+      subject: El soporte para Mastodon %{branch} usado en %{instance} terminará en 3 meses.
+    end_of_support_two_weeks_warning:
+      body: La versión de Mastodon actualmente en uso en tu servidor dejará de ser compatible en 2 semanas. Te recomendamos que actualices a una rama más reciente con antelación.
+      subject: El soporte para Mastodon %{branch} usado en %{instance} terminará en 2 semanas.
     new_appeal:
       actions:
         delete_statuses: para eliminar sus mensajes
@@ -1501,6 +1540,7 @@ es:
       your_appeal_rejected: Tu apelación ha sido rechazada
   edit_profile:
     other: Otros
+    privacy_redesign_body: La opción de mostrar a quién sigues y tus seguidores ahora está directamente en tu perfil.
     redesign_body: Ahora puedes acceder a la edición del perfil desde la propia página de perfil.
     redesign_button: Llévame allí
     redesign_title: Hay una nueva experiencia de edición de perfil
@@ -1533,7 +1573,9 @@ es:
         success_html: Ahora empezarás a recibir correos electrónicos cuando %{name} publique algo nuevo. Añade %{sender} a tus contactos para que estas publicaciones no terminen en tu carpeta de Spam.
         title: Estás suscrito
         unsubscribe: Cancelar suscripición
+    disabled: Desactivado
     inactive: Inactiva
+    no_access: Sin acceso
     status: Estado
     subscribers: Suscriptores
   emoji_styles:
@@ -1649,7 +1691,9 @@ es:
       empty: Archivo CSV vacío
       incompatible_type: Incompatible con el tipo de importación seleccionado
       invalid_csv_file: 'Archivo CSV no válido. Error: %{error}'
+      invalid_json_file: 'Fichero JSON no válido. Error: %{error}'
       over_rows_processing_limit: contiene más de %{count} filas
+      status_not_found_warning: Algunos de tus filtros ocultan publicaciones específicas que no son conocidas por este servidor. Estas publicaciones no se filtrarán automáticamente si más tarde son descubiertas por el servidor.
       too_large: El archivo es demasiado grande
     failures: Fallos
     imported: Importado
@@ -1666,6 +1710,9 @@ es:
       bookmarks_html:
         one: Estás a punto de <strong>reemplazar tus marcadores</strong> por <strong>%{count} publicación</strong> proveniente de <strong>%{filename}</strong>.
         other: Estás a punto de <strong>reemplazar tus marcadores</strong> por hasta <strong>%{count} publicaciones</strong> provenientes de <strong>%{filename}</strong>.
+      custom_filters_html:
+        one: Estás a punto de <strong>reemplazar tus filtros</strong> por el contenido de <strong>%{filename}</strong>. Se añadirá hasta <strong>%{count} filtro</strong> a los nuevos filtros.
+        other: Estás a punto de <strong>reemplazar tus filtros</strong> por el contenido de <strong>%{filename}</strong>. Se añadirán hasta <strong>%{count} filtros</strong> a los nuevos filtros.
       domain_blocking_html:
         one: Estás a punto de <strong>reemplazar tu lista de bloqueos de dominio</strong> por <strong>%{count} dominio</strong> proveniente de <strong>%{filename}</strong>.
         other: Estás a punto de <strong>reemplazar tu lista de bloqueos de dominio</strong> por hasta <strong>%{count} dominios</strong> provenientes de <strong>%{filename}</strong>.
@@ -1685,6 +1732,9 @@ es:
       bookmarks_html:
         one: Está a punto de añadir <strong>%{count} publicación</strong> proveniente de <strong>%{filename}</strong> a tus <strong>marcadores</strong>.
         other: Está a punto de añadir hasta <strong>%{count} publicaciones</strong> provenientes de <strong>%{filename}</strong> a tus <strong>marcadores</strong>.
+      custom_filters_html:
+        one: Estás a punto de añadir hasta <strong>%{count} filtro</strong> desde <strong>%{filename}</strong> a tus <strong>filtros</strong>.
+        other: Estás a punto de añadir hasta <strong>%{count} filtros</strong> desde <strong>%{filename}</strong> a tus <strong>filtros</strong>.
       domain_blocking_html:
         one: Estás a punto de <strong>bloquear</strong> <strong>%{count} dominio</strong> proveniente de <strong>%{filename}</strong>.
         other: Estás a punto de <strong>bloquear</strong> hasta <strong>%{count} dominios</strong> provenientes de <strong>%{filename}</strong>.
@@ -1721,6 +1771,7 @@ es:
     types:
       blocking: Lista de bloqueados
       bookmarks: Marcadores
+      custom_filters: Filtros
       domain_blocking: Lista de dominios bloqueados
       following: Lista de seguidos
       lists: Listas
@@ -1884,6 +1935,7 @@ es:
     administration_emails: Notificaciones administrativas por correo
     email_events: Eventos para notificaciones por correo electrónico
     email_events_hint: 'Selecciona los eventos para los que deseas recibir notificaciones:'
+    moderation_emails: Notificaciones de moderación por correo
   number:
     human:
       decimal_units:
@@ -1907,7 +1959,7 @@ es:
     next: Próximo
     older: Más antiguo
     prev: Anterior
-    truncate: "&hellip;"
+    truncate_html: "&hellip;"
   polls:
     errors:
       already_voted: Ya has votado en esta encuesta

@@ -82,15 +82,18 @@ RSpec.configure do |config|
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include ActionMailer::TestHelper
   config.include Paperclip::Shoulda::Matchers
+  config.include ActiveSupport::Testing::NotificationAssertions
   config.include ActiveSupport::Testing::TimeHelpers
   config.include Chewy::Rspec::Helpers
   config.include Redisable
   config.include DomainHelpers
   config.include ThreadingHelpers
+  config.include SigningKeysHelpers
   config.include SignedRequestHelpers, type: :request
   config.include CommandLineHelpers, type: :cli
   config.include SystemHelpers, type: :system
   config.include Shoulda::Matchers::ActiveModel, type: :validator
+  config.include HtmlHeadInspection, type: :request
 
   # TODO: Remove when Devise fixes https://github.com/heartcombo/devise/issues/5705
   config.before do

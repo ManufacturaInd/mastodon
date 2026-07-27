@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_05_155103) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_06_143100) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -227,6 +227,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_05_155103) do
     t.datetime "created_at", precision: nil, null: false
     t.string "human_identifier"
     t.string "permalink"
+    t.jsonb "recorded_changes"
+    t.string "recorded_changes_format"
     t.string "route_param"
     t.bigint "target_id"
     t.string "target_type"
@@ -338,6 +340,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_05_155103) do
     t.datetime "finished_at", precision: nil
     t.integer "imported_items", default: 0, null: false
     t.boolean "likely_mismatched", default: false, null: false
+    t.boolean "missing_status", default: false, null: false
     t.string "original_filename", default: "", null: false
     t.boolean "overwrite", default: false, null: false
     t.integer "processed_items", default: 0, null: false
@@ -702,12 +705,14 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_05_155103) do
     t.bigint "account_id", null: false
     t.datetime "created_at", null: false
     t.datetime "expires_at"
+    t.string "local_fragment"
     t.string "private_key"
     t.string "public_key", null: false
     t.boolean "revoked", default: false, null: false
     t.integer "type", null: false
     t.datetime "updated_at", null: false
-    t.string "uri", null: false
+    t.string "uri"
+    t.index ["account_id", "local_fragment"], name: "index_keypairs_on_account_id_and_local_fragment", unique: true
     t.index ["account_id"], name: "index_keypairs_on_account_id"
     t.index ["uri"], name: "index_keypairs_on_uri", unique: true
   end
@@ -818,6 +823,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_05_155103) do
   create_table "notification_policies", force: :cascade do |t|
     t.bigint "account_id", null: false
     t.datetime "created_at", null: false
+    t.integer "for_bots", default: 0, null: false
     t.integer "for_limited_accounts", default: 1, null: false
     t.integer "for_new_accounts", default: 0, null: false
     t.integer "for_not_followers", default: 0, null: false
@@ -1151,8 +1157,18 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_05_155103) do
     t.index ["var"], name: "index_site_uploads_on_var", unique: true
   end
 
+  create_table "software_deprecations", force: :cascade do |t|
+    t.string "branch", null: false
+    t.datetime "created_at", null: false
+    t.date "end_of_support", null: false
+    t.datetime "updated_at", null: false
+    t.integer "warning_issued", null: false
+    t.index ["branch"], name: "index_software_deprecations_on_branch", unique: true
+  end
+
   create_table "software_updates", force: :cascade do |t|
     t.datetime "created_at", null: false
+    t.date "end_of_support"
     t.string "release_notes", default: "", null: false
     t.integer "type", default: 0, null: false
     t.datetime "updated_at", null: false

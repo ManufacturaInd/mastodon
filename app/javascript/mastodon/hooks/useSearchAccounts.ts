@@ -30,7 +30,7 @@ export function useSearchAccounts({
     'idle' | 'loading' | 'error'
   >('idle');
 
-  const searchRequestRef = useRef<AbortController | null>(null);
+  const searchRequestRef = useRef<AbortController>(null);
 
   const searchAccounts = useDebouncedCallback(
     async (value: string) => {
@@ -51,7 +51,7 @@ export function useSearchAccounts({
       searchRequestRef.current = new AbortController();
 
       try {
-        const data = await apiRequest<ApiAccountJSON[]>(
+        const accounts = await apiRequest<ApiAccountJSON[]>(
           'GET',
           'v1/accounts/search',
           {
@@ -62,7 +62,6 @@ export function useSearchAccounts({
             },
           },
         );
-        const accounts = filterResults ? data.filter(filterResults) : data;
         const accountIds = accounts.map((a) => a.id);
         dispatch(importFetchedAccounts(accounts));
         if (withRelationships) {
@@ -95,6 +94,7 @@ export function useSearchAccounts({
   const [defaultAccounts, setDefaultAccounts] = useState<
     ApiAccountJSON[] | null
   >(null);
+
   useEffect(() => {
     if (
       !currentUserId ||
@@ -108,12 +108,11 @@ export function useSearchAccounts({
     async function doRequest() {
       setLoadingState('loading');
       try {
-        const data = await apiRequest<ApiAccountJSON[]>(
+        const accounts = await apiRequest<ApiAccountJSON[]>(
           'GET',
           `v1/accounts/${currentUserId}/following`,
           { params: { limit: 40 } },
         );
-        const accounts = filterResults ? data.filter(filterResults) : data;
         const accountIds = accounts.map((a) => a.id);
         dispatch(importFetchedAccounts(accounts));
         if (withRelationships) {
@@ -137,13 +136,19 @@ export function useSearchAccounts({
     withDefaultFollows,
   ]);
 
+  const accountsToReturn =
+    accounts.length === 0 && withDefaultFollows
+      ? (defaultAccounts ?? [])
+      : accounts;
+
+  const filteredAccounts = filterResults
+    ? accountsToReturn.filter(filterResults)
+    : accountsToReturn;
+
   return {
     searchAccounts: startSearch,
     resetAccounts,
-    accounts:
-      accounts.length === 0 && withDefaultFollows
-        ? (defaultAccounts ?? [])
-        : accounts,
+    accounts: filteredAccounts,
     isLoading: loadingState === 'loading',
     isError: loadingState === 'error',
   };
