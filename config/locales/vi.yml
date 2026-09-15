@@ -61,12 +61,18 @@ vi:
       custom: Tùy chỉnh
       delete: Xóa dữ liệu
       deleted: Đã xóa
+      deletion_irreversible: Dữ liệu của người này đã bị xóa vĩnh viễn.
+      deletion_reversible_hint_html: Tài khoản này đang chờ xóa và dữ liệu sẽ bị xóa hoàn toàn vào ngày %{date}.
       demote: Hạ vai trò
       destroyed_msg: Dữ liệu %{username} sẽ được lên lịch xóa ngay bây giờ
       disable: Khóa
       disable_sign_in_token_auth: Tắt xác minh bằng email
       disable_two_factor_authentication: Vô hiệu hóa xác thực 2 bước
       disabled: Tạm khóa
+      discoverable:
+        disabled: Tác giả đã chọn không tham gia mục khám phá
+        enabled: Tác giả đã chọn tham gia mục khám phá
+        title: Khả năng khám phá
       display_name: Tên gọi
       domain: Máy chủ
       edit: Chỉnh sửa
@@ -76,6 +82,12 @@ vi:
       enable_sign_in_token_auth: Bật xác minh bằng email
       enabled: Đã duyệt
       enabled_msg: Đã kích hoạt lại tài khoản %{username} thành công
+      follow_recommendations:
+        allowed: Cho phép
+        suppress: Tắt gợi ý theo dõi
+        suppressed: Đã tắt
+        title: Gợi ý theo dõi
+        unsuppress: Mở lại gợi ý theo dõi
       followers: Người theo dõi
       follows: Đang theo dõi
       header: Ảnh bìa
@@ -159,6 +171,12 @@ vi:
       suspension_irreversible: Toàn bộ dữ liệu của người này sẽ bị xóa hết. Bạn vẫn có thể ngừng vô hiệu hóa nhưng dữ liệu sẽ không thể phục hồi.
       suspension_reversible_hint_html: Mọi dữ liệu của người này sẽ bị xóa sạch vào %{date}. Trước thời hạn này, dữ liệu vẫn có thể phục hồi. Nếu bạn muốn xóa dữ liệu của người này ngay lập tức, hãy tiếp tục.
       title: Tài khoản
+      trends:
+        allow: Cho phép
+        allowed: Cho phép
+        disallow: Cấm
+        disallowed: Cấm
+        title: Xu hướng tút
       unblock_email: Bỏ chặn địa chỉ email
       unblocked_email_msg: Đã bỏ chặn địa chỉ email của %{username}
       unconfirmed_email: Email chưa được xác minh
@@ -997,6 +1015,7 @@ vi:
       critical_update: Quan trọng — vui lòng cập nhật sớm
       description: Bạn nên cập nhật Mastodon phiên bản mới nhất để được hưởng lợi từ các bản sửa lỗi và thêm tính năng mới. Nhất là để tránh các vấn đề bảo mật. Vì những lý do này, Mastodon sẽ kiểm tra các bản cập nhật 30 phút một lần và sẽ thông báo cho bạn theo tùy chọn thông báo qua email của bạn.
       documentation_link: Tìm hiểu thêm
+      nearing_eol: Việc hỗ trợ cho nhánh bạn đang sử dụng sẽ kết thúc vào ngày %{date}, vui lòng cân nhắc cập nhật.
       release_notes: Có gì mới?
       supported_until: Kết thúc hỗ trợ vào %{date}
       title: Bản cập nhật mới
@@ -1005,6 +1024,7 @@ vi:
         major: Bản cập nhật lớn
         minor: Bản cập nhật nhỏ
         patch: Bản vá - sửa lỗi và dễ dàng áp dụng các thay đổi
+      unsupported_branch: Việc hỗ trợ cho nhánh bạn đang sử dụng đã kết thúc; vui lòng cân nhắc cập nhật.
       unsupported_since: Không còn được hỗ trợ vào %{date}
       version: Phiên bản
     statuses:
@@ -1168,7 +1188,6 @@ vi:
         shared_by_over_week:
           other: "%{count} người chia sẻ tuần rồi"
         title: Xu hướng tin tức
-        usage_comparison: Chia sẻ %{today} lần hôm nay, so với %{yesterday} lần hôm qua
       not_allowed_to_trend: Không được phép thành xu hướng
       only_allowed: Đã cho phép
       pending_review: Đang chờ
@@ -1212,7 +1231,6 @@ vi:
         trendable: Cho phép lên xu hướng
         trending_rank: 'Xu hướng #%{rank}'
         usable: Có thể dùng
-        usage_comparison: Dùng %{today} lần hôm nay, so với %{yesterday} hôm qua
         used_by_over_week:
           other: "%{count} người dùng tuần rồi"
       title: Đề xuất và Xu hướng
@@ -1266,6 +1284,15 @@ vi:
     auto_close_registrations:
       body: Do gần đây thiếu kiểm duyệt viên nên việc đăng ký trên %{instance} sẽ tự động chuyển thành duyệt thủ công, để tránh %{instance} bị sử dụng làm nền tảng cho những kẻ xấu. Bạn có thể chuyển nó trở lại trạng thái đăng ký mở bất kỳ lúc nào.
       subject: Đăng ký mới %{instance} đã được tự động chuyển sang duyệt thủ công
+    end_of_support_out_of_support_warning:
+      body: Phiên bản Mastodon hiện đang được sử dụng trên máy chủ của bạn không còn được hỗ trợ nữa. Chúng tôi khuyên bạn nên cập nhật càng sớm càng tốt!
+      subject: Mastodon %{branch} đang được sử dụng trên %{instance} hiện không còn được hỗ trợ!
+    end_of_support_three_months_warning:
+      body: Phiên bản Mastodon hiện đang được sử dụng trên máy chủ của bạn sẽ ngừng được hỗ trợ trong vòng 3 tháng tới. Bạn nên cân nhắc cập nhật lên một nhánh mới hơn từ sớm.
+      subject: Hỗ trợ cho Mastodon %{branch} đang được sử dụng trên %{instance} sẽ kết thúc sau 3 tháng nữa.
+    end_of_support_two_weeks_warning:
+      body: Phiên bản Mastodon hiện đang được sử dụng trên máy chủ của bạn sẽ ngừng được hỗ trợ trong 2 tuần nữa. Chúng tôi khuyến nghị bạn nên cập nhật lên một nhánh mới hơn trước thời hạn đó.
+      subject: Hỗ trợ cho Mastodon %{branch} đang được sử dụng trên %{instance} sẽ kết thúc sau 2 tuần nữa.
     new_appeal:
       actions:
         delete_statuses: xóa tút của họ
@@ -1561,6 +1588,7 @@ vi:
       content: Chúng tôi xin lỗi, nhưng đã xảy ra sự cố.
       title: Múi giờ trên thiết bị không đúng
     '503': Trang không thể hiển thị do lỗi máy chủ tạm thời.
+    go_home: Về trang chủ
     noscript_html: Để vào Mastodon bản web, vui lòng bật JavaScript. Ngoài ra, hãy thử dùng một <a href="%{apps_path}">ứng dụng lướt Mastodon</a> cho thiết bị của bạn.
   existing_username_validator:
     not_found: không có tên người dùng này trên máy chủ
@@ -1650,7 +1678,7 @@ vi:
       incompatible_type: Không tương thích với loại nhập đã chọn
       invalid_csv_file: 'Tệp CSV không hợp lệ. Lỗi: %{error}'
       invalid_json_file: 'Tệp JSON không hợp lệ. Lỗi: %{error}'
-      over_rows_processing_limit: chứa nhiều hơn %{count} hàng
+      no_data: Tệp này không chứa dữ liệu nào khớp với loại đã chỉ định
       status_not_found_warning: Một số bộ lọc của bạn ẩn các tút cụ thể mà máy chủ này không biết đến. Những tút này sẽ không tự động bị lọc nếu máy chủ phát hiện ra chúng sau này.
       too_large: Tệp quá lớn
     failures: Thất bại
@@ -1786,7 +1814,6 @@ vi:
     incoming_migrations_html: Để chuyển từ tài khoản khác sang tài khoản này, trước tiên bạn cần <a href="%{path}">kết nối tài khoản</a>.
     moved_msg: Tài khoản của bạn hiện đang chuyển hướng đến %{acct} và những người theo dõi bạn cũng sẽ được chuyển đi.
     not_redirecting: Tài khoản của bạn hiện không chuyển hướng đến bất kỳ tài khoản nào khác.
-    on_cooldown: Bạn vừa mới chuyển tài khoản của bạn đi nơi khác. Chỉ có thể sử dụng tiếp tính năng này sau %{count} ngày.
     past_migrations: Những lần dời nhà cũ
     proceed_with_move: Chuyển hướng người theo dõi
     redirected_msg: Tài khoản của bạn đã chuyển hướng đến %{acct}.
@@ -1877,6 +1904,7 @@ vi:
     administration_emails: Thông báo email admin
     email_events: Hoạt động thông báo email
     email_events_hint: 'Chọn những hoạt động sẽ gửi thông báo qua email:'
+    moderation_emails: Thông báo qua email về việc kiểm duyệt
   number:
     human:
       decimal_units:
@@ -1972,8 +2000,6 @@ vi:
       account: Những tút công khai của @%{acct}
       tag: 'Những tút #%{hashtag} công khai'
   scheduled_statuses:
-    over_daily_limit: Bạn đã vượt qua giới hạn được lên lịch đăng tút %{limit} hôm nay
-    over_total_limit: Bạn đã vượt quá giới hạn %{limit} của các tút được lên lịch
     too_soon: ngày phải ở tương lai
   self_destruct:
     lead_html: Rất tiếc, <strong>%{domain}</strong>đã đóng cửa vĩnh viễn. Nếu bạn có tài khoản ở đó, bạn sẽ không thể tiếp tục sử dụng tài khoản đó nhưng bạn vẫn có thể yêu cầu bản sao lưu dữ liệu của mình.

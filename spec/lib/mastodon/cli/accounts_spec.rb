@@ -194,6 +194,20 @@ RSpec.describe Mastodon::CLI::Accounts do
 
           it_behaves_like 'a new user with given email address and username'
         end
+
+        context "when account's user is not present and account was previously deleted" do
+          let(:options) { { email: 'tootctl@example.com', reattach: true } }
+
+          before do
+            Fabricate(:account, username: 'tootctl_username', user: nil, requested_deletion_at: 10.days.ago)
+          end
+
+          it 'removes requested deletion timestamp' do
+            expect { subject }
+              .to output_results('OK')
+              .and change { Account.find_local('tootctl_username').requested_deletion_at }.to(nil)
+          end
+        end
       end
     end
 
@@ -374,7 +388,7 @@ RSpec.describe Mastodon::CLI::Accounts do
             .to output_results(new_password)
 
           expect(user).to have_received(:change_password!).with(new_password)
-          expect(user.reload).to_not be_external_or_valid_password(original_password)
+          expect(user.reload).to_not be_valid_password(original_password)
         end
       end
 
@@ -644,25 +658,6 @@ RSpec.describe Mastodon::CLI::Accounts do
         expect(unfollow_service).to have_received(:call).with(follower_chris, target_account).once
         expect(unfollow_service).to have_received(:call).with(follower_rambo, target_account).once
         expect(unfollow_service).to have_received(:call).with(follower_ana, target_account).once
-      end
-    end
-  end
-
-  describe '#fix_duplicates' do
-    let(:action) { :fix_duplicates }
-    let(:service_double) { instance_double(ActivityPub::FetchRemoteAccountService, call: nil) }
-    let(:uri) { 'https://host.example/same/value' }
-
-    context 'when there are duplicate URI accounts' do
-      before do
-        Fabricate.times(2, :account, domain: 'host.example', uri: uri, legacy_keypair: true)
-        allow(ActivityPub::FetchRemoteAccountService).to receive(:new).and_return(service_double)
-      end
-
-      it 'finds the duplicates and calls fetch remote account service' do
-        expect { subject }
-          .to output_results('Duplicates found')
-        expect(service_double).to have_received(:call).with(uri)
       end
     end
   end

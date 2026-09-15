@@ -95,11 +95,16 @@ export interface PopoverProps {
      * enable it to be sized and positioned. The `ref` prop
      * is not passed when the `popoverElement` prop is provided.
      */
-    props: Record<string, unknown> & {
-      ref?: React.RefCallback<HTMLElement>;
-      style: React.CSSProperties;
-    };
+    props: PopoverChildProps;
   }) => React.ReactNode;
+}
+
+export interface PopoverChildProps {
+  ref?: React.RefCallback<HTMLElement>;
+  style: React.CSSProperties;
+  'data-popover-placement': Placement;
+  'data-popover-reference-hidden'?: boolean;
+  'data-popover-escaped'?: boolean;
 }
 
 export const Popover: React.FC<PopoverProps> = ({
@@ -109,7 +114,7 @@ export const Popover: React.FC<PopoverProps> = ({
   popoverElement,
   placement = 'bottom',
   offset,
-  strategy = 'fixed',
+  strategy = 'absolute',
   flip = true,
   container,
   matchReferenceWidth = false,
@@ -185,18 +190,22 @@ export const Popover: React.FC<PopoverProps> = ({
     return null;
   }
 
+  const props: PopoverChildProps = {
+    style: floatingStyles,
+    'data-popover-placement': computedPlacement,
+    'data-popover-reference-hidden': middlewareData.hide?.referenceHidden,
+    'data-popover-escaped': middlewareData.hide?.escaped,
+  };
+  if (!popoverElement) {
+    props.ref = refs.setFloating;
+  }
+
   return (
     <Portal container={container}>
       {children({
         placement: computedPlacement,
         update,
-        props: {
-          ref: popoverElement ? undefined : refs.setFloating,
-          style: floatingStyles,
-          'data-popover-placement': computedPlacement,
-          'data-popover-reference-hidden': middlewareData.hide?.referenceHidden,
-          'data-popover-escaped': middlewareData.hide?.escaped,
-        },
+        props,
       })}
     </Portal>
   );
